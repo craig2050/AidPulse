@@ -7,7 +7,7 @@ This hackathon focuses on leveraging **AI for fire resilience**, emergency respo
 📅 **Event Link**: [FireAI Hackathon](https://lu.ma/djblzsj5)  
 
 📄 **Hackathon Resources**:  
-- [Hackathon Google Doc](https://docs.google.com/document/d/16V5l3yia1Lz9OKjCZtpF2nCoz0LMoRUfy1GG1rFJQnc/edit?tab=t.0#heading=h.h9pniebat0ch) – Details about the hackathon, problem statements, and guidelines.  
+- [Hackathon Google Doc](https://docs.google.com/document/d/16V5l3yia1Lz9OKjCZtpF2nCoz0LMoRUfy1GG1rFJQnc/edit?tab=t.0#heading=h.h9pniebat0ch) – Team notes/brainstorming ideas/documentation.
 - [Kwaii Hackathon Guide](https://docs.google.com/document/d/10gCKUugqRjMwj0wIuKW-_vIyp9Z_9SC8Vul7q6XjBT8/edit?tab=t.0) – Comprehensive guide for participants on using AI effectively in fire resilience applications.  
 
 ## 🔹 What is FireAI?  
