@@ -1,6 +1,22 @@
 # 🔥 FireAI: Fire Resilience & Beyond – Personal AI Hackathon  
+# Development Environment Setup
 
-🚀 **Join the Fire Resilience & Beyond Hackathon!**  
+## Using Dev Containers
+
+This project uses Visual Studio Code Dev Containers to ensure a consistent development environment. Follow these steps to set up the dev container:
+
+1. **Install Docker**: Make sure you have Docker installed on your machine. You can download it from [Docker's official website](https://www.docker.com/products/docker-desktop).
+
+2. **Install Visual Studio Code**: If you don't have Visual Studio Code installed, you can download it from [Visual Studio Code's official website](https://code.visualstudio.com/).
+
+3. **Install the Remote - Containers extension**: In Visual Studio Code, install the "Remote - Containers" extension from the Extensions view (`Ctrl+Shift+X`).
+
+4. **Open the project in a dev container**:
+   - Open Visual Studio Code.
+   - Open the project folder.
+   - Press `F1` and select `Remote-Containers: Reopen in Container`.
+
+Visual Studio Code will build the dev container defined in the `.devcontainer` directory and open the project inside the container.
 
 This hackathon focuses on leveraging **AI for fire resilience**, emergency response, and beyond. Participants will develop **AI-driven solutions** to enhance fire prediction, detection, and response systems.  
 
