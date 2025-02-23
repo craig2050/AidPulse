@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fire AI</title>
+    <script type="module">
+        async function loadWasm() {
+            try {
+                const response = await fetch('your_wasm_llm.wasm'); // Replace with your WASM file
+                const buffer = await response.arrayBuffer();
+                const module = await WebAssembly.instantiate(buffer, {
+                    env: {
+                        js_print: (ptr, len) => {
+                            const memory = new Uint8Array(instance.exports.memory.buffer);
+                            const message = new TextDecoder().decode(memory.subarray(ptr, ptr + len));
+                            displayMessage("LLM: " + message);
+                        }
+                    }
+                });
+                instance = module.instance;
+                memory = instance.exports.memory;
+                allocate = instance.exports.allocate;
+                deallocate = instance.exports.deallocate;
+                process_input = instance.exports.process_input; // Replace with your WASM function
+
+            } catch (error) {
+                console.error("Error loading WASM:", error);
+                displayMessage("Error loading LLM.");
+            }
+        }
+
+        let instance;
+        let memory;
+        let allocate;
+        let deallocate;
+        let process_input;
+
+        // Hook functions to intercept and modify LLM output
+        function beforeLLMOutput(llmOutput) {
+            // Modify the LLM output before further processing.
+            let modifiedOutput = llmOutput.replace(/\s+/g, ' ').trim(); // Example: Remove extra whitespace
+            return modifiedOutput;
+        }
+
+        function afterLLMOutput(processedOutput) {
+            // Modify the processed output before displaying it.
+            let finalOutput = "Answer: " + processedOutput; // Example: Add a prefix
+            return finalOutput;
+        }
+
+        async function sendMessage() {
+            let userInput = document.getElementById("userInput").value;
+            displayMessage("You: " + userInput);
+
+            if (!instance) {
+                displayMessage("LLM not loaded.");
+                return;
+            }
+
+            // Modify the user input before sending it to the LLM.
+            let modifiedInput = "Summarize this: " + userInput; // Example modification
+
+            const inputBuffer = new TextEncoder().encode(modifiedInput);
+            const inputPtr = allocate(inputBuffer.length);
+            const inputMemory = new Uint8Array(memory.buffer, inputPtr, inputBuffer.length);
+            inputMemory.set(inputBuffer);
+
+            process_input(inputPtr, inputBuffer.length);
+
+            deallocate(inputPtr, inputBuffer.length);
+
+            document.getElementById("userInput").value = "";
+
+            // After sending the message to the LLM, update the custom HTML:
+            updateCustomHTML("<p>Waiting for LLM response...</p>");
+        }
+
+        function displayMessage(message) {
+            const chatBox = document.getElementById("chatBox");
+            const messageElement = document.createElement("p");
+            messageElement.textContent = message;
+            chatBox.appendChild(messageElement);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function updateCustomHTML(htmlContent) {
+            document.getElementById("customHTML").innerHTML = htmlContent;
+        }
+
+        window.js_print = (ptr, len) => {
+            const memory = new Uint8Array(instance.exports.memory.buffer);
+            let llmOutput = new TextDecoder().decode(memory.subarray(ptr, ptr + len));
+
+            // Apply the 'beforeLLMOutput' hook
+            llmOutput = beforeLLMOutput(llmOutput);
+
+            // Process the LLM output (you can add your logic here)
+            let processedOutput = llmOutput; // No processing in this example
+
+            // Apply the 'afterLLMOutput' hook
+            processedOutput = afterLLMOutput(processedOutput);
+
+            // Display the final processed output
+            displayMessage("LLM: " + processedOutput);
+
+            // After displaying the LLM's response, update the custom HTML:
+            updateCustomHTML(`
+                <p>The LLM responded. Do you have any other questions?</p>
+                <p>Current date: ${new Date().toLocaleDateString()}</p>
+            `);
+        };
+
+        window.onload = async function() {
+            await loadWasm();
+
+            // Initial custom HTML content
+            updateCustomHTML(`
+                <h1>Welcome to the WASM LLM Chat!</h1>
+                <p>This chat application uses a WebAssembly-based LLM to generate responses.</p>
+            `);
+
+            document.getElementById("sendButton").addEventListener("click", sendMessage);
+            document.getElementById("userInput").addEventListener("keydown", (event) => {
+                if (event.key === "Enter") {
+                    sendMessage();
+                }
+            });
+        };
+    </script>
+    <style>
+        #chatBox {
+            height: 300px;
+            border: 1px solid #ccc;
+            overflow-y: scroll;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="customHTML"></div>
+    <div id="chatBox"></div>
+    <input type="text" id="userInput" placeholder="Type your message...">
+    <button id="sendButton">Send</button>
+</body>
+</html>
