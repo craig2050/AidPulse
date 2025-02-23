@@ -1,5 +1,5 @@
 # Use the official Python 3.11 image
-FROM python:3.11-slim
+FROM python:3.13-slim
 
 # Set the working directory
 WORKDIR /workspace
@@ -12,4 +12,4 @@ COPY requirements.txt /workspace/
 RUN pip install --no-cache-dir -r requirements.txt || echo "No requirements.txt found, skipping install."
 
 # Default command
-CMD ["bash"]
+CMD sleep infinity
