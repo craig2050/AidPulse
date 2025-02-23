@@ -1,2 +1,6 @@
 .firenv
 .edge
+.venv
+.pytest_cache
+.vscode
+.coverage

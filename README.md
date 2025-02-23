@@ -1,36 +1,55 @@
-# 🔥 FireAI: Fire Resilience & Beyond – Personal AI Hackathon  
-# Development Environment Setup
+# FireAI
 
-## Using Dev Containers
+This project is a single-page web application that utilizes FastAPI to connect to a central server and incorporates a local LLM (Language Model) implemented in WebAssembly (WASM). The application is structured to facilitate test-driven development and provides organization for packaging the WebAssembly.
 
-This project uses Visual Studio Code Dev Containers to ensure a consistent development environment. Follow these steps to set up the dev container:
+## Project Structure
 
-1. **Install Docker**: Make sure you have Docker installed on your machine. You can download it from [Docker's official website](https://www.docker.com/products/docker-desktop).
+- **backend/**: Contains the FastAPI backend code.
+  - **src/**: Source code for the backend.
+    - **api/**: API endpoints and routing.
+    - **core/**: Core configuration and settings.
+    - **models/**: Data models for request and response validation.
+    - **main.py**: Entry point for the FastAPI application.
+  - **tests/**: Unit tests for the backend.
+  - **requirements.txt**: Backend dependencies.
 
-2. **Install Visual Studio Code**: If you don't have Visual Studio Code installed, you can download it from [Visual Studio Code's official website](https://code.visualstudio.com/).
+- **frontend/**: Contains the frontend application code.
+  - **src/**: Source code for the frontend.
+    - **components/**: React components for the frontend.
+    - **services/**: API service functions.
+    - **main.py**: Entry point for the frontend application.
+  - **tests/**: Unit tests for the frontend.
+  - **requirements.txt**: Frontend dependencies.
 
-3. **Install the DEV - Containers extension**: In Visual Studio Code, install the "DEV - Containers" extension from the Extensions view (`Ctrl+Shift+X`).
+- **llm/**: Contains the local LLM implementation.
+  - **src/**: Source code for the LLM.
+    - **model/**: Model architecture and inference methods.
+    - **wasm/**: WebAssembly bindings for the LLM.
+  - **tests/**: Unit tests for the LLM.
+  - **requirements.txt**: LLM dependencies.
 
-4. **Open the project in a dev container**:
-   - Open Visual Studio Code.
-   - Open the project folder.
-   - Press `F1` and select `Remote-Containers: Reopen in Container`.
+## Installation
 
-Visual Studio Code will build the dev container defined in the `.devcontainer` directory and open the project inside the container.
+To install the required dependencies, navigate to each directory (backend, frontend, llm) and run:
 
-This hackathon focuses on leveraging **AI for fire resilience**, emergency response, and beyond. Participants will develop **AI-driven solutions** to enhance fire prediction, detection, and response systems.  
+```
+pip install -r requirements.txt
+```
 
-📅 **Event Link**: [FireAI Hackathon](https://lu.ma/djblzsj5)  
+## Usage
 
-📄 **Hackathon Resources**:  
-- [Hackathon Google Doc](https://docs.google.com/document/d/16V5l3yia1Lz9OKjCZtpF2nCoz0LMoRUfy1GG1rFJQnc/edit?tab=t.0#heading=h.h9pniebat0ch) – Team notes/brainstorming ideas/documentation.
-- [Kwaii Hackathon Guide](https://docs.google.com/document/d/10gCKUugqRjMwj0wIuKW-_vIyp9Z_9SC8Vul7q6XjBT8/edit?tab=t.0) – Comprehensive guide for participants on using AI effectively in fire resilience applications.  
+To run the backend server, navigate to the `backend/src` directory and execute:
 
-## 🔹 What is FireAI?  
-FireAI is an initiative aimed at **using AI to mitigate fire-related risks** by enhancing **early detection, real-time monitoring, and predictive analytics**.  
+```
+uvicorn main:app --reload
+```
 
-### 🔥 **Key Focus Areas**:  
-1. **Wildfire Prediction & Detection** – AI models to detect fire-prone areas and predict potential outbreaks.  
-2. **Emergency Response Optimization** – Real-time AI-driven systems for faster evacuation and resource allocation.  
-3. **Post-Fire Recovery** – AI-powered solutions for assessing damage and aiding recovery efforts.  
-4. **Smart Infrastructure** – AI-enhanced urban planning and building designs to improve fire resilience.  
+To run the frontend application, navigate to the `frontend/src` directory and execute your preferred method (e.g., using a tool like React Scripts).
+
+## Testing
+
+To run the tests for the backend, frontend, and LLM, use pytest in their respective test directories.
+
+## License
+
+This project is licensed under the MIT License.
