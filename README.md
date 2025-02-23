@@ -9,7 +9,7 @@ This project uses Visual Studio Code Dev Containers to ensure a consistent devel
 
 2. **Install Visual Studio Code**: If you don't have Visual Studio Code installed, you can download it from [Visual Studio Code's official website](https://code.visualstudio.com/).
 
-3. **Install the Remote - Containers extension**: In Visual Studio Code, install the "Remote - Containers" extension from the Extensions view (`Ctrl+Shift+X`).
+3. **Install the DEV - Containers extension**: In Visual Studio Code, install the "DEV - Containers" extension from the Extensions view (`Ctrl+Shift+X`).
 
 4. **Open the project in a dev container**:
    - Open Visual Studio Code.
