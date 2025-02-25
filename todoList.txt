@@ -1,0 +1,9 @@
+Function to create a prompt
+A prompt to validate the response
+A function to check for the falsely values based on priority
+A function to identify the message to send greeting or exiting
+A function to get identity of the user
+A function to track emergency
+A function to send the json to central server
+A function to call the llm with a prompt
+A callback to receive the message from llm
