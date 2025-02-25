@@ -1,4 +1,4 @@
-# FireAI
+# AIDPulse
 
 This project is a single-page web application that utilizes FastAPI to connect to a central server and incorporates a local LLM (Language Model) implemented in WebAssembly (WASM). The application is structured to facilitate test-driven development and provides organization for packaging the WebAssembly.
 
