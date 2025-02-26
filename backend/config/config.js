@@ -1,7 +1,6 @@
 import dotenv from "dotenv";
-import path from "path";
 
-const env = process.env.NODE_ENV || "development";
+const env = process.env.NODE_ENV || "dev";
 
 // Load environment variables from root .env file
 dotenv.config();
