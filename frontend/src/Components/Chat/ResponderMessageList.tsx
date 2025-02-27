@@ -5,10 +5,11 @@ import {
   VirtuosoMessageListMethods,
   VirtuosoMessageListProps
 } from '@virtuoso.dev/message-list'
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Message } from 'types/types'
 import logo from '../../assets/logo.webp'
 import ChatInput from './ChatInput'
+import InteractiveGraphic from 'Components/InteractiveGraphic/InteractiveGraphic'
 
 const ItemContent: VirtuosoMessageListProps<Message, null>['ItemContent'] = ({
   data
@@ -30,7 +31,11 @@ const ItemContent: VirtuosoMessageListProps<Message, null>['ItemContent'] = ({
       {data.user !== 'me' && (
         <Avatar style={{ backgroundColor: '#1E1E1E' }}>
           {' '}
-          <img src={logo} style={{ height: 24, width: 24 }}></img>
+          <img
+            alt='AidPulseLogo'
+            src={logo}
+            style={{ height: 24, width: 24 }}
+          ></img>
         </Avatar>
       )}
 
@@ -55,39 +60,42 @@ const ItemContent: VirtuosoMessageListProps<Message, null>['ItemContent'] = ({
   )
 }
 
-export default function RealMessageList() {
+export default function ResponderMessageList() {
   const virtuoso = useRef<VirtuosoMessageListMethods<Message, {}>>(null)
   return (
-    <div
-      className='tall-example'
-      style={{
-        height: 'calc(100vh - 84px)',
-        display: 'flex',
-        flexDirection: 'column',
-        fontSize: '80%'
-      }}
-    >
-      <VirtuosoMessageListLicense licenseKey=''>
-        <VirtuosoMessageList<Message, null>
-          ref={virtuoso as any}
-          style={{ flex: 1, backgroundColor: 'black' }}
-          computeItemKey={({ data }: { data: any }) => data.key}
-          initialLocation={{ index: 'LAST', align: 'end' }}
-          shortSizeAlign='bottom-smooth'
-          ItemContent={ItemContent}
-        />
-      </VirtuosoMessageListLicense>
+    <>
+      <InteractiveGraphic title={'graphic'} buttonUrl={''} />
       <div
-        className='chat-input-container'
+        className='tall-example'
         style={{
+          height: '70dvh',
           display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          paddingTop: 8
+          flexDirection: 'column',
+          fontSize: '80%'
         }}
       >
-        <ChatInput virtuoso={virtuoso} />
+        <VirtuosoMessageListLicense licenseKey=''>
+          <VirtuosoMessageList<Message, null>
+            ref={virtuoso as any}
+            style={{ flex: 1, backgroundColor: 'black' }}
+            computeItemKey={({ data }: { data: any }) => data.key}
+            initialLocation={{ index: 'LAST', align: 'end' }}
+            shortSizeAlign='bottom-smooth'
+            ItemContent={ItemContent}
+          />
+        </VirtuosoMessageListLicense>
+        <div
+          className='chat-input-container'
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            paddingTop: 8
+          }}
+        >
+          <ChatInput virtuoso={virtuoso} />
+        </div>
       </div>
-    </div>
+    </>
   )
 }

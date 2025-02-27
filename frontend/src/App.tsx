@@ -6,7 +6,8 @@ import './App.css'
 import Chat from './Components/Chat/Chat'
 import Home from './Components/Home/Home'
 import InteractiveGraphic from './Components/InteractiveGraphic/InteractiveGraphic'
-import { Paper } from '@mui/material'
+import { Paper, Typography } from '@mui/material'
+import ResponderMessageList from 'Components/Chat/ResponderMessageList'
 
 function App() {
   const context = useContext(AppContext)
@@ -19,12 +20,11 @@ function App() {
       case 'civilian':
         return <RealMessageList />
       case 'volunteer':
-        return <div>Volunteer Component</div>
+        return <RealMessageList/>
       case 'responder':
         return (
           <>
-            <InteractiveGraphic title={'graphic'} buttonUrl={''} />
-            <Chat onSelectComponent={setUserType} />
+            <ResponderMessageList/>
           </>
         )
       default:

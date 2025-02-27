@@ -6,7 +6,8 @@ import IconButton from '@mui/material/IconButton'
 import InputAdornment from '@mui/material/InputAdornment'
 import TextField from '@mui/material/TextField'
 import { VirtuosoMessageListMethods } from '@virtuoso.dev/message-list'
-import { RefObject, useEffect, useRef, useState } from 'react'
+import { AppContext } from 'context/AppContext'
+import { RefObject, useContext, useEffect, useRef, useState } from 'react'
 import { Message } from 'types/types'
 
 const ChatInput = ({
@@ -17,13 +18,16 @@ const ChatInput = ({
   const theme = useTheme()
   const [message, setMessage] = useState('')
   const [listening, setListening] = useState(false)
-  const [idCounter, setIdCounter] = useState(0)
+  const idCounterRef = useRef(0)
+  const context = useContext(AppContext)
+  if (!context) throw new Error('App must be used within an AppProvider')
+  const { userType, setHasGraphic } = context
 
   //for development purposes only
   const hasRun = useRef(false)
 
   const randPhrase = () => {
-    const length = Math.floor(Math.random() * 50) + 10 // Random length between 10-60 characters
+    const length = Math.floor(Math.random() * 10) + 10 // Random length between 10-60 characters
     return faker.lorem.sentence(length)
   }
 
@@ -31,11 +35,13 @@ const ChatInput = ({
     user: Message['user'],
     optionalText?: string
   ): Message {
-    const length = Math.floor(Math.random() * 50) + 10 // Random length between 10-60 characters
+    const length = Math.floor(Math.random() * 10) + 10 // Random length between 10-60 characters
     const text = optionalText || faker.lorem.sentence(length)
+    idCounterRef.current = idCounterRef.current++
+    console.log('generating random message with id', idCounterRef.current)
     return {
       user,
-      key: `${idCounter + 1}`,
+      key: `${idCounterRef.current}`,
       text
     }
   }
@@ -84,11 +90,11 @@ const ChatInput = ({
   const handleSendClick = () => {
     if (!message.trim()) return // Prevent sending empty messages
     const fullMessage: Message = {
-      key: idCounter.toString(),
+      key: idCounterRef.current.toString(),
       text: message,
       user: 'me'
     }
-    setIdCounter(idCounter + 1)
+    idCounterRef.current = idCounterRef.current + 1
     virtuoso.current?.data.append(
       [fullMessage],
       ({ scrollInProgress, atBottom }) => {
@@ -106,8 +112,13 @@ const ChatInput = ({
 
       let counter = 0
       const interval = setInterval(() => {
-        if (counter++ > 20) {
+        if (counter++ > 2) {
           clearInterval(interval)
+          setTimeout(() => {
+            if (userType === 'responder') {
+              setHasGraphic(true)
+            }
+          }, 1000)
         }
         virtuoso.current?.data.map((message) => {
           return message.key === botMessage.key
@@ -123,9 +134,12 @@ const ChatInput = ({
     if (hasRun.current) return
     const botMessage = randomMessage(
       'other',
-      "Hello, Yunjin. I see you're in a location affected by the Los Angeles Earthquake. What do you need? "
+      userType !== 'responder'
+        ? "Hello, Yunjin. I see you're in a location affected by the Los Angeles Earthquake. What do you need?"
+        : 'Hello Fire Chief Margaret. What do you need?'
     )
     virtuoso.current?.data.append([botMessage], 'smooth')
+    idCounterRef.current = idCounterRef.current + 1
     hasRun.current = true // Mark as run for development strict mode workaround
   }, [])
 

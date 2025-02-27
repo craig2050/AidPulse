@@ -3,6 +3,8 @@ import { createTheme, ThemeProvider, Theme } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 export interface AppContextType {
   userType: string;
+  hasGraphic: boolean,
+  setHasGraphic: (hasGraphic: boolean) => void
   setUserType: (component: string) => void;
   theme: Theme;
 }
@@ -13,6 +15,10 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   const [userType, setUserType] = useState<string>(
     localStorage.getItem("userType") || ""
   );
+
+  const [hasGraphic, setHasGraphic] = useState(false)
+
+
 
   useEffect(() => {
     localStorage.setItem("userType", userType);
@@ -36,7 +42,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   const theme = getTheme();
 
   return (
-    <AppContext.Provider value={{ userType, setUserType, theme }}>
+    <AppContext.Provider value={{ userType, setUserType, theme, hasGraphic, setHasGraphic }}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         {children}
