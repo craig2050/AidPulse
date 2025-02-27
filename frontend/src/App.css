@@ -1,10 +1,4 @@
-.App {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f0f0f0;
-}
+
 
 .App-logo {
   height: 40vmin;
@@ -15,18 +9,6 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  width: 375px; /* iPhone width */
-  height: 667px; /* iPhone height */
-  border: 16px solid #000;
-  border-radius: 36px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
 }
 
 .Chat {
@@ -90,6 +72,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -100,20 +83,22 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full viewport height to center vertically */
-  margin-bottom: 20px;
 }
 
 .home-button {
-  padding: 15px 30px; /* Adjust padding for iPhone-like buttons */
-  font-size: 18px; /* Slightly larger font size */
+  padding: 15px 30px;
+  /* Adjust padding for iPhone-like buttons */
+  font-size: 18px;
+  /* Slightly larger font size */
   background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  margin: 10px 0; /* Add margin between buttons */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+  margin: 10px 0;
+  /* Add margin between buttons */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Add subtle shadow for depth */
 }
 
 .home-button:hover {
@@ -151,4 +136,34 @@
   height: auto;
   border: 1px solid #ccc;
   border-radius: 10px;
+}
+
+
+body>iframe {
+  display: none !important
+}
+
+.app-header {
+  position: fixed; /* Stays at the top */
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  background-color: white; /* Adjust if needed */
+  z-index: 1000; /* Ensures it stays above other elements */
+}
+
+.logo {
+  height: auto;
+  max-width: 75px; /* Adjust size as needed */
+  display: block;
+  margin: 0 auto; /* Ensures it's centered */
+  padding: 10px;
+}
+
+[data-testid="virtuoso-list"] {
+ margin-right: 8px;
+ margin-left: 8px;
 }
