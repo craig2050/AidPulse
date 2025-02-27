@@ -102,7 +102,7 @@ function Chat({ onSelectComponent }: { onSelectComponent: any }) {
 
   return (
     <div className='Chat'>
-      <button className='back-button' onClick={() => onSelectComponent('Home')}>
+      <button className='back-button' onClick={() => onSelectComponent('')}>
         Back
       </button>
       {location && (

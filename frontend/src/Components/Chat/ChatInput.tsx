@@ -1,33 +1,38 @@
 import { faker } from '@faker-js/faker'
 import { ArrowUpwardRounded } from '@mui/icons-material'
 import MicIcon from '@mui/icons-material/Mic'
-import { Button } from '@mui/material'
+import { Button, useTheme } from '@mui/material'
 import IconButton from '@mui/material/IconButton'
 import InputAdornment from '@mui/material/InputAdornment'
 import TextField from '@mui/material/TextField'
 import { VirtuosoMessageListMethods } from '@virtuoso.dev/message-list'
-import { RefObject, useState } from 'react'
+import { RefObject, useEffect, useRef, useState } from 'react'
 import { Message } from 'types/types'
-
-
 
 const ChatInput = ({
   virtuoso
 }: {
   virtuoso: RefObject<VirtuosoMessageListMethods<Message, {}> | null>
 }) => {
+  const theme = useTheme()
   const [message, setMessage] = useState('')
   const [listening, setListening] = useState(false)
   const [idCounter, setIdCounter] = useState(0)
+
+  //for development purposes only
+  const hasRun = useRef(false)
 
   const randPhrase = () => {
     const length = Math.floor(Math.random() * 50) + 10 // Random length between 10-60 characters
     return faker.lorem.sentence(length)
   }
 
-  function randomMessage(user: Message['user']): Message {
+  function randomMessage(
+    user: Message['user'],
+    optionalText?: string
+  ): Message {
     const length = Math.floor(Math.random() * 50) + 10 // Random length between 10-60 characters
-    const text = faker.lorem.sentence(length)
+    const text = optionalText || faker.lorem.sentence(length)
     return {
       user,
       key: `${idCounter + 1}`,
@@ -83,7 +88,7 @@ const ChatInput = ({
       text: message,
       user: 'me'
     }
-    setIdCounter(idCounter + 1);
+    setIdCounter(idCounter + 1)
     virtuoso.current?.data.append(
       [fullMessage],
       ({ scrollInProgress, atBottom }) => {
@@ -112,6 +117,17 @@ const ChatInput = ({
       }, 150)
     }, 1000)
   }
+
+  useEffect(() => {
+    //for development purposes only
+    if (hasRun.current) return
+    const botMessage = randomMessage(
+      'other',
+      "Hello, Yunjin. I see you're in a location affected by the Los Angeles Earthquake. What do you need? "
+    )
+    virtuoso.current?.data.append([botMessage], 'smooth')
+    hasRun.current = true // Mark as run for development strict mode workaround
+  }, [])
 
   return (
     <TextField
@@ -148,7 +164,9 @@ const ChatInput = ({
               ) : (
                 <IconButton
                   onClick={handleMicClick}
-                  color={listening ? 'error' : 'default'}
+                  sx={{
+                    color: listening ? theme.palette.primary.main : 'default'
+                  }}
                 >
                   <MicIcon />
                 </IconButton>

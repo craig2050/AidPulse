@@ -1,8 +1,3 @@
-declare module "*.webp" {
-  const value: string;
-  export default value;
-}
-
 declare global {
   interface Window {
     SpeechRecognition: typeof SpeechRecognition;
@@ -10,4 +5,4 @@ declare global {
   }
 }
 
-export {}; // Ensures this file is treated as a module
+export {};
