@@ -1,297 +1,72 @@
-{
-    "personal_information": {
-      "priority": 1,
-      "data": [
-        {
-          "name": "first_name",
-          "display_name": "First Name",
-          "format": "string",
-          "data_type": "text",
-          "rationale": "To identify the victim",
-          "value": "",
-          "optional": false
-        },
-        {
-          "name": "last_name",
-          "display_name": "Last Name",
-          "format": "string",
-          "data_type": "text",
-          "rationale": "To identify the victim",
-          "value": "",
-          "optional": false
-        },
-        {
-          "name": "date_of_birth",
-          "display_name": "Date of Birth",
-          "format": "YYYY-MM-DD",
-          "data_type": "date",
-          "rationale": "To verify the age of the victim",
-          "value": "",
-          "optional": false
-        },
-        {
-          "name": "gender",
-          "display_name": "Gender",
-          "format": "string",
-          "data_type": "text",
-          "rationale": "To identify the gender of the victim",
-          "value": "",
-          "optional": false
-        },
-        {
-          "name": "national_id",
-          "display_name": "National ID / SSN",
-          "format": "string",
-          "data_type": "text",
-          "rationale": "To uniquely verify the victim's identity",
-          "value": "",
-          "optional": true
-        }
-      ]
-    },
-    "contact_information": {
-      "priority": 2,
-      "data": [
-        {
-          "name": "phone_number",
-          "display_name": "Phone Number",
-          "format": "string",
-          "data_type": "text",
-          "rationale": "To contact the victim",
-          "value": "",
-          "optional": false
-        },
-        {
-          "name": "email",
-          "display_name": "Email",
-          "format": "string",
-          "data_type": "text",
-          "rationale": "To contact the victim",
-          "value": "",
-          "optional": true
-        },
-        {
-          "name": "emergency_contact_name",
-          "display_name": "Emergency Contact Name",
-          "format": "string",
-          "data_type": "text",
-          "rationale": "To reach a family member or friend in case of emergency",
-          "value": "",
-          "optional": false
-        },
-        {
-          "name": "emergency_contact_phone",
-          "display_name": "Emergency Contact Phone",
-          "format": "string",
-          "data_type": "text",
-          "rationale": "To quickly contact a next of kin or responsible party",
-          "value": "",
-          "optional": false
-        }
-      ]
-    },
-    "location_information": {
-      "priority": 3,
-      "data": [
-        {
-          "name": "address",
-          "display_name": "Residential Address",
-          "format": "string",
-          "data_type": "text",
-          "rationale": "To identify the victim's residence for assistance",
-          "value": "",
-          "optional": false
-        },
-        {
-          "name": "coordinates",
-          "display_name": "Geolocation (Latitude, Longitude)",
-          "format": "object",
-          "data_type": "geo",
-          "rationale": "To pinpoint the victim’s exact location for response teams",
-          "value": {
-            "latitude": "",
-            "longitude": ""
-          },
-          "optional": true
-        },
-        {
-          "name": "temporary_shelter",
-          "display_name": "Temporary Shelter Location",
-          "format": "string",
-          "data_type": "text",
-          "rationale": "If the victim has relocated, this provides their current location",
-          "value": "",
-          "optional": true
-        }
-      ]
-    },
-    "household_information": {
-      "priority": 4,
-      "data": [
-        {
-          "name": "adults",
-          "display_name": "Number of Adults in Household",
-          "format": "integer",
-          "data_type": "number",
-          "rationale": "To determine the total number of adults needing assistance",
-          "value": 0,
-          "optional": false
-        },
-        {
-          "name": "children",
-          "display_name": "Number of Children in Household",
-          "format": "integer",
-          "data_type": "number",
-          "rationale": "To determine the number of children affected",
-          "value": 0,
-          "optional": false
-        },
-        {
-          "name": "elderly",
-          "display_name": "Number of Elderly in Household",
-          "format": "integer",
-          "data_type": "number",
-          "rationale": "To prioritize support for elderly individuals",
-          "value": 0,
-          "optional": false
-        },
-        {
-          "name": "pets",
-          "display_name": "Number of Pets",
-          "format": "integer",
-          "data_type": "number",
-          "rationale": "To assist in rescuing and providing care for pets",
-          "value": 0,
-          "optional": true
-        }
-      ]
-    },
-    "utility_information": {
-      "priority": 5,
-      "data": [
-        {
-          "name": "utility_type",
-          "display_name": "Utility Type (Gas/Electric)",
-          "format": "string",
-          "data_type": "text",
-          "rationale": "To determine the necessary utility assistance",
-          "value": "",
-          "optional": false
-        }
-      ]
-    },
-    "disaster_information": {
-      "priority": 6,
-      "data": [
-        {
-          "name": "disaster_type",
-          "display_name": "Disaster Type",
-          "format": "string",
-          "data_type": "text",
-          "rationale": "To categorize the emergency",
-          "value": "",
-          "optional": false
-        },
-        {
-          "name": "fire_active",
-          "display_name": "Is Fire Still Active?",
-          "format": "boolean",
-          "data_type": "boolean",
-          "rationale": "To determine urgency of response",
-          "value": false,
-          "optional": false
-        },
-        {
-          "name": "damage_level",
-          "display_name": "Damage Level",
-          "format": "string",
-          "data_type": "text",
-          "rationale": "To assess the severity of destruction",
-          "value": "",
-          "optional": false
-        },
-        {
-          "name": "hazards",
-          "display_name": "Known Hazards (Gas leaks, Power lines, Chemicals)",
-          "format": "string",
-          "data_type": "text",
-          "rationale": "To warn responders of potential dangers",
-          "value": "",
-          "optional": true
-        },
-        {
-          "name": "safe_exit",
-          "display_name": "Is a Safe Exit Available?",
-          "format": "boolean",
-          "data_type": "boolean",
-          "rationale": "To assess if victims can evacuate safely",
-          "value": false,
-          "optional": false
-        }
-      ]
-    },
-    "assistance_information": {
-      "priority": 7,
-      "data": [
-        {
-          "name": "medical_assistance",
-          "display_name": "Medical Assistance Needed?",
-          "format": "boolean",
-          "data_type": "boolean",
-          "rationale": "To ensure medical aid is dispatched",
-          "value": false,
-          "optional": false
-        },
-        {
-          "name": "shelter_assistance",
-          "display_name": "Shelter Assistance Needed?",
-          "format": "boolean",
-          "data_type": "boolean",
-          "rationale": "To determine if temporary housing is required",
-          "value": false,
-          "optional": false
-        },
-        {
-          "name": "food_assistance",
-          "display_name": "Food Assistance Needed?",
-          "format": "boolean",
-          "data_type": "boolean",
-          "rationale": "To provide necessary food aid",
-          "value": false,
-          "optional": false
-        },
-        {
-          "name": "water_assistance",
-          "display_name": "Water Assistance Needed?",
-          "format": "boolean",
-          "data_type": "boolean",
-          "rationale": "To provide drinking water to victims",
-          "value": false,
-          "optional": false
-        },
-        {
-          "name": "other_needs",
-          "display_name": "Other Assistance Needs",
-          "format": "string",
-          "data_type": "text",
-          "rationale": "To capture any additional requirements",
-          "value": "",
-          "optional": true
-        }
-      ]
-    },
-    "timestamp": {
-      "priority": 8,
-      "data": [
-        {
-          "name": "report_time",
-          "display_name": "Report Time",
-          "format": "YYYY-MM-DDTHH:MM:SSZ",
-          "data_type": "datetime",
-          "rationale": "To track when the incident was reported",
-          "value": "",
-          "optional": false
-        }
-      ]
-    }
+[
+  {
+    "DataElementName": "IntroMessage",
+    "DisplayName": "Introductory Message",
+    "PreferredFormat": "String",
+    "Datatype": "string",
+    "RationaleForCollecting": "To provide reassurance and set expectations for the victim at the beginning of the conversation",
+    "HelpfulInformationForCollecting": "Keep the message compassionate, concise, and reassuring.",
+    "Priority": "Critical",
+    "Message": "Hello, I’m here to help. I know this is a difficult time, but you are not alone. I’ll ask a few quick questions to understand your situation and get you the right assistance. You can take your time, and if you need to stop at any point, that’s okay too. Let’s begin."
+  },
+  {
+    "DataElementName": "SafetyCheck",
+    "DisplayName": "Safety Check",
+    "PreferredFormat": "Enum (Yes/No)",
+    "Datatype": "string",
+    "RationaleForCollecting": "To assess whether immediate emergency services are required",
+    "HelpfulInformationForCollecting": "If the answer is 'No', direct the victim to call 911 immediately.",
+    "Priority": "Critical",
+    "Message": "First, are you safe right now? (Yes/No)"
+  },
+  {
+    "DataElementName": "Name",
+    "DisplayName": "Victim's Name",
+    "PreferredFormat": "String",
+    "Datatype": "string",
+    "RationaleForCollecting": "To address the victim personally and create a more supportive interaction",
+    "HelpfulInformationForCollecting": "If the person is uncomfortable sharing their full name, a first name or nickname is fine.",
+    "Priority": "High",
+    "Message": "Can you please share your name so we can address you properly? If you’re not comfortable sharing your full name, a first name or nickname is fine."
+  },
+  {
+    "DataElementName": "PhoneNumber",
+    "DisplayName": "Contact Information",
+    "PreferredFormat": "String (Phone Number)",
+    "Datatype": "string",
+    "RationaleForCollecting": "To follow up if necessary and provide continuous assistance",
+    "HelpfulInformationForCollecting": "Ensure the phone number is accurate for emergency contact purposes.",
+    "Priority": "Critical",
+    "Message": "How can we reach you in case we need to follow up? A phone number would be helpful."
+  },
+  {
+    "DataElementName": "DisasterType",
+    "DisplayName": "Disaster Type",
+    "PreferredFormat": "Enum (e.g., wildfire, flood, earthquake, etc.)",
+    "Datatype": "string",
+    "RationaleForCollecting": "To tailor response efforts based on the specific disaster",
+    "HelpfulInformationForCollecting": "Ensure the disaster type is accurately reported.",
+    "Priority": "Critical",
+    "Message": "What type of disaster are you experiencing? (e.g., wildfire, flood, earthquake, etc.)"
+  },
+  {
+    "DataElementName": "NumberOfPeople",
+    "DisplayName": "Number of People",
+    "PreferredFormat": "Integer (e.g., 1, 2, 3, etc.)",
+    "Datatype": "integer",
+    "RationaleForCollecting": "To determine the scale of assistance required",
+    "HelpfulInformationForCollecting": "Include all individuals affected, including children and pets.",
+    "Priority": "High",
+    "Message": "How many people, including yourself, need assistance?"
+  },
+  {
+    "DataElementName": "Needs",
+    "DisplayName": "Victim's Needs",
+    "PreferredFormat": "JSON Array (e.g., [\"food\", \"water\", \"shelter\", \"medical\"])",
+    "Datatype": "array",
+    "RationaleForCollecting": "To identify the victim's specific needs and allocate resources accordingly",
+    "HelpfulInformationForCollecting": "Enumerate needs based on the disaster type (e.g., wildfire-specific needs: evacuation assistance, fire-resistant gear).",
+    "Priority": "High",
+    "Message": "What immediate assistance do you need? (e.g., food, water, shelter, medical aid)"
   }
+]
