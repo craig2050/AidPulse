@@ -7,7 +7,7 @@ import data from '../../questions.json'
 function Chat({ onSelectComponent }: { onSelectComponent: any }) {
   const [messages, setMessages] = useState<string[]>([])
 
-  const combinedData = Object.values(data).reduce((acc: any, section) => {
+  const combinedData = Object.values(data).reduce((acc: any, section: any) => {
     if (section.data && Array.isArray(section.data)) {
       acc.push(...section.data)
     }
