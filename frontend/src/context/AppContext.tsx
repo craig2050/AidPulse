@@ -47,13 +47,21 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   const getTheme = () => {
     let primaryColor = "#1976d2"; // Volunteer
     if (userType === "responder") primaryColor = "#d32f2f";
-    if (userType === "civilian") primaryColor = "#388e3c";
+    if (userType === "victim") primaryColor = "#388e3c";
 
     return createTheme({
       palette: {
-        mode: "dark",
+        mode: "dark", // Set the theme mode to dark
         primary: {
           main: primaryColor,
+        },
+        background: {
+          default:"#FFFFFF", // Set the default background color for dark mode
+          paper:"#848484", // Set the background color for paper components
+        },
+        text: {
+          primary: "#ffffff", // Set the primary text color for dark mode
+          secondary: "#b0b0b0", // Set the secondary text color for dark mode
         },
       },
     });

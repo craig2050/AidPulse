@@ -1,7 +1,20 @@
 import { EmojiPeople, HealthAndSafety, Support } from "@mui/icons-material";
-import { Button, Box } from "@mui/material";
+import { Button, Box, Typography } from "@mui/material";
+import { useEffect, useState } from 'react'
+import data from '../../messages.json' // Import the JSON file
 
 function Home({ onSelectComponent }: { onSelectComponent: any }) {
+  const [greeting, setGreeting] = useState<string>('')
+  const [homeText, setHomeText] = useState<string>('');
+
+  useEffect(() => {
+    // Extract the greeting message from the JSON
+    if (data.greeting) {
+      setGreeting(data.greeting)
+      setHomeText(data.homeText);
+    }
+  }, []);
+
   return (
     <Box
       className="Home"
@@ -13,9 +26,21 @@ function Home({ onSelectComponent }: { onSelectComponent: any }) {
         padding: "20px",
         height: "92dvh", // Use dynamic viewport height for mobile browsers
         overflow: "hidden", // Prevents scrolling
+        fontFamily: 'Montserrat, sans-serif', // Use the new font
       }}
     >
-      {/* Civilian Button - Centered Vertically */}
+      {/* Introductory Message */}
+      {greeting && (
+        <Typography variant="h4" sx={{ marginBottom: "10px", fontSize: "28px", fontWeight: "600" }}>
+          {greeting}
+        </Typography>
+      )}
+
+      <Typography variant="h6" sx={{ marginBottom: "20px", fontSize: "18px", fontWeight: "400" }} align="center">
+        {homeText}
+      </Typography>
+
+      {/* Victim Button - Centered Vertically */}
       <Box
         sx={{
           flex: 1,
@@ -27,9 +52,8 @@ function Home({ onSelectComponent }: { onSelectComponent: any }) {
       >
         <Button
           variant="contained"
-          className="home-button"
-          onClick={() => onSelectComponent("civilian")}
-          color="success"
+          className="home-button victim"
+          onClick={() => onSelectComponent("victim")}
           sx={{
             width: "80%",
             maxWidth: "400px",
@@ -44,7 +68,7 @@ function Home({ onSelectComponent }: { onSelectComponent: any }) {
           }}
         >
           <EmojiPeople fontSize="large" />
-          Get Help
+          I need help.
         </Button>
       </Box>
 
@@ -63,7 +87,7 @@ function Home({ onSelectComponent }: { onSelectComponent: any }) {
         <Button
           variant="contained"
           className="home-button"
-          onClick={() => onSelectComponent("victim")}
+          onClick={() => onSelectComponent("volunteer")}
           sx={{
             width: "80%",
             maxWidth: "400px",
@@ -77,14 +101,13 @@ function Home({ onSelectComponent }: { onSelectComponent: any }) {
           }}
         >
           <Support fontSize="large" />
-          Victim
+          I want to help.
         </Button>
 
         <Button
           variant="contained"
-          className="home-button"
+          className="home-button responder"
           onClick={() => onSelectComponent("responder")}
-          color="error"
           sx={{
             width: "80%",
             maxWidth: "400px",
@@ -98,7 +121,7 @@ function Home({ onSelectComponent }: { onSelectComponent: any }) {
           }}
         >
           <HealthAndSafety fontSize="large" />
-          Responder
+          I am a Responder.
         </Button>
       </Box>
     </Box>

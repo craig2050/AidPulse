@@ -17,10 +17,14 @@ function App() {
 
   const renderComponent = () => {
     switch (userType) {
-      case 'civilian':
-        return <RealMessageList />
       case 'victim':
-        return <RealMessageList/>
+        return <RealMessageList />
+      case 'volunteer':
+        return (
+          <>
+            <ResponderMessageList/>
+          </>
+        )
       case 'responder':
         return (
           <>

@@ -81,17 +81,54 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(180deg, #191919, #656565); /* Background gradient */
+  font-family: 'Montserrat, sans-serif'; /* Use the new font */
 }
 
 .Home .home-button {
   margin-bottom: 8px;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 10px;
+  color: white;
+  font-weight:bold;
+}
+
+.Home .home-button.victim {
+  background-color: #1a8633; /* Muted green */
+}
+
+.Home .home-button.victim:hover {
+  background-color: #dcd8d8; /* Lighter shade on hover */
+}
+
+.Home .home-button.volunteer {
+  background-color: #024a96; /* Royal Blue */
+}
+
+.Home .home-button.volunteer:hover {
+  background-color: #dcd8d8; /* Lighter shade on hover */
+}
+
+.Home .home-button.responder {
+  background-color: #c33400; /* Professional Red */
+}
+
+.Home .home-button.responder:hover {
+  background-color: #dcd8d8; /* Lighter shade on hover */
 }
 
 .InteractiveGraphic {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 200px
+  height: 200px;
 }
 
 .interactive-button {
@@ -120,9 +157,8 @@
   border-radius: 10px;
 }
 
-
 body>iframe {
-  display: none !important
+  display: none !important;
 }
 
 .app-header {
@@ -155,9 +191,8 @@ body>iframe {
 }
 
 [data-testid="virtuoso-scroller"] {
-  padding-top: 8px
+  padding-top: 8px;
 }
-
 
 html,
 body,
