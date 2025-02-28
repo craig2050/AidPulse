@@ -11,6 +11,8 @@ import logo from '../../assets/logo.webp'
 import ChatInput from './ChatInput'
 import { AppContext } from 'context/AppContext'
 
+const key = process.env.VIRTUOSO_KEY || ''
+
 const ItemContent: VirtuosoMessageListProps<Message, null>['ItemContent'] = ({
   data
 }: {
@@ -73,7 +75,7 @@ export default function RealMessageList() {
         fontSize: '80%'
       }}
     >
-      <VirtuosoMessageListLicense licenseKey=''>
+      <VirtuosoMessageListLicense licenseKey={key}>
         <VirtuosoMessageList<Message, null>
           ref={virtuoso as any}
           style={{ flex: 1, backgroundColor: 'black' }}

@@ -5,11 +5,13 @@ import {
   VirtuosoMessageListMethods,
   VirtuosoMessageListProps
 } from '@virtuoso.dev/message-list'
-import { useEffect, useRef, useState } from 'react'
+import InteractiveGraphic from 'Components/InteractiveGraphic/InteractiveGraphic'
+import { useRef } from 'react'
 import { Message } from 'types/types'
 import logo from '../../assets/logo.webp'
 import ChatInput from './ChatInput'
-import InteractiveGraphic from 'Components/InteractiveGraphic/InteractiveGraphic'
+
+const key = process.env.VIRTUOSO_KEY || ''
 
 const ItemContent: VirtuosoMessageListProps<Message, null>['ItemContent'] = ({
   data
@@ -74,7 +76,7 @@ export default function ResponderMessageList() {
           fontSize: '80%'
         }}
       >
-        <VirtuosoMessageListLicense licenseKey=''>
+        <VirtuosoMessageListLicense licenseKey={key}>
           <VirtuosoMessageList<Message, null>
             ref={virtuoso as any}
             style={{ flex: 1, backgroundColor: 'black' }}
