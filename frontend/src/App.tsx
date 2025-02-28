@@ -19,7 +19,7 @@ function App() {
     switch (userType) {
       case 'civilian':
         return <RealMessageList />
-      case 'volunteer':
+      case 'victim':
         return <RealMessageList/>
       case 'responder':
         return (

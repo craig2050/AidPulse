@@ -63,7 +63,7 @@ function Home({ onSelectComponent }: { onSelectComponent: any }) {
         <Button
           variant="contained"
           className="home-button"
-          onClick={() => onSelectComponent("volunteer")}
+          onClick={() => onSelectComponent("victim")}
           sx={{
             width: "80%",
             maxWidth: "400px",
@@ -77,7 +77,7 @@ function Home({ onSelectComponent }: { onSelectComponent: any }) {
           }}
         >
           <Support fontSize="large" />
-          Volunteer
+          Victim
         </Button>
 
         <Button

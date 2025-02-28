@@ -5,16 +5,18 @@ import {
   VirtuosoMessageListMethods,
   VirtuosoMessageListProps
 } from '@virtuoso.dev/message-list'
-import { useRef } from 'react'
+import { useContext, useRef } from 'react'
 import { Message } from 'types/types'
 import logo from '../../assets/logo.webp'
 import ChatInput from './ChatInput'
+import { AppContext } from 'context/AppContext'
 
 const ItemContent: VirtuosoMessageListProps<Message, null>['ItemContent'] = ({
   data
 }: {
   data: any
 }) => {
+  console.log(data)
   const ownMessage = data.user === 'me'
   const theme = useTheme()
 
@@ -57,6 +59,10 @@ const ItemContent: VirtuosoMessageListProps<Message, null>['ItemContent'] = ({
 
 export default function RealMessageList() {
   const virtuoso = useRef<VirtuosoMessageListMethods<Message, {}>>(null)
+  const context = useContext(AppContext)
+
+  if(context?.userIdentifier === "") context.configureNewUserSetup()
+
   return (
     <div
       className='tall-example'
