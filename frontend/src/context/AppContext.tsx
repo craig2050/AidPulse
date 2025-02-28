@@ -36,7 +36,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
     if(userType === "victim") localStorage.setItem("questionData", JSON.stringify(victimData));
     if(userType === "responder") localStorage.setItem("questionData", JSON.stringify(responderData));
-    
+
     setUderIdentifier(identifier);
   };
 
