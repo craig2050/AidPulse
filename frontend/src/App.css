@@ -81,7 +81,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(180deg, #191919, #656565); /* Background gradient */
   font-family: 'Montserrat, sans-serif'; /* Use the new font */
 }
 

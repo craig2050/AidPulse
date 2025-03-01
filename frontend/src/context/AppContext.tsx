@@ -25,7 +25,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   const [hasGraphic, setHasGraphic] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(1);
 
-  const [userIdentifier, setUderIdentifier] = useState(
+  const [userIdentifier, setUserIdentifier] = useState(
     localStorage.getItem("userIdentifier") || ""
   );
 
@@ -37,7 +37,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     if(userType === "victim") localStorage.setItem("questionData", JSON.stringify(victimData));
     if(userType === "responder") localStorage.setItem("questionData", JSON.stringify(responderData));
 
-    setUderIdentifier(identifier);
+    setUserIdentifier(identifier);
   };
 
   useEffect(() => {
@@ -55,14 +55,14 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
         primary: {
           main: primaryColor,
         },
-        background: {
-          default:"#FFFFFF", // Set the default background color for dark mode
-          paper:"#848484", // Set the background color for paper components
-        },
-        text: {
-          primary: "#ffffff", // Set the primary text color for dark mode
-          secondary: "#b0b0b0", // Set the secondary text color for dark mode
-        },
+        // background: {
+        //   default:"#FFFFFF", // Set the default background color for dark mode
+        //   paper:"#848484", // Set the background color for paper components
+        // },
+        // text: {
+        //   primary: "#ffffff", // Set the primary text color for dark mode
+        //   secondary: "#b0b0b0", // Set the secondary text color for dark mode
+        // },
       },
     });
   };

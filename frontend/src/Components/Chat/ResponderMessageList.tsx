@@ -16,7 +16,7 @@ const key = process.env.VIRTUOSO_KEY || ''
 const ItemContent: VirtuosoMessageListProps<Message, null>['ItemContent'] = ({
   data
 }: {
-  data: any
+  data: Message
 }) => {
   const ownMessage = data.user === 'me'
   const theme = useTheme()
@@ -63,7 +63,7 @@ const ItemContent: VirtuosoMessageListProps<Message, null>['ItemContent'] = ({
 }
 
 export default function ResponderMessageList() {
-  const virtuoso = useRef<VirtuosoMessageListMethods<Message, {}>>(null)
+  const virtuoso = useRef<VirtuosoMessageListMethods<Message, null>>(null)
   return (
     <>
       <InteractiveGraphic title={'graphic'} buttonUrl={''} />
@@ -78,9 +78,9 @@ export default function ResponderMessageList() {
       >
         <VirtuosoMessageListLicense licenseKey={key}>
           <VirtuosoMessageList<Message, null>
-            ref={virtuoso as any}
+            ref={virtuoso}
             style={{ flex: 1, backgroundColor: 'black' }}
-            computeItemKey={({ data }: { data: any }) => data.key}
+            computeItemKey={({ data }: { data: Message }) => data.key}
             initialLocation={{ index: 'LAST', align: 'end' }}
             shortSizeAlign='bottom-smooth'
             ItemContent={ItemContent}

@@ -1,19 +1,17 @@
-import { useContext } from 'react'
-import { AppContext } from './context/AppContext' // Import the global context
+import { Paper } from '@mui/material'
 import RealMessageList from 'Components/Chat/MessageList'
-import logo from './assets/logo.webp'
-import './App.css'
-import Chat from './Components/Chat/Chat'
-import Home from './Components/Home/Home'
-import InteractiveGraphic from './Components/InteractiveGraphic/InteractiveGraphic'
-import { Paper, Typography } from '@mui/material'
 import ResponderMessageList from 'Components/Chat/ResponderMessageList'
+import { useContext } from 'react'
+import './App.css'
+import logo from './assets/logo.webp'
+import Home from './Components/Home/Home'
+import { AppContext } from './context/AppContext'; // Import the global context
 
 function App() {
   const context = useContext(AppContext)
   if (!context) throw new Error('App must be used within an AppProvider')
 
-  const { userType, setUserType } = context
+  const { userType } = context
 
   const renderComponent = () => {
     switch (userType) {
@@ -32,7 +30,7 @@ function App() {
           </>
         )
       default:
-        return <Home onSelectComponent={setUserType} />
+        return <Home />
     }
   }
 

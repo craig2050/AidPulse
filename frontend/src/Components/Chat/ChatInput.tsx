@@ -1,229 +1,190 @@
-import { faker } from "@faker-js/faker";
-import { ArrowUpwardRounded } from "@mui/icons-material";
-import MicIcon from "@mui/icons-material/Mic";
-import { Button, useTheme } from "@mui/material";
-import IconButton from "@mui/material/IconButton";
-import InputAdornment from "@mui/material/InputAdornment";
-import TextField from "@mui/material/TextField";
-import { VirtuosoMessageListMethods } from "@virtuoso.dev/message-list";
-import { AppContext } from "context/AppContext";
-import { RefObject, useContext, useEffect, useRef, useState } from "react";
-import { Message } from "types/types";
-import victimData from "../../victimdata.json";
-import { findFirstEmptyValue, promptFunction, updateValueById } from "utils";
+import { ArrowUpwardRounded } from '@mui/icons-material'
+import MicIcon from '@mui/icons-material/Mic'
+import { Button, useTheme } from '@mui/material'
+import IconButton from '@mui/material/IconButton'
+import InputAdornment from '@mui/material/InputAdornment'
+import TextField from '@mui/material/TextField'
+import { VirtuosoMessageListMethods } from '@virtuoso.dev/message-list'
+import { AppContext } from 'context/AppContext'
+import { RefObject, useContext, useEffect, useRef, useState } from 'react'
+import { LLMResponse, Message } from 'types/types'
+import { findFirstEmptyValue, promptFunction, updateValueById } from 'utils'
+import victimData from '../../victimdata.json'
+
+interface ChatInputProps {
+  virtuoso: RefObject<VirtuosoMessageListMethods<Message, null> | null>;
+}
 
 const ChatInput = ({
-  virtuoso,
-}: {
-  virtuoso: RefObject<VirtuosoMessageListMethods<Message, {}> | null>;
-}) => {
-  const theme = useTheme();
-  const [message, setMessage] = useState("");
-  const [listening, setListening] = useState(false);
-  const idCounterRef = useRef(0);
-  const context = useContext(AppContext);
-  if (!context) throw new Error("App must be used within an AppProvider");
-  const { userType, setHasGraphic } = context;
+  virtuoso
+}: ChatInputProps) => {
+  const theme = useTheme()
+  const [message, setMessage] = useState<string>('')
+  const [listening, setListening] = useState<boolean>(false)
+  const idCounterRef = useRef<number>(0)
+  const context = useContext(AppContext)
+  if (!context) throw new Error('App must be used within an AppProvider')
 
-  //for development purposes only
-  const hasRun = useRef(false);
+  // For development purposes only
+  const hasRun = useRef<boolean>(false)
 
-  const randPhrase = () => {
-    const length = Math.floor(Math.random() * 10) + 10; // Random length between 10-60 characters
-    return faker.lorem.sentence(length);
-  };
-
-  function randomMessage(
-    user: Message["user"],
-    optionalText?: string
-  ): Message {
-    const length = Math.floor(Math.random() * 10) + 10; // Random length between 10-60 characters
-    const text = optionalText || faker.lorem.sentence(length);
-    idCounterRef.current = idCounterRef.current++;
-    console.log("generating random message with id", idCounterRef.current);
-    console.log(`hi`);
-    return {
-      user,
-      key: `${idCounterRef.current}`,
-      text,
-    };
-  }
-
-  // Check if browser supports Speech Recognition
-  const SpeechRecognition =
-    window.SpeechRecognition || window.webkitSpeechRecognition;
-  const recognition = SpeechRecognition ? new SpeechRecognition() : null;
+  const { SpeechRecognition, webkitSpeechRecognition } =
+    window as WindowWithSpeechRecognition
+  const RecognitionConstructor = SpeechRecognition || webkitSpeechRecognition
+  const recognition: SpeechRecognition | null = RecognitionConstructor
+    ? new RecognitionConstructor()
+    : null
 
   if (recognition) {
-    recognition.continuous = false; // Stops automatically after a single phrase
-    recognition.interimResults = false; // Only return final results
-    recognition.lang = "en-US"; // Set default language (can be changed)
+    recognition.continuous = false // Stops automatically after a single phrase
+    recognition.interimResults = false // Only return final results
+    recognition.lang = 'en-US' // Set default language
   }
 
-  const handleMicClick = () => {
+  const handleMicClick = (): void => {
     if (!recognition) {
-      alert("Your browser does not support voice recognition.");
-      return;
+      alert('Your browser does not support voice recognition.')
+      return
     }
 
     if (!listening) {
-      setListening(true);
-      recognition.start();
+      setListening(true)
+      recognition.start()
 
-      recognition.onresult = (event: any) => {
-        const transcript = event.results[0][0].transcript;
-        setMessage(transcript);
-        setListening(false);
-      };
+      recognition.onresult = (event: SpeechRecognitionEvent): void => {
+        const transcript: string = event.results[0][0].transcript
+        setMessage(transcript)
+        setListening(false)
+      }
 
-      recognition.onerror = (event: any) => {
-        console.error("Speech recognition error:", event.error);
-        setListening(false);
-      };
+      recognition.onerror = (event: SpeechRecognitionErrorEvent): void => {
+        console.error('Speech recognition error:', event.error)
+        setListening(false)
+      }
 
-      recognition.onend = () => {
-        setListening(false);
-      };
+      recognition.onend = (): void => {
+        setListening(false)
+      }
     } else {
-      recognition.stop();
-      setListening(false);
+      recognition.stop()
+      setListening(false)
     }
-  };
+  }
 
-  const handleSendClick = () => {
-    if (!message.trim()) return; // Prevent sending empty messages
+  const handleSendClick = (): void => {
+    if (!message.trim()) return // Prevent sending empty messages
     const fullMessage: Message = {
       key: idCounterRef.current.toString(),
       text: message,
-      user: "me",
-    };
-    idCounterRef.current = idCounterRef.current + 1;
+      user: 'me'
+    }
+    idCounterRef.current++
     virtuoso.current?.data.append(
       [fullMessage],
-      ({ scrollInProgress, atBottom }) => {
-        return {
-          index: "LAST",
-          align: "end",
-          behavior: atBottom || scrollInProgress ? "smooth" : "auto",
-        };
-      }
-    );
+      ({
+        scrollInProgress,
+        atBottom
+      }): { index: 'LAST'; align: 'end'; behavior: 'smooth' | 'auto' } => ({
+        index: 'LAST',
+        align: 'end',
+        behavior: atBottom || scrollInProgress ? 'smooth' : 'auto'
+      })
+    )
 
-    updateValueById(
-      JSON.parse(localStorage.getItem("questionData") ?? ""),
-      context.currentQuestion,
-      message
-    );
+    // Parse questionData from localStorage. If not available, fallback to victimData.
+    const storedQuestionData: string | null =
+      localStorage.getItem('questionData')
+    const parsedQuestionData = storedQuestionData
+      ? (JSON.parse(storedQuestionData) as typeof victimData)
+      : victimData
+    updateValueById(parsedQuestionData, context.currentQuestion, message)
 
-    setMessage(""); // Clear input after sending
-    setTimeout(() => {
-      const questionObject = findFirstEmptyValue(JSON.parse(localStorage.getItem("questionData") ?? ""));
-      context.setCurrentQuestion(questionObject.id);
-      const question: string = promptFunction(JSON.stringify(questionObject));
+    setMessage('') // Clear input after sending
+    setTimeout((): void => {
+      const storedData: string | null = localStorage.getItem('questionData')
+      const parsedData = storedData
+        ? (JSON.parse(storedData) as typeof victimData)
+        : victimData
+      const questionObject = findFirstEmptyValue(parsedData)
+      context.setCurrentQuestion(questionObject.id)
+      const question: string = promptFunction(JSON.stringify(questionObject))
 
-      generateQuestion(question);
-      // const botMessage = randomMessage("other");
-      // virtuoso.current?.data.append([botMessage]);
+      generateQuestion(question)
+    }, 1000)
+  }
 
-      // let counter = 0;
-      // const interval = setInterval(() => {
-      //   if (counter++ > 2) {
-      //     clearInterval(interval);
-      //     setTimeout(() => {
-      //       if (userType === "responder") {
-      //         setHasGraphic(true);
-      //       }
-      //     }, 1000);
-      //   }
-      //   virtuoso.current?.data.map((message) => {
-      //     return message.key === botMessage.key
-      //       ? { ...message, text: message.text + " " + randPhrase() }
-      //       : message;
-      //   }, "smooth");
-      // }, 150);
-    }, 1000);
-  };
-
-  const generateQuestion = async (question: string) => {
-    const apiUrl = "http://localhost:5005/chat";
-    const payload = { prompt: question };
-    console.log(question);
+  const generateQuestion = async (question: string): Promise<void | null> => {
+    const apiUrl = 'http://localhost:5005/chat'
+    const payload = { prompt: question }
+    console.log(question)
     try {
       const response = await fetch(apiUrl, {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json'
         },
-        body: JSON.stringify(payload),
-      });
+        body: JSON.stringify(payload)
+      })
 
       if (!response.ok) {
-        throw new Error(`API error: ${response.status}`);
+        throw new Error(`API error: ${response.status}`)
       }
 
-      const data = await response.json();
+      const data: LLMResponse = await response.json()
       const botMessage: Message = {
-        user: "other",
-        key: `${idCounterRef.current}`,
-        text: data.response,
-      };
+        user: 'other',
+        key: idCounterRef.current.toString(),
+        text: data.response
+      }
 
-      virtuoso.current?.data.append([botMessage], "smooth");
-      idCounterRef.current = idCounterRef.current + 1;
-      hasRun.current = true; // Mark as run for development strict mode workaround
+      virtuoso.current?.data.append([botMessage], 'smooth')
+      idCounterRef.current++
+      hasRun.current = true // Mark as run for development strict mode workaround
     } catch (error) {
-      console.error("Error communicating with LLM API:", error);
-      return null;
+      console.error('Error communicating with LLM API:', error)
+      return null
     }
-  };
+  }
 
   useEffect(() => {
-    //for development purposes only
-    if (hasRun.current) return;
-    // const botMessage = randomMessage(
-    //   'other',
-    //   userType !== 'responder'
-    //     ? "Hello, Yunjin. I see you're in a location affected by the Los Angeles Earthquake. What do you need?"
-    //     : 'Hello Fire Chief Margaret. What do you need?'
-    // )
-
-    const questionData = localStorage.getItem("questionData");
-    const parsedQuestionData = questionData ? JSON.parse(questionData) : victimData;
-    const questionObject = findFirstEmptyValue(parsedQuestionData);
-    context.setCurrentQuestion(questionObject.id);
-    const question: string = promptFunction(JSON.stringify(questionObject));
-
-    generateQuestion(question);
-  }, []);
+    // For development purposes only
+    if (hasRun.current) return
+    const storedQuestionData = localStorage.getItem('questionData')
+    const parsedQuestionData = storedQuestionData
+      ? (JSON.parse(storedQuestionData) as typeof victimData)
+      : victimData
+    const questionObject = findFirstEmptyValue(parsedQuestionData)
+    context.setCurrentQuestion(questionObject.id)
+    const question: string = promptFunction(JSON.stringify(questionObject))
+    generateQuestion(question)
+  }, [])
 
   return (
     <TextField
-      variant="outlined"
-      placeholder="Type a message..."
+      variant='outlined'
+      placeholder='Type a message...'
       fullWidth
       sx={{
-        width: "95vw",
+        width: '95vw'
       }}
       value={message}
       onChange={(e) => setMessage(e.target.value)}
-      color="primary"
+      color='primary'
       slotProps={{
         input: {
-          style: {
-            borderRadius: 50,
-          },
+          style: { borderRadius: 50 },
           endAdornment: (
-            <InputAdornment position="start">
+            <InputAdornment position='start'>
               {message ? (
                 <Button
-                  variant="contained"
+                  variant='contained'
                   onClick={handleSendClick}
-                  color="primary"
+                  color='primary'
                   sx={{
-                    borderRadius: "50%",
+                    borderRadius: '50%',
                     width: 25,
                     height: 30,
-                    minWidth: 0,
+                    minWidth: 0
                   }}
                 >
                   <ArrowUpwardRounded />
@@ -232,18 +193,18 @@ const ChatInput = ({
                 <IconButton
                   onClick={handleMicClick}
                   sx={{
-                    color: listening ? theme.palette.primary.main : "default",
+                    color: listening ? theme.palette.primary.main : 'default'
                   }}
                 >
                   <MicIcon />
                 </IconButton>
               )}
             </InputAdornment>
-          ),
-        },
+          )
+        }
       }}
     />
-  );
-};
+  )
+}
 
-export default ChatInput;
+export default ChatInput

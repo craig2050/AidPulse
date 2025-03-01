@@ -16,9 +16,8 @@ const key = process.env.VIRTUOSO_KEY || ''
 const ItemContent: VirtuosoMessageListProps<Message, null>['ItemContent'] = ({
   data
 }: {
-  data: any
+  data: Message
 }) => {
-  console.log(data)
   const ownMessage = data.user === 'me'
   const theme = useTheme()
 
@@ -34,7 +33,7 @@ const ItemContent: VirtuosoMessageListProps<Message, null>['ItemContent'] = ({
       {data.user !== 'me' && (
         <Avatar style={{ backgroundColor: '#1E1E1E' }}>
           {' '}
-          <img src={logo} style={{ height: 24, width: 24 }}></img>
+          <img alt="AidPulse Avatar"src={logo} style={{ height: 24, width: 24 }}></img>
         </Avatar>
       )}
 
@@ -60,10 +59,10 @@ const ItemContent: VirtuosoMessageListProps<Message, null>['ItemContent'] = ({
 }
 
 export default function RealMessageList() {
-  const virtuoso = useRef<VirtuosoMessageListMethods<Message, {}>>(null)
+  const virtuoso = useRef<VirtuosoMessageListMethods<Message, null>>(null);
   const context = useContext(AppContext)
 
-  if(context?.userIdentifier === "") context.configureNewUserSetup()
+  if (context?.userIdentifier === '') context.configureNewUserSetup()
 
   return (
     <div
@@ -77,9 +76,9 @@ export default function RealMessageList() {
     >
       <VirtuosoMessageListLicense licenseKey={key}>
         <VirtuosoMessageList<Message, null>
-          ref={virtuoso as any}
+          ref={virtuoso}
           style={{ flex: 1, backgroundColor: 'black' }}
-          computeItemKey={({ data }: { data: any }) => data.key}
+          computeItemKey={({ data }: { data: Message }) => data.key}
           initialLocation={{ index: 'LAST', align: 'end' }}
           shortSizeAlign='bottom-smooth'
           ItemContent={ItemContent}
