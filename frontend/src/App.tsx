@@ -3,7 +3,7 @@ import RealMessageList from 'Components/Chat/MessageList'
 import ResponderMessageList from 'Components/Chat/ResponderMessageList'
 import { useContext } from 'react'
 import './App.css'
-import logo from './assets/logo.webp'
+import logo from './assets/whitelogo.webp'
 import Home from './Components/Home/Home'
 import { AppContext } from './context/AppContext'; // Import the global context
 
