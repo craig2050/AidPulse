@@ -1,4 +1,5 @@
 import React, { forwardRef, useRef } from 'react'
+import 'material-symbols';
 
 import { AnimatedBeam } from '@/components/magicui/animated-beam'
 import { cn } from '@/lib/utils'
@@ -185,5 +186,3 @@ export function AidPulse() {
     </div>
   )
 }
-
-AidPulse.di

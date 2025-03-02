@@ -1,5 +1,5 @@
-import { LocationData, QuestionData } from '@/app/types/types'
-import data from '@/data/questions.json'
+import { LocationData } from '@/app/types/types'
+// import data from '@/data/questions.json'
 import { useEffect, useState } from 'react'
 import './Chat.css'
 interface ChatProps {
@@ -7,7 +7,7 @@ interface ChatProps {
 }
 
 function Chat({ onSelectComponent }: ChatProps) {
-  const [messages, setMessages] = useState<string[]>([])
+  // const [messages, setMessages] = useState<string[]>([])
   const [location, setLocation] = useState<LocationData | null>(null)
   const [locationError, setLocationError] = useState<string>('')
   const [locationSent, setLocationSent] = useState<boolean>(false)
@@ -97,42 +97,45 @@ function Chat({ onSelectComponent }: ChatProps) {
 
   // **Note from Jayde: Don't need to over think this right now, but this data manipulation is a little code smelly to me.
   // There's probably a better way to handle this from a data side so we don't have to do this. We can work it out once we have the details finalized
-function isQuestionDataArray(section: any): section is QuestionData[] {
-  return (
-    Array.isArray(section) &&
-    section.length > 0 &&
-    typeof section[0].DataElementName === 'string'
-  );
-}
+  // This is suspicious because the data is unpreditable -- this code is written to work with many potential incoming data models. We need to collaborate on this.
 
-const combinedData: QuestionData[] = Object.values(data).reduce<QuestionData[]>((acc, section) => {
-  if (isQuestionDataArray(section)) {
-    acc.push(...section);
-  }
-  else if (!Array.isArray(section) && section !== null && 'data' in section) {
-    const sec = section as { data: any };
-    if (isQuestionDataArray(sec.data)) {
-      acc.push(...sec.data);
-    }
-  }
-  return acc;
-}, []);
+
+// function isQuestionDataArray(section: QuestionData[]) {
+//   return (
+//     Array.isArray(section) &&
+//     section.length > 0 &&
+//     typeof section[0].DataElementName === 'string'
+//   );
+// }
+
+// const combinedData: QuestionData[] = Object.values(data).reduce<QuestionData[]>((acc, section) => {
+//   if (isQuestionDataArray(section)) {
+//     acc.push(...section);
+//   }
+//   else if (section?.data && !Array.isArray(section) && section !== null && 'data' in section) {
+//     const sec = section as { data: any };
+//     if (isQuestionDataArray(sec.data)) {
+//       acc.push(...sec.data);
+//     }
+//   }
+//   return acc;
+// }, []);
 //**************************************************************** */
 
-  useEffect(() => {
-    const objectWithEmptyValue = combinedData.find(
-      (item: any) => item.value === ''
-    )
-    if (objectWithEmptyValue) {
-      // Pass objectWithEmptyValue to LLM
-      console.log('Object with empty value:', objectWithEmptyValue)
-      // Add your LLM call here
-    }
-  }, [combinedData])
+  // useEffect(() => {
+  //   const objectWithEmptyValue = combinedData.find(
+  //     (item: any) => item.value === ''
+  //   )
+  //   if (objectWithEmptyValue) {
+  //     // Pass objectWithEmptyValue to LLM
+  //     console.log('Object with empty value:', objectWithEmptyValue)
+  //     // Add your LLM call here
+  //   }
+  // }, [combinedData])
 
-  const handleSendMessage = (message: string) => {
-    setMessages([...messages, message])
-  }
+  // const handleSendMessage = (message: string) => {
+  //   setMessages([...messages, message])
+  // }
 
   return (
     <div className='Chat'>

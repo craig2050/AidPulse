@@ -10,8 +10,8 @@ interface InteractiveGraphicProps {
   buttonUrl: string
 }
 
-const InteractiveGraphic = ({ title, buttonUrl }: InteractiveGraphicProps) => {
-  const [showImage, setShowImage] = useState(false)
+const InteractiveGraphic = ({ buttonUrl }: InteractiveGraphicProps) => {
+  const [showImage, ] = useState(false)
   const context = useContext(AppContext)
 
   if (!context) {
@@ -49,7 +49,7 @@ const InteractiveGraphic = ({ title, buttonUrl }: InteractiveGraphicProps) => {
 
       {showImage && (
         <div className='interactive-image'>
-          <img src={buttonUrl} alt='Interactive Graphic' />
+          <Image src={buttonUrl} alt='Interactive Graphic' height={100} width={100}/>
         </div>
       )}
     </div>

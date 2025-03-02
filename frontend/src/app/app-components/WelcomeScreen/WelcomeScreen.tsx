@@ -12,7 +12,7 @@ export function WelcomeScreen() {
         <div className='p-8 pt-4 pb-0 text-center'>
           <Typography variant='h2'>Hello</Typography>
           <Typography variant='h6' className=''>
-            We're here to help.
+            We&apos;re here to help.
           </Typography>
         </div>
         <Typography className='text-center pt-8'>
