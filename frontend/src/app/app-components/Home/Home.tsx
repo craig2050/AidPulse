@@ -36,16 +36,6 @@ function Home() {
         fontFamily: 'Montserrat, sans-serif' // Use the new font
       }}
     >
-      {/* Introductory Message
-      {greeting && (
-        <Typography variant="h4" sx={{ marginBottom: "10px", fontSize: "28px", fontWeight: "600" }}>
-          {greeting}
-        </Typography>
-      )} */}
-
-      {/* <Typography variant="h6" sx={{ marginBottom: "20px", fontSize: "18px", fontWeight: "400" }} align="center">
-        {homeText}
-      </Typography> */}
 
       <Box
         sx={{

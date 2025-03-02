@@ -9,7 +9,7 @@ import { VirtuosoMessageListMethods } from '@virtuoso.dev/message-list'
 import { RefObject, useContext, useEffect, useRef, useState } from 'react'
 import { findFirstEmptyValue, promptFunction, updateValueById } from '@/app/utils'
 import victimData from '@/data/victimData.json';
-import { Message } from '../../types/types'
+import { LLMResponse, Message } from '../../types/types'
 
 
 interface ChatInputProps {

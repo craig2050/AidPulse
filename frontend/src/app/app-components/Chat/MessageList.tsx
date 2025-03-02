@@ -92,7 +92,7 @@ export default function MessageList() {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          paddingTop: 8
+          paddingTop: 16
         }}
       >
         <ChatInput virtuoso={virtuoso} />

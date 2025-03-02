@@ -1,12 +1,11 @@
 'use client'
 
+import { Paper } from '@mui/material'
 import { useContext, useEffect, useState } from 'react'
 import { AppContext } from './AppContext'
-import MessageList from './components/Chat/MessageList'
-import ResponderMessageList from './components/Chat/ResponderMessageList'
-import { Paper } from '@mui/material'
-import Image from 'next/image'
-import Home from './components/Home/Home'
+import { WelcomeScreen } from './app-components/WelcomeScreen/WelcomeScreen'
+import MessageList from './app-components/Chat/MessageList'
+import ResponderMessageList from './app-components/Chat/ResponderMessageList'
 
 export default function App() {
   const context = useContext(AppContext)
@@ -40,7 +39,7 @@ export default function App() {
           </>
         )
       default:
-        return <Home />
+        return <WelcomeScreen />
     }
   }
 

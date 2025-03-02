@@ -6,7 +6,7 @@ import { CssBaseline } from '@mui/material'
 import { v4 as uuidv4 } from 'uuid'
 import victimData from '@/data/victimData.json'
 import responderData from '@/data/responderData.json'
-import { red, green, indigo } from '@mui/material/colors'
+import { red, green, blue } from '@mui/material/colors'
 
 export interface AppContextType {
   userType: string
@@ -54,17 +54,22 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   }
 
   const getTheme = () => {
-    let primaryColor;
+    let primaryColor
+    primaryColor = blue
     if (userType === 'responder') primaryColor = red
     if (userType === 'victim') primaryColor = green
-    else {
-      primaryColor = indigo
-    }
 
     return createTheme({
       palette: {
         mode: 'dark',
         primary: primaryColor
+      },
+      components: {
+        MuiTypography: {
+          defaultProps: {
+            fontFamily: 'Inter, sans-serif'
+          }
+        }
       }
     })
   }

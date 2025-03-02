@@ -1,9 +1,8 @@
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter'
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
 import { AppProvider } from './AppContext'
-import Header from './components/Header'
+import Header from './app-components/Header'
 import './globals.css'
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 
 
 export const metadata: Metadata = {
