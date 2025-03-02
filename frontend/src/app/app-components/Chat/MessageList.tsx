@@ -7,7 +7,7 @@ import {
   VirtuosoMessageListMethods,
   VirtuosoMessageListProps
 } from '@virtuoso.dev/message-list'
-import { useContext, useRef } from 'react'
+import { useContext, useEffect, useRef } from 'react'
 import ChatInput from './ChatInput'
 import { Message } from '@/app/types/types'
 import { AppContext } from '@/app/AppContext'
@@ -35,7 +35,12 @@ const ItemContent: VirtuosoMessageListProps<Message, null>['ItemContent'] = ({
       {data.user !== 'me' && (
         <Avatar style={{ backgroundColor: '#1E1E1E' }}>
           {' '}
-          <Image alt="AidPulse Avatar" src='/assets/logo.webp'  height={24} width={24}></Image>
+          <Image
+            alt='AidPulse Avatar'
+            src='/assets/logo.webp'
+            height={24}
+            width={24}
+          ></Image>
         </Avatar>
       )}
 
@@ -61,10 +66,12 @@ const ItemContent: VirtuosoMessageListProps<Message, null>['ItemContent'] = ({
 }
 
 export default function MessageList() {
-  const virtuoso = useRef<VirtuosoMessageListMethods<Message, null>>(null);
+  const virtuoso = useRef<VirtuosoMessageListMethods<Message, null>>(null)
   const context = useContext(AppContext)
 
-  if (context?.userIdentifier === '') context.configureNewUserSetup()
+  useEffect(() => {
+    if (context?.userIdentifier === '') context.configureNewUserSetup()
+  }, [context])
 
   return (
     <div

@@ -1,3 +1,5 @@
+'use client'
+
 import { AppContext } from '@/app/AppContext'
 import { ArrowUpwardRounded } from '@mui/icons-material'
 import MicIcon from '@mui/icons-material/Mic'
@@ -28,49 +30,54 @@ const ChatInput = ({
 
   // For development purposes only
   const hasRun = useRef<boolean>(false)
+  const recognitionRef = useRef<SpeechRecognition | null>(null);
 
-  const { SpeechRecognition, webkitSpeechRecognition } =
-    window as WindowWithSpeechRecognition
-  const RecognitionConstructor = SpeechRecognition || webkitSpeechRecognition
-  const recognition: SpeechRecognition | null = RecognitionConstructor
-    ? new RecognitionConstructor()
-    : null
-
-  if (recognition) {
-    recognition.continuous = false // Stops automatically after a single phrase
-    recognition.interimResults = false // Only return final results
-    recognition.lang = 'en-US' // Set default language
-  }
+  useEffect(() => {
+    // Ensure that this code runs only on the client and only once.
+    if (typeof window !== 'undefined' && !hasRun.current) {
+      hasRun.current = true;
+      const { SpeechRecognition, webkitSpeechRecognition } = window as WindowWithSpeechRecognition;
+      const RecognitionConstructor = SpeechRecognition || webkitSpeechRecognition;
+      if (RecognitionConstructor) {
+        const recognitionInstance = new RecognitionConstructor();
+        recognitionInstance.continuous = false; // Stops automatically after a single phrase
+        recognitionInstance.interimResults = false; // Only return final results
+        recognitionInstance.lang = 'en-US'; // Set default language
+        recognitionRef.current = recognitionInstance;
+      }
+    }
+  }, []);
 
   const handleMicClick = (): void => {
+    const recognition = recognitionRef.current;
     if (!recognition) {
-      alert('Your browser does not support voice recognition.')
-      return
+      alert('Your browser does not support voice recognition.');
+      return;
     }
 
     if (!listening) {
-      setListening(true)
-      recognition.start()
+      setListening(true);
+      recognition.start();
 
       recognition.onresult = (event: SpeechRecognitionEvent): void => {
-        const transcript: string = event.results[0][0].transcript
-        setMessage(transcript)
-        setListening(false)
-      }
+        const transcript: string = event.results[0][0].transcript;
+        setMessage(transcript);
+        setListening(false);
+      };
 
       recognition.onerror = (event: SpeechRecognitionErrorEvent): void => {
-        console.error('Speech recognition error:', event.error)
-        setListening(false)
-      }
+        console.error('Speech recognition error:', event.error);
+        setListening(false);
+      };
 
       recognition.onend = (): void => {
-        setListening(false)
-      }
+        setListening(false);
+      };
     } else {
-      recognition.stop()
-      setListening(false)
+      recognition.stop();
+      setListening(false);
     }
-  }
+  };
 
   const handleSendClick = (): void => {
     if (!message.trim()) return // Prevent sending empty messages
