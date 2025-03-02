@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton'
 import InputAdornment from '@mui/material/InputAdornment'
 import TextField from '@mui/material/TextField'
 import { VirtuosoMessageListMethods } from '@virtuoso.dev/message-list'
-import { RefObject, useContext, useEffect, useRef, useState } from 'react'
+import { RefObject, useCallback, useContext, useEffect, useRef, useState } from 'react'
 import { findFirstEmptyValue, promptFunction, updateValueById } from '@/app/utils'
 import victimData from '@/data/victimData.json';
 import { LLMResponse, Message } from '../../types/types'
@@ -114,7 +114,7 @@ const ChatInput = ({
     }, 1000)
   }
 
-  const generateQuestion = async (question: string): Promise<void | null> => {
+  const generateQuestion = useCallback(async (question: string): Promise<void | null> => {
     const apiUrl = 'http://localhost:5005/chat'
     const payload = { prompt: question }
     console.log(question)
@@ -145,7 +145,7 @@ const ChatInput = ({
       console.error('Error communicating with LLM API:', error)
       return null
     }
-  }
+  }, [virtuoso])
 
   useEffect(() => {
     // For development purposes only
@@ -158,7 +158,7 @@ const ChatInput = ({
     context.setCurrentQuestion(questionObject.id)
     const question: string = promptFunction(JSON.stringify(questionObject))
     generateQuestion(question)
-  }, [])
+  }, [context, generateQuestion])
 
   return (
     <TextField
