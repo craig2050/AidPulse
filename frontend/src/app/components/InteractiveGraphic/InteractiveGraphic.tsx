@@ -1,10 +1,11 @@
-import { Button, Fade } from "@mui/material" // Import MUI's Fade transition
-import { AppContext } from "context/AppContext"
+'use client'
+
+import { Fade } from "@mui/material"; // Import MUI's Fade transition
 import { useContext, useState } from "react"
+import { AppContext } from '@/app/AppContext'
+import Image from 'next/image'
 
-import scatterGif from '../../assets/ScatterGif.gif'
-
-const InteractiveGraphic = ({ title, buttonUrl }) => {
+const InteractiveGraphic = ({ title, buttonUrl }: any) => {
   const [showImage, setShowImage] = useState(false)
   const context = useContext(AppContext)
 
@@ -30,7 +31,7 @@ const InteractiveGraphic = ({ title, buttonUrl }) => {
         >
           Show Interactive Graphic
         </Button> */}
-        <img src={scatterGif} style={{ height: '100%', width: '100%' }} alt="Interactive Graphic" />
+        <Image src='/assets/ScatterGif.gif' height={100} width={100} alt="Interactive Graphic" />
       </Fade>
 
       {showImage && (

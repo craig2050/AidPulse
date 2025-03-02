@@ -1,3 +1,5 @@
+'use client'
+
 import { Avatar, useTheme } from '@mui/material'
 import {
   VirtuosoMessageList,
@@ -6,10 +8,10 @@ import {
   VirtuosoMessageListProps
 } from '@virtuoso.dev/message-list'
 import { useContext, useRef } from 'react'
-import { Message } from 'types/types'
-import logo from '../../assets/logo.webp'
 import ChatInput from './ChatInput'
-import { AppContext } from 'context/AppContext'
+import { Message } from '@/app/types/types'
+import { AppContext } from '@/app/AppContext'
+import Image from 'next/image'
 
 const key = process.env.VIRTUOSO_KEY || ''
 
@@ -33,7 +35,7 @@ const ItemContent: VirtuosoMessageListProps<Message, null>['ItemContent'] = ({
       {data.user !== 'me' && (
         <Avatar style={{ backgroundColor: '#1E1E1E' }}>
           {' '}
-          <img alt="AidPulse Avatar"src={logo} style={{ height: 24, width: 24 }}></img>
+          <Image alt="AidPulse Avatar" src='/assets/logo.webp'  height={24} width={24}></Image>
         </Avatar>
       )}
 
@@ -58,7 +60,7 @@ const ItemContent: VirtuosoMessageListProps<Message, null>['ItemContent'] = ({
   )
 }
 
-export default function RealMessageList() {
+export default function MessageList() {
   const virtuoso = useRef<VirtuosoMessageListMethods<Message, null>>(null);
   const context = useContext(AppContext)
 

@@ -1,21 +1,22 @@
-import { EmojiPeople, HealthAndSafety, Support } from "@mui/icons-material";
-import { Button, Box, Typography } from "@mui/material";
-import { useEffect, useState } from 'react'
-import data from '../../messages.json' // Import the JSON file
-import { AppContext } from 'context/AppContext'
-import { useContext } from 'react'
+'use client'
+
+import { AppContext } from '@/app/AppContext'
+import { EmojiPeople, HealthAndSafety, Support } from '@mui/icons-material'
+import { Box, Button } from '@mui/material'
+import data from '@/data/messages.json'
+import { useContext, useEffect, useState } from 'react'
 
 function Home() {
   const [greeting, setGreeting] = useState<string>('')
-  const [homeText, setHomeText] = useState<string>('');
+  const [homeText, setHomeText] = useState<string>('')
 
   useEffect(() => {
     // Extract the greeting message from the JSON
     if (data.greeting) {
       setGreeting(data.greeting)
-      setHomeText(data.homeText);
+      setHomeText(data.homeText)
     }
-  }, []);
+  }, [])
 
   const context = useContext(AppContext)
   if (!context) throw new Error('App must be used within an AppProvider')
@@ -29,10 +30,10 @@ function Home() {
         flexDirection: 'column',
         alignItems: 'center',
         flex: 1,
-        padding: "20px",
-        height: "92dvh", // Use dynamic viewport height for mobile browsers
-        overflow: "hidden", // Prevents scrolling
-        fontFamily: 'Montserrat, sans-serif', // Use the new font
+        padding: '20px',
+        height: '92dvh', // Use dynamic viewport height for mobile browsers
+        overflow: 'hidden', // Prevents scrolling
+        fontFamily: 'Montserrat, sans-serif' // Use the new font
       }}
     >
       {/* Introductory Message
@@ -56,8 +57,8 @@ function Home() {
         }}
       >
         <Button
-          variant="contained"
-          className="home-button victim"
+          variant='contained'
+          className='home-button victim'
           onClick={() => setUserType('victim')}
           color='success'
           sx={{
@@ -73,8 +74,7 @@ function Home() {
             color: 'white'
           }}
         >
-          <EmojiPeople fontSize='large' />
-          I need help
+          <EmojiPeople fontSize='large' />I need help
         </Button>
       </Box>
 
@@ -105,14 +105,13 @@ function Home() {
             padding: '10px'
           }}
         >
-          <Support fontSize="large" />
-          I want to help
+          <Support fontSize='large' />I want to help
         </Button>
 
         <Button
-          variant="contained"
-          className="home-button responder"
-          onClick={() => setUserType("responder")}
+          variant='contained'
+          className='home-button responder'
+          onClick={() => setUserType('responder')}
           sx={{
             width: '80%',
             maxWidth: '400px',
@@ -125,8 +124,7 @@ function Home() {
             padding: '10px'
           }}
         >
-          <HealthAndSafety fontSize="large" />
-          I am a Responder
+          <HealthAndSafety fontSize='large' />I am a Responder
         </Button>
       </Box>
     </Box>

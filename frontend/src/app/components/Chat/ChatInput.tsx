@@ -1,3 +1,4 @@
+import { AppContext } from '@/app/AppContext'
 import { ArrowUpwardRounded } from '@mui/icons-material'
 import MicIcon from '@mui/icons-material/Mic'
 import { Button, useTheme } from '@mui/material'
@@ -5,11 +6,11 @@ import IconButton from '@mui/material/IconButton'
 import InputAdornment from '@mui/material/InputAdornment'
 import TextField from '@mui/material/TextField'
 import { VirtuosoMessageListMethods } from '@virtuoso.dev/message-list'
-import { AppContext } from 'context/AppContext'
 import { RefObject, useContext, useEffect, useRef, useState } from 'react'
-import { LLMResponse, Message } from 'types/types'
-import { findFirstEmptyValue, promptFunction, updateValueById } from 'utils'
-import victimData from '../../victimdata.json'
+import { findFirstEmptyValue, promptFunction, updateValueById } from '@/app/utils'
+import victimData from '@/data/victimData.json';
+import { Message } from '../../types/types'
+
 
 interface ChatInputProps {
   virtuoso: RefObject<VirtuosoMessageListMethods<Message, null> | null>;

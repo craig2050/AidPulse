@@ -1,3 +1,5 @@
+'use client'
+
 import { Avatar, useTheme } from '@mui/material'
 import {
   VirtuosoMessageList,
@@ -5,11 +7,11 @@ import {
   VirtuosoMessageListMethods,
   VirtuosoMessageListProps
 } from '@virtuoso.dev/message-list'
-import InteractiveGraphic from 'Components/InteractiveGraphic/InteractiveGraphic'
 import { useRef } from 'react'
-import { Message } from 'types/types'
-import logo from '../../assets/logo.webp'
 import ChatInput from './ChatInput'
+import Image from 'next/image'
+import { Message } from '@/app/types/types'
+import InteractiveGraphic from '../InteractiveGraphic/InteractiveGraphic'
 
 const key = process.env.VIRTUOSO_KEY || ''
 
@@ -33,11 +35,12 @@ const ItemContent: VirtuosoMessageListProps<Message, null>['ItemContent'] = ({
       {data.user !== 'me' && (
         <Avatar style={{ backgroundColor: '#1E1E1E' }}>
           {' '}
-          <img
+          <Image
             alt='AidPulseLogo'
-            src={logo}
-            style={{ height: 24, width: 24 }}
-          ></img>
+            src='/assets/logo.webp'
+            height={24}
+            width={24}
+          ></Image>
         </Avatar>
       )}
 

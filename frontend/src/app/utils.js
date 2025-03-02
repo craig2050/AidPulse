@@ -1,4 +1,4 @@
-import { questionFormationPrompt } from "./promts.js";
+import { questionFormationPrompt } from "@/data/prompts.js";
 
 const promptFunction = (questionObj) => {
   return `${questionFormationPrompt}${questionObj}. Example: {question: What is your name?}`;
@@ -25,7 +25,7 @@ const updateValueById = (data, id, newValue) => {
       break
     }
   }
-  
+
   localStorage.setItem("questionData", JSON.stringify(data))
 };
 
