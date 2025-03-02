@@ -6,7 +6,7 @@ export function WelcomeScreen() {
 
   return (
     <>
-      <div className='p-8 pt-16 pb-0'></div>
+      <div className='p-8 pt-8 pb-0'></div>
       <AidPulse />
       <div>
         <div className='p-8 pt-4 pb-0 text-center'>
