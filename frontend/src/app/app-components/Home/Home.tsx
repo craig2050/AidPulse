@@ -3,20 +3,19 @@
 import { AppContext } from '@/app/AppContext'
 import { EmojiPeople, HealthAndSafety, Support } from '@mui/icons-material'
 import { Box, Button } from '@mui/material'
-import data from '@/data/messages.json'
-import { useContext, useEffect, useState } from 'react'
+import { useContext } from 'react'
 
 function Home() {
-  const [greeting, setGreeting] = useState<string>('')
-  const [homeText, setHomeText] = useState<string>('')
+  // const [greeting, setGreeting] = useState<string>('')
+  // const [homeText, setHomeText] = useState<string>('')
 
-  useEffect(() => {
-    // Extract the greeting message from the JSON
-    if (data.greeting) {
-      setGreeting(data.greeting)
-      setHomeText(data.homeText)
-    }
-  }, [])
+  // useEffect(() => {
+  //   // Extract the greeting message from the JSON
+  //   if (data.greeting) {
+  //     setGreeting(data.greeting)
+  //     setHomeText(data.homeText)
+  //   }
+  // }, [])
 
   const context = useContext(AppContext)
   if (!context) throw new Error('App must be used within an AppProvider')

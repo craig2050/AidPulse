@@ -1,9 +1,7 @@
+import { LocationData, QuestionData } from '@/app/types/types'
+import data from '@/data/questions.json'
 import { useEffect, useState } from 'react'
 import './Chat.css'
-import MessageInput from './Message/MessageInput'
-import MessageList from './Message/MessageList'
-import data from '../../questions.json'
-import { LocationData, QuestionData } from 'types/types'
 interface ChatProps {
   onSelectComponent: (componentName: string) => void
 }
@@ -155,8 +153,8 @@ const combinedData: QuestionData[] = Object.values(data).reduce<QuestionData[]>(
           <small>Location error: {locationError}</small>
         </div>
       )}
-      <MessageList messages={messages} />
-      <MessageInput onSendMessage={handleSendMessage} />
+      {/* <MessageList messages={messages} /> */}
+      {/* <MessageInput onSendMessage={handleSendMessage} /> */}
     </div>
   )
 }

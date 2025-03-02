@@ -1,16 +1,21 @@
 'use client'
 
-import { Fade } from "@mui/material"; // Import MUI's Fade transition
-import { useContext, useState } from "react"
 import { AppContext } from '@/app/AppContext'
+import { Fade } from '@mui/material' // Import MUI's Fade transition
 import Image from 'next/image'
+import { useContext, useState } from 'react'
 
-const InteractiveGraphic = ({ title, buttonUrl }: any) => {
+interface InteractiveGraphicProps {
+  title: string
+  buttonUrl: string
+}
+
+const InteractiveGraphic = ({ title, buttonUrl }: InteractiveGraphicProps) => {
   const [showImage, setShowImage] = useState(false)
   const context = useContext(AppContext)
 
   if (!context) {
-    throw new Error("AppContext not found")
+    throw new Error('AppContext not found')
   }
 
   const { hasGraphic } = context
@@ -20,7 +25,10 @@ const InteractiveGraphic = ({ title, buttonUrl }: any) => {
   // }
 
   return (
-    <div className="InteractiveGraphic" style={{ backgroundColor: "black", padding: "20px" }}>
+    <div
+      className='InteractiveGraphic'
+      style={{ backgroundColor: 'black', padding: '20px' }}
+    >
       <Fade in={hasGraphic} timeout={1000}>
         {/* <Button
           variant="contained"
@@ -31,12 +39,17 @@ const InteractiveGraphic = ({ title, buttonUrl }: any) => {
         >
           Show Interactive Graphic
         </Button> */}
-        <Image src='/assets/ScatterGif.gif' height={100} width={100} alt="Interactive Graphic" />
+        <Image
+          src='/assets/ScatterGif.gif'
+          height={100}
+          width={100}
+          alt='Interactive Graphic'
+        />
       </Fade>
 
       {showImage && (
-        <div className="interactive-image">
-          <img src={buttonUrl} alt="Interactive Graphic" />
+        <div className='interactive-image'>
+          <img src={buttonUrl} alt='Interactive Graphic' />
         </div>
       )}
     </div>

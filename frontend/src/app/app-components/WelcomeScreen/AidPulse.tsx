@@ -23,6 +23,8 @@ const Circle = forwardRef<
   )
 })
 
+Circle.displayName = "Circle"
+
 export function AidPulse() {
   const containerRef = useRef<HTMLDivElement>(null)
   const div1Ref = useRef<HTMLDivElement>(null)
@@ -76,7 +78,7 @@ export function AidPulse() {
             ></Image>
           </Circle>
           <Circle ref={div6Ref}>
-            <span className='material-symbols-outlined'>location_city</span>
+            <span className='material-symbols-outlined' style={{color: 'black'}}>location_city</span>
           </Circle>
         </div>
         <div className='flex flex-row items-center justify-between'>
@@ -183,3 +185,5 @@ export function AidPulse() {
     </div>
   )
 }
+
+AidPulse.di

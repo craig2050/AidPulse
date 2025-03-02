@@ -1,34 +1,6 @@
-'use client'
-
-import React, { forwardRef, useRef } from 'react'
-
-import { cn } from '@/lib/utils'
-import { AnimatedBeam } from '@/components/magicui/animated-beam'
-import Image from 'next/image'
-import { Button, Typography } from '@mui/material'
 import messages from '@/data/messages.json'
+import { Button, Typography } from '@mui/material'
 import { AidPulse } from './AidPulse'
-
-const Circle = forwardRef<
-  HTMLDivElement,
-  { className?: string; children?: React.ReactNode; color?: string }
->(({ className, children, color }, ref) => {
-  return (
-    <div
-      ref={ref}
-      className={cn(
-        `z-10 flex size-12 items-center justify-center rounded-full border-2 ${
-          color ? 'bg-black' : 'bg-white'
-        } p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]`,
-        className
-      )}
-    >
-      {children}
-    </div>
-  )
-})
-
-Circle.displayName = 'Circle'
 
 export function WelcomeScreen() {
 

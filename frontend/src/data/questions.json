@@ -1,0 +1,198 @@
+{
+  "dataElements": [
+    {
+      "DataElementName": "PhoneNumber",
+      "DisplayName": "Phone Number",
+      "PreferredFormat": "E.164 Format (e.g., +1234567890)",
+      "Datatype": "string",
+      "RationaleForCollecting": "To uniquely identify and contact the victim",
+      "HelpfulInformationForCollecting": "Ensure the phone number is verified and active.",
+      "Priority": "Critical"
+    },
+    {
+      "DataElementName": "Location",
+      "DisplayName": "Current Location",
+      "PreferredFormat": "GPS Coordinates (e.g., latitude, longitude)",
+      "Datatype": "string",
+      "RationaleForCollecting": "To quickly locate the victim and dispatch responders",
+      "HelpfulInformationForCollecting": "Use a GPS app or device to provide accurate location data.",
+      "Priority": "Critical"
+    },
+    {
+      "DataElementName": "HealthStatus",
+      "DisplayName": "Health Status",
+      "PreferredFormat": "Enum (e.g., safe, injured, critically injured, missing)",
+      "Datatype": "string",
+      "RationaleForCollecting": "To prioritize response efforts based on the victim's condition",
+      "HelpfulInformationForCollecting": "Ask the victim to report their health status honestly.",
+      "Priority": "Critical"
+    },
+    {
+      "DataElementName": "DisasterType",
+      "DisplayName": "Disaster Type",
+      "PreferredFormat": "Enum (e.g., wildfire, flood, earthquake, etc.)",
+      "Datatype": "string",
+      "RationaleForCollecting": "To tailor response efforts based on the specific disaster",
+      "HelpfulInformationForCollecting": "Ensure the disaster type is accurately reported.",
+      "Priority": "Critical"
+    },
+    {
+      "DataElementName": "NumberOfPeople",
+      "DisplayName": "Number of People",
+      "PreferredFormat": "Integer (e.g., 1, 2, 3, etc.)",
+      "Datatype": "integer",
+      "RationaleForCollecting": "To determine the scale of assistance required",
+      "HelpfulInformationForCollecting": "Include all individuals affected, including children and pets.",
+      "Priority": "High"
+    },
+    {
+      "DataElementName": "Needs",
+      "DisplayName": "Victim's Needs",
+      "PreferredFormat": "JSON Array (e.g., [\"food\", \"water\", \"shelter\", \"medical\"])",
+      "Datatype": "array",
+      "RationaleForCollecting": "To identify the victim's specific needs and allocate resources accordingly",
+      "HelpfulInformationForCollecting": "Enumerate needs based on the disaster type (e.g., wildfire-specific needs: evacuation assistance, fire-resistant gear).",
+      "Priority": "High"
+    },
+    {
+      "DataElementName": "SpecialNeeds",
+      "DisplayName": "Special Needs",
+      "PreferredFormat": "JSON Object (e.g., {\"medical\": \"asthma\", \"disability\": \"wheelchair\"})",
+      "Datatype": "object",
+      "RationaleForCollecting": "To address special needs and ensure equitable assistance",
+      "HelpfulInformationForCollecting": "Provide detailed information to ensure appropriate assistance.",
+      "Priority": "High"
+    },
+    {
+      "DataElementName": "EvacuationStatus",
+      "DisplayName": "Evacuation Status",
+      "PreferredFormat": "Enum (e.g., evacuated, needs evacuation, unable to evacuate)",
+      "Datatype": "string",
+      "RationaleForCollecting": "To coordinate evacuation efforts and prioritize those most at risk",
+      "HelpfulInformationForCollecting": "Update the status in real-time as the situation changes.",
+      "Priority": "High"
+    },
+    {
+      "DataElementName": "ShelterLocation",
+      "DisplayName": "Shelter Location",
+      "PreferredFormat": "GPS Coordinates or Address",
+      "Datatype": "string",
+      "RationaleForCollecting": "To direct victims to the nearest shelter or confirm their current shelter location",
+      "HelpfulInformationForCollecting": "Provide the exact location of the shelter if known.",
+      "Priority": "High"
+    },
+    {
+      "DataElementName": "ResourcesAvailable",
+      "DisplayName": "Resources Available",
+      "PreferredFormat": "JSON Object (e.g., {\"water\": \"yes\", \"food\": \"no\", \"medication\": \"yes\"})",
+      "Datatype": "object",
+      "RationaleForCollecting": "To assess available resources to avoid duplication of efforts",
+      "HelpfulInformationForCollecting": "Be honest about available resources to avoid duplication of efforts.",
+      "Priority": "Medium"
+    },
+    {
+      "DataElementName": "Pets",
+      "DisplayName": "Pets Present",
+      "PreferredFormat": "JSON Array (e.g., [\"dog\", \"cat\", \"bird\"])",
+      "Datatype": "array",
+      "RationaleForCollecting": "To ensure pets are accounted for during evacuation or rescue",
+      "HelpfulInformationForCollecting": "Include the number and type of pets.",
+      "Priority": "Medium"
+    },
+    {
+      "DataElementName": "VehicleInfo",
+      "DisplayName": "Vehicle Information",
+      "PreferredFormat": "JSON Object (e.g., {\"make\": \"Toyota\", \"model\": \"Corolla\", \"license_plate\": \"ABC123\"})",
+      "Datatype": "object",
+      "RationaleForCollecting": "To assist with evacuation or rescue if vehicles are involved",
+      "HelpfulInformationForCollecting": "Provide detailed vehicle information if applicable.",
+      "Priority": "Medium"
+    },
+    {
+      "DataElementName": "ContactEmergency",
+      "DisplayName": "Emergency Contact",
+      "PreferredFormat": "JSON Object (e.g., {\"name\": \"John Doe\", \"phone\": \"+1234567890\"})",
+      "Datatype": "object",
+      "RationaleForCollecting": "To provide an alternative contact for follow-up or updates",
+      "HelpfulInformationForCollecting": "Ensure the emergency contact is verified and reachable.",
+      "Priority": "Medium"
+    },
+    {
+      "DataElementName": "MedicalHistory",
+      "DisplayName": "Medical History",
+      "PreferredFormat": "JSON Object (e.g., {\"allergies\": \"penicillin\", \"conditions\": \"diabetes\"})",
+      "Datatype": "object",
+      "RationaleForCollecting": "To provide critical medical information for responders",
+      "HelpfulInformationForCollecting": "Be specific about medical conditions and allergies.",
+      "Priority": "Medium"
+    },
+    {
+      "DataElementName": "Photos",
+      "DisplayName": "Photos of Damage",
+      "PreferredFormat": "Base64 Encoded String or URL",
+      "Datatype": "string",
+      "RationaleForCollecting": "To provide visual evidence of damage for assessment and resource allocation",
+      "HelpfulInformationForCollecting": "Capture clear photos of damage to buildings, vehicles, or injuries.",
+      "Priority": "Low"
+    },
+    {
+      "DataElementName": "Videos",
+      "DisplayName": "Videos of Situation",
+      "PreferredFormat": "Base64 Encoded String or URL",
+      "Datatype": "string",
+      "RationaleForCollecting": "To provide real-time video footage of the situation",
+      "HelpfulInformationForCollecting": "Record and upload videos showing the extent of the disaster.",
+      "Priority": "Low"
+    },
+    {
+      "DataElementName": "Notes",
+      "DisplayName": "Additional Notes",
+      "PreferredFormat": "Free-Text",
+      "Datatype": "string",
+      "RationaleForCollecting": "To provide any additional information that may not fit into predefined categories",
+      "HelpfulInformationForCollecting": "Be concise and specific in describing the situation.",
+      "Priority": "Low"
+    }
+  ],
+  "enumeratedNeedsByDisasterType": {
+    "wildfire": [
+      "evacuation assistance",
+      "fire-resistant gear",
+      "water supply",
+      "shelter for pets",
+      "smoke inhalation treatment"
+    ],
+    "flood": [
+      "boats or rafts for rescue",
+      "clean drinking water",
+      "sandbags",
+      "waterproof clothing",
+      "disinfectant supplies"
+    ],
+    "earthquake": [
+      "search and rescue teams",
+      "first aid supplies",
+      "blankets",
+      "portable lighting",
+      "structural assessment tools"
+    ]
+  },
+  "prioritiesForCollection": [
+    {
+      "PriorityLevel": "Critical",
+      "DataElements": ["PhoneNumber", "Location", "HealthStatus", "DisasterType"]
+    },
+    {
+      "PriorityLevel": "High",
+      "DataElements": ["NumberOfPeople", "Needs", "SpecialNeeds", "EvacuationStatus", "ShelterLocation"]
+    },
+    {
+      "PriorityLevel": "Medium",
+      "DataElements": ["ResourcesAvailable", "Pets", "VehicleInfo", "ContactEmergency", "MedicalHistory"]
+    },
+    {
+      "PriorityLevel": "Low",
+      "DataElements": ["Photos", "Videos", "Notes"]
+    }
+  ]
+}
