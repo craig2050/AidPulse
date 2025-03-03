@@ -1,1 +1,2 @@
 export const questionFormationPrompt = "Given the following JSON object, form a question using all the keys in the object to gather the required information from a user. Ensure the question is clear and contextually relevant based on the rationale provided. JSON Object:"
+export const answerValidationPrompt = "Given the following text, check if it answers the above question or not. text:"
