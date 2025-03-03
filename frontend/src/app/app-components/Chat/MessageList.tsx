@@ -41,7 +41,6 @@ const ItemContent: VirtuosoMessageListProps<Message, null>["ItemContent"] = ({
     >
       {data.user !== "me" && (
         <Avatar style={{ backgroundColor: "#1E1E1E" }}>
-          {" "}
           <Image
             alt="AidPulse Avatar"
             src="/assets/logo.webp"
