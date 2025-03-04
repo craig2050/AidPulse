@@ -1,0 +1,1175 @@
+[
+  {
+    "incident_id": "FIRE-4385",
+    "date": "2024-06-02",
+    "location": {
+      "latitude": 34.152866,
+      "longitude": -118.496771,
+      "city": "Glendale"
+    },
+    "severity": "High",
+    "response_time_minutes": 25,
+    "casualties": 5,
+    "property_damage_estimate": 36757,
+    "fire_cause": "Arson",
+    "victim_resources": {
+      "medical_assistance": "ICU",
+      "evacuation_support": "Temporary Shelter",
+      "psychological_support": "Counseling",
+      "basic_necessities": [
+        "Medication",
+        "Water",
+        "Clothing",
+        "Food"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-8011",
+    "date": "2024-04-24",
+    "location": {
+      "latitude": 34.19667,
+      "longitude": -118.394332,
+      "city": "Long Beach"
+    },
+    "severity": "Moderate",
+    "response_time_minutes": 16,
+    "casualties": 5,
+    "property_damage_estimate": 59821,
+    "fire_cause": "Natural",
+    "victim_resources": {
+      "medical_assistance": "ICU",
+      "evacuation_support": "Temporary Shelter",
+      "psychological_support": "Counseling",
+      "basic_necessities": [
+        "Clothing"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-3721",
+    "date": "2024-03-20",
+    "location": {
+      "latitude": 34.180863,
+      "longitude": -118.278589,
+      "city": "Pasadena"
+    },
+    "severity": "High",
+    "response_time_minutes": 14,
+    "casualties": 7,
+    "property_damage_estimate": 31806,
+    "fire_cause": "Arson",
+    "victim_resources": {
+      "medical_assistance": "ICU",
+      "evacuation_support": "None",
+      "psychological_support": "None",
+      "basic_necessities": [
+        "Water"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-6864",
+    "date": "2024-05-31",
+    "location": {
+      "latitude": 34.084353,
+      "longitude": -118.492525,
+      "city": "Los Angeles"
+    },
+    "severity": "High",
+    "response_time_minutes": 8,
+    "casualties": 4,
+    "property_damage_estimate": 71718,
+    "fire_cause": "Electrical",
+    "victim_resources": {
+      "medical_assistance": "First Aid",
+      "evacuation_support": "Temporary Shelter",
+      "psychological_support": "None",
+      "basic_necessities": [
+        "Food",
+        "Clothing",
+        "Medication",
+        "Water"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-1815",
+    "date": "2024-03-28",
+    "location": {
+      "latitude": 34.203991,
+      "longitude": -118.293455,
+      "city": "Pasadena"
+    },
+    "severity": "Low",
+    "response_time_minutes": 29,
+    "casualties": 6,
+    "property_damage_estimate": 25278,
+    "fire_cause": "Electrical",
+    "victim_resources": {
+      "medical_assistance": "ICU",
+      "evacuation_support": "Long-Term Housing",
+      "psychological_support": "Counseling",
+      "basic_necessities": [
+        "Medication",
+        "Clothing",
+        "Food"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-7202",
+    "date": "2024-06-27",
+    "location": {
+      "latitude": 34.189013,
+      "longitude": -118.438382,
+      "city": "Glendale"
+    },
+    "severity": "High",
+    "response_time_minutes": 7,
+    "casualties": 2,
+    "property_damage_estimate": 61593,
+    "fire_cause": "Natural",
+    "victim_resources": {
+      "medical_assistance": "Ambulance",
+      "evacuation_support": "Temporary Shelter",
+      "psychological_support": "None",
+      "basic_necessities": [
+        "Food",
+        "Medication",
+        "Water"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-9246",
+    "date": "2024-05-07",
+    "location": {
+      "latitude": 34.160098,
+      "longitude": -118.496397,
+      "city": "Los Angeles"
+    },
+    "severity": "High",
+    "response_time_minutes": 12,
+    "casualties": 4,
+    "property_damage_estimate": 20228,
+    "fire_cause": "Natural",
+    "victim_resources": {
+      "medical_assistance": "Ambulance",
+      "evacuation_support": "Long-Term Housing",
+      "psychological_support": "Counseling",
+      "basic_necessities": [
+        "Clothing",
+        "Water",
+        "Medication"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-1181",
+    "date": "2024-08-01",
+    "location": {
+      "latitude": 34.120264,
+      "longitude": -118.231772,
+      "city": "Glendale"
+    },
+    "severity": "Critical",
+    "response_time_minutes": 9,
+    "casualties": 0,
+    "property_damage_estimate": 69000,
+    "fire_cause": "Natural",
+    "victim_resources": {
+      "medical_assistance": "ICU",
+      "evacuation_support": "Long-Term Housing",
+      "psychological_support": "Crisis Intervention",
+      "basic_necessities": [
+        "Clothing",
+        "Food",
+        "Medication",
+        "Water"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-2198",
+    "date": "2024-12-10",
+    "location": {
+      "latitude": 34.083214,
+      "longitude": -118.30911,
+      "city": "Glendale"
+    },
+    "severity": "High",
+    "response_time_minutes": 21,
+    "casualties": 2,
+    "property_damage_estimate": 34211,
+    "fire_cause": "Electrical",
+    "victim_resources": {
+      "medical_assistance": "Ambulance",
+      "evacuation_support": "Long-Term Housing",
+      "psychological_support": "None",
+      "basic_necessities": [
+        "Medication"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-5388",
+    "date": "2025-02-19",
+    "location": {
+      "latitude": 34.19812,
+      "longitude": -118.443764,
+      "city": "Los Angeles"
+    },
+    "severity": "Moderate",
+    "response_time_minutes": 29,
+    "casualties": 0,
+    "property_damage_estimate": 94305,
+    "fire_cause": "Electrical",
+    "victim_resources": {
+      "medical_assistance": "First Aid",
+      "evacuation_support": "Temporary Shelter",
+      "psychological_support": "None",
+      "basic_necessities": [
+        "Food",
+        "Medication"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-7037",
+    "date": "2024-03-27",
+    "location": {
+      "latitude": 34.15793,
+      "longitude": -118.321818,
+      "city": "Pasadena"
+    },
+    "severity": "Critical",
+    "response_time_minutes": 19,
+    "casualties": 3,
+    "property_damage_estimate": 45119,
+    "fire_cause": "Arson",
+    "victim_resources": {
+      "medical_assistance": "First Aid",
+      "evacuation_support": "Temporary Shelter",
+      "psychological_support": "None",
+      "basic_necessities": [
+        "Clothing"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-2194",
+    "date": "2024-04-06",
+    "location": {
+      "latitude": 34.096689,
+      "longitude": -118.269037,
+      "city": "Pasadena"
+    },
+    "severity": "Low",
+    "response_time_minutes": 9,
+    "casualties": 4,
+    "property_damage_estimate": 74202,
+    "fire_cause": "Arson",
+    "victim_resources": {
+      "medical_assistance": "First Aid",
+      "evacuation_support": "None",
+      "psychological_support": "Counseling",
+      "basic_necessities": [
+        "Clothing"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-9247",
+    "date": "2025-02-12",
+    "location": {
+      "latitude": 34.101864,
+      "longitude": -118.353773,
+      "city": "Long Beach"
+    },
+    "severity": "Low",
+    "response_time_minutes": 28,
+    "casualties": 2,
+    "property_damage_estimate": 30634,
+    "fire_cause": "Arson",
+    "victim_resources": {
+      "medical_assistance": "Ambulance",
+      "evacuation_support": "None",
+      "psychological_support": "None",
+      "basic_necessities": [
+        "Water"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-2381",
+    "date": "2024-03-30",
+    "location": {
+      "latitude": 34.127419,
+      "longitude": -118.297877,
+      "city": "Los Angeles"
+    },
+    "severity": "High",
+    "response_time_minutes": 19,
+    "casualties": 6,
+    "property_damage_estimate": 7514,
+    "fire_cause": "Electrical",
+    "victim_resources": {
+      "medical_assistance": "ICU",
+      "evacuation_support": "Long-Term Housing",
+      "psychological_support": "Counseling",
+      "basic_necessities": [
+        "Clothing",
+        "Water",
+        "Medication"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-6107",
+    "date": "2024-09-24",
+    "location": {
+      "latitude": 34.254088,
+      "longitude": -118.494395,
+      "city": "Pasadena"
+    },
+    "severity": "High",
+    "response_time_minutes": 22,
+    "casualties": 8,
+    "property_damage_estimate": 67772,
+    "fire_cause": "Electrical",
+    "victim_resources": {
+      "medical_assistance": "ICU",
+      "evacuation_support": "None",
+      "psychological_support": "None",
+      "basic_necessities": [
+        "Medication",
+        "Water"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-9547",
+    "date": "2025-01-21",
+    "location": {
+      "latitude": 34.125989,
+      "longitude": -118.428375,
+      "city": "Pasadena"
+    },
+    "severity": "Critical",
+    "response_time_minutes": 9,
+    "casualties": 8,
+    "property_damage_estimate": 83080,
+    "fire_cause": "Arson",
+    "victim_resources": {
+      "medical_assistance": "First Aid",
+      "evacuation_support": "Long-Term Housing",
+      "psychological_support": "Crisis Intervention",
+      "basic_necessities": [
+        "Water"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-6478",
+    "date": "2024-10-08",
+    "location": {
+      "latitude": 34.22302,
+      "longitude": -118.340492,
+      "city": "Los Angeles"
+    },
+    "severity": "Moderate",
+    "response_time_minutes": 19,
+    "casualties": 1,
+    "property_damage_estimate": 96573,
+    "fire_cause": "Electrical",
+    "victim_resources": {
+      "medical_assistance": "First Aid",
+      "evacuation_support": "Temporary Shelter",
+      "psychological_support": "Crisis Intervention",
+      "basic_necessities": [
+        "Medication",
+        "Water",
+        "Clothing",
+        "Food"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-9405",
+    "date": "2024-07-20",
+    "location": {
+      "latitude": 34.179413,
+      "longitude": -118.341154,
+      "city": "Los Angeles"
+    },
+    "severity": "Low",
+    "response_time_minutes": 14,
+    "casualties": 1,
+    "property_damage_estimate": 2126,
+    "fire_cause": "Accidental",
+    "victim_resources": {
+      "medical_assistance": "Ambulance",
+      "evacuation_support": "Long-Term Housing",
+      "psychological_support": "Crisis Intervention",
+      "basic_necessities": [
+        "Water",
+        "Clothing",
+        "Medication",
+        "Food"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-3724",
+    "date": "2025-02-05",
+    "location": {
+      "latitude": 34.187954,
+      "longitude": -118.317912,
+      "city": "Glendale"
+    },
+    "severity": "Low",
+    "response_time_minutes": 28,
+    "casualties": 5,
+    "property_damage_estimate": 89399,
+    "fire_cause": "Electrical",
+    "victim_resources": {
+      "medical_assistance": "ICU",
+      "evacuation_support": "None",
+      "psychological_support": "None",
+      "basic_necessities": [
+        "Water",
+        "Food"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-1717",
+    "date": "2024-08-21",
+    "location": {
+      "latitude": 34.159166,
+      "longitude": -118.296355,
+      "city": "Los Angeles"
+    },
+    "severity": "Critical",
+    "response_time_minutes": 26,
+    "casualties": 9,
+    "property_damage_estimate": 26475,
+    "fire_cause": "Accidental",
+    "victim_resources": {
+      "medical_assistance": "First Aid",
+      "evacuation_support": "Temporary Shelter",
+      "psychological_support": "Crisis Intervention",
+      "basic_necessities": [
+        "Water",
+        "Clothing",
+        "Food"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-2410",
+    "date": "2024-05-10",
+    "location": {
+      "latitude": 34.008039,
+      "longitude": -118.246082,
+      "city": "Glendale"
+    },
+    "severity": "High",
+    "response_time_minutes": 9,
+    "casualties": 1,
+    "property_damage_estimate": 69149,
+    "fire_cause": "Electrical",
+    "victim_resources": {
+      "medical_assistance": "ICU",
+      "evacuation_support": "None",
+      "psychological_support": "Crisis Intervention",
+      "basic_necessities": [
+        "Medication"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-3428",
+    "date": "2024-07-04",
+    "location": {
+      "latitude": 34.039235,
+      "longitude": -118.384345,
+      "city": "Los Angeles"
+    },
+    "severity": "Critical",
+    "response_time_minutes": 19,
+    "casualties": 8,
+    "property_damage_estimate": 98691,
+    "fire_cause": "Arson",
+    "victim_resources": {
+      "medical_assistance": "Ambulance",
+      "evacuation_support": "None",
+      "psychological_support": "Counseling",
+      "basic_necessities": [
+        "Medication",
+        "Clothing"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-5137",
+    "date": "2025-01-19",
+    "location": {
+      "latitude": 34.035663,
+      "longitude": -118.338345,
+      "city": "Pasadena"
+    },
+    "severity": "Moderate",
+    "response_time_minutes": 15,
+    "casualties": 6,
+    "property_damage_estimate": 51172,
+    "fire_cause": "Accidental",
+    "victim_resources": {
+      "medical_assistance": "First Aid",
+      "evacuation_support": "None",
+      "psychological_support": "None",
+      "basic_necessities": [
+        "Clothing",
+        "Medication"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-7432",
+    "date": "2024-06-08",
+    "location": {
+      "latitude": 34.020355,
+      "longitude": -118.329883,
+      "city": "Long Beach"
+    },
+    "severity": "Moderate",
+    "response_time_minutes": 30,
+    "casualties": 7,
+    "property_damage_estimate": 53052,
+    "fire_cause": "Accidental",
+    "victim_resources": {
+      "medical_assistance": "Ambulance",
+      "evacuation_support": "Long-Term Housing",
+      "psychological_support": "Crisis Intervention",
+      "basic_necessities": [
+        "Clothing",
+        "Food",
+        "Medication",
+        "Water"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-4669",
+    "date": "2024-04-14",
+    "location": {
+      "latitude": 34.152473,
+      "longitude": -118.331361,
+      "city": "Glendale"
+    },
+    "severity": "High",
+    "response_time_minutes": 30,
+    "casualties": 6,
+    "property_damage_estimate": 25763,
+    "fire_cause": "Accidental",
+    "victim_resources": {
+      "medical_assistance": "Ambulance",
+      "evacuation_support": "Temporary Shelter",
+      "psychological_support": "None",
+      "basic_necessities": [
+        "Medication",
+        "Food"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-6656",
+    "date": "2024-10-21",
+    "location": {
+      "latitude": 34.126247,
+      "longitude": -118.298016,
+      "city": "Long Beach"
+    },
+    "severity": "High",
+    "response_time_minutes": 18,
+    "casualties": 7,
+    "property_damage_estimate": 60998,
+    "fire_cause": "Electrical",
+    "victim_resources": {
+      "medical_assistance": "ICU",
+      "evacuation_support": "None",
+      "psychological_support": "Counseling",
+      "basic_necessities": [
+        "Food",
+        "Clothing",
+        "Water"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-5095",
+    "date": "2024-08-06",
+    "location": {
+      "latitude": 34.172618,
+      "longitude": -118.425688,
+      "city": "Los Angeles"
+    },
+    "severity": "Moderate",
+    "response_time_minutes": 15,
+    "casualties": 6,
+    "property_damage_estimate": 91809,
+    "fire_cause": "Accidental",
+    "victim_resources": {
+      "medical_assistance": "ICU",
+      "evacuation_support": "None",
+      "psychological_support": "Crisis Intervention",
+      "basic_necessities": [
+        "Medication"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-9289",
+    "date": "2024-05-09",
+    "location": {
+      "latitude": 34.071079,
+      "longitude": -118.484634,
+      "city": "Long Beach"
+    },
+    "severity": "Critical",
+    "response_time_minutes": 5,
+    "casualties": 5,
+    "property_damage_estimate": 17917,
+    "fire_cause": "Accidental",
+    "victim_resources": {
+      "medical_assistance": "ICU",
+      "evacuation_support": "Temporary Shelter",
+      "psychological_support": "Counseling",
+      "basic_necessities": [
+        "Clothing",
+        "Water",
+        "Food"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-9249",
+    "date": "2024-05-14",
+    "location": {
+      "latitude": 34.164111,
+      "longitude": -118.257009,
+      "city": "Pasadena"
+    },
+    "severity": "Low",
+    "response_time_minutes": 5,
+    "casualties": 1,
+    "property_damage_estimate": 80502,
+    "fire_cause": "Arson",
+    "victim_resources": {
+      "medical_assistance": "First Aid",
+      "evacuation_support": "Long-Term Housing",
+      "psychological_support": "None",
+      "basic_necessities": [
+        "Water",
+        "Food",
+        "Clothing"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-6497",
+    "date": "2024-09-20",
+    "location": {
+      "latitude": 34.11902,
+      "longitude": -118.344836,
+      "city": "Los Angeles"
+    },
+    "severity": "Low",
+    "response_time_minutes": 28,
+    "casualties": 10,
+    "property_damage_estimate": 31144,
+    "fire_cause": "Arson",
+    "victim_resources": {
+      "medical_assistance": "First Aid",
+      "evacuation_support": "None",
+      "psychological_support": "Counseling",
+      "basic_necessities": [
+        "Clothing",
+        "Food",
+        "Water"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-1976",
+    "date": "2024-05-20",
+    "location": {
+      "latitude": 34.186565,
+      "longitude": -118.282649,
+      "city": "Los Angeles"
+    },
+    "severity": "Critical",
+    "response_time_minutes": 7,
+    "casualties": 2,
+    "property_damage_estimate": 97240,
+    "fire_cause": "Natural",
+    "victim_resources": {
+      "medical_assistance": "Ambulance",
+      "evacuation_support": "Long-Term Housing",
+      "psychological_support": "Counseling",
+      "basic_necessities": [
+        "Water",
+        "Food",
+        "Clothing"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-5096",
+    "date": "2024-07-31",
+    "location": {
+      "latitude": 34.137607,
+      "longitude": -118.429732,
+      "city": "Glendale"
+    },
+    "severity": "Low",
+    "response_time_minutes": 10,
+    "casualties": 5,
+    "property_damage_estimate": 3236,
+    "fire_cause": "Natural",
+    "victim_resources": {
+      "medical_assistance": "First Aid",
+      "evacuation_support": "Temporary Shelter",
+      "psychological_support": "None",
+      "basic_necessities": [
+        "Medication",
+        "Food",
+        "Clothing"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-6255",
+    "date": "2024-11-12",
+    "location": {
+      "latitude": 34.229227,
+      "longitude": -118.274951,
+      "city": "Long Beach"
+    },
+    "severity": "Moderate",
+    "response_time_minutes": 23,
+    "casualties": 6,
+    "property_damage_estimate": 32726,
+    "fire_cause": "Arson",
+    "victim_resources": {
+      "medical_assistance": "ICU",
+      "evacuation_support": "Long-Term Housing",
+      "psychological_support": "Counseling",
+      "basic_necessities": [
+        "Medication",
+        "Water",
+        "Food",
+        "Clothing"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-9011",
+    "date": "2024-03-28",
+    "location": {
+      "latitude": 34.130925,
+      "longitude": -118.40313,
+      "city": "Los Angeles"
+    },
+    "severity": "Critical",
+    "response_time_minutes": 9,
+    "casualties": 5,
+    "property_damage_estimate": 77744,
+    "fire_cause": "Natural",
+    "victim_resources": {
+      "medical_assistance": "ICU",
+      "evacuation_support": "Long-Term Housing",
+      "psychological_support": "Crisis Intervention",
+      "basic_necessities": [
+        "Clothing"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-7319",
+    "date": "2024-03-29",
+    "location": {
+      "latitude": 34.197807,
+      "longitude": -118.237039,
+      "city": "Glendale"
+    },
+    "severity": "Low",
+    "response_time_minutes": 11,
+    "casualties": 10,
+    "property_damage_estimate": 7340,
+    "fire_cause": "Natural",
+    "victim_resources": {
+      "medical_assistance": "ICU",
+      "evacuation_support": "Temporary Shelter",
+      "psychological_support": "Crisis Intervention",
+      "basic_necessities": [
+        "Clothing",
+        "Food",
+        "Water",
+        "Medication"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-7836",
+    "date": "2025-01-30",
+    "location": {
+      "latitude": 34.161714,
+      "longitude": -118.426576,
+      "city": "Pasadena"
+    },
+    "severity": "High",
+    "response_time_minutes": 22,
+    "casualties": 8,
+    "property_damage_estimate": 52772,
+    "fire_cause": "Accidental",
+    "victim_resources": {
+      "medical_assistance": "Ambulance",
+      "evacuation_support": "None",
+      "psychological_support": "Crisis Intervention",
+      "basic_necessities": [
+        "Food",
+        "Water"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-9526",
+    "date": "2024-04-03",
+    "location": {
+      "latitude": 34.000846,
+      "longitude": -118.339451,
+      "city": "Long Beach"
+    },
+    "severity": "High",
+    "response_time_minutes": 22,
+    "casualties": 8,
+    "property_damage_estimate": 86667,
+    "fire_cause": "Natural",
+    "victim_resources": {
+      "medical_assistance": "First Aid",
+      "evacuation_support": "None",
+      "psychological_support": "Counseling",
+      "basic_necessities": [
+        "Food"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-5226",
+    "date": "2024-12-19",
+    "location": {
+      "latitude": 34.275713,
+      "longitude": -118.243632,
+      "city": "Pasadena"
+    },
+    "severity": "Low",
+    "response_time_minutes": 26,
+    "casualties": 0,
+    "property_damage_estimate": 24357,
+    "fire_cause": "Accidental",
+    "victim_resources": {
+      "medical_assistance": "ICU",
+      "evacuation_support": "None",
+      "psychological_support": "Crisis Intervention",
+      "basic_necessities": [
+        "Food",
+        "Clothing"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-8750",
+    "date": "2024-05-10",
+    "location": {
+      "latitude": 34.073226,
+      "longitude": -118.355557,
+      "city": "Los Angeles"
+    },
+    "severity": "Critical",
+    "response_time_minutes": 19,
+    "casualties": 10,
+    "property_damage_estimate": 37527,
+    "fire_cause": "Arson",
+    "victim_resources": {
+      "medical_assistance": "First Aid",
+      "evacuation_support": "Long-Term Housing",
+      "psychological_support": "Counseling",
+      "basic_necessities": [
+        "Clothing",
+        "Medication",
+        "Water",
+        "Food"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-9274",
+    "date": "2024-05-04",
+    "location": {
+      "latitude": 34.049081,
+      "longitude": -118.258995,
+      "city": "Los Angeles"
+    },
+    "severity": "Low",
+    "response_time_minutes": 10,
+    "casualties": 0,
+    "property_damage_estimate": 26990,
+    "fire_cause": "Arson",
+    "victim_resources": {
+      "medical_assistance": "ICU",
+      "evacuation_support": "Temporary Shelter",
+      "psychological_support": "Crisis Intervention",
+      "basic_necessities": [
+        "Medication",
+        "Clothing",
+        "Water"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-3782",
+    "date": "2025-01-16",
+    "location": {
+      "latitude": 34.023317,
+      "longitude": -118.387812,
+      "city": "Pasadena"
+    },
+    "severity": "Moderate",
+    "response_time_minutes": 12,
+    "casualties": 3,
+    "property_damage_estimate": 76104,
+    "fire_cause": "Accidental",
+    "victim_resources": {
+      "medical_assistance": "ICU",
+      "evacuation_support": "None",
+      "psychological_support": "None",
+      "basic_necessities": [
+        "Clothing",
+        "Food"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-2830",
+    "date": "2025-02-25",
+    "location": {
+      "latitude": 34.116796,
+      "longitude": -118.248182,
+      "city": "Long Beach"
+    },
+    "severity": "Critical",
+    "response_time_minutes": 21,
+    "casualties": 0,
+    "property_damage_estimate": 79211,
+    "fire_cause": "Accidental",
+    "victim_resources": {
+      "medical_assistance": "ICU",
+      "evacuation_support": "None",
+      "psychological_support": "Counseling",
+      "basic_necessities": [
+        "Clothing",
+        "Food",
+        "Medication",
+        "Water"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-8613",
+    "date": "2024-09-29",
+    "location": {
+      "latitude": 34.040496,
+      "longitude": -118.375671,
+      "city": "Long Beach"
+    },
+    "severity": "Moderate",
+    "response_time_minutes": 21,
+    "casualties": 6,
+    "property_damage_estimate": 69769,
+    "fire_cause": "Electrical",
+    "victim_resources": {
+      "medical_assistance": "Ambulance",
+      "evacuation_support": "None",
+      "psychological_support": "None",
+      "basic_necessities": [
+        "Clothing",
+        "Water",
+        "Medication",
+        "Food"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-5253",
+    "date": "2025-01-20",
+    "location": {
+      "latitude": 34.038423,
+      "longitude": -118.314462,
+      "city": "Glendale"
+    },
+    "severity": "Critical",
+    "response_time_minutes": 16,
+    "casualties": 0,
+    "property_damage_estimate": 14875,
+    "fire_cause": "Accidental",
+    "victim_resources": {
+      "medical_assistance": "ICU",
+      "evacuation_support": "None",
+      "psychological_support": "Crisis Intervention",
+      "basic_necessities": [
+        "Water",
+        "Medication",
+        "Clothing"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-9790",
+    "date": "2024-12-05",
+    "location": {
+      "latitude": 34.274419,
+      "longitude": -118.40484,
+      "city": "Long Beach"
+    },
+    "severity": "High",
+    "response_time_minutes": 5,
+    "casualties": 1,
+    "property_damage_estimate": 42212,
+    "fire_cause": "Accidental",
+    "victim_resources": {
+      "medical_assistance": "First Aid",
+      "evacuation_support": "Temporary Shelter",
+      "psychological_support": "None",
+      "basic_necessities": [
+        "Water"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-6808",
+    "date": "2024-05-13",
+    "location": {
+      "latitude": 34.017491,
+      "longitude": -118.242179,
+      "city": "Los Angeles"
+    },
+    "severity": "Low",
+    "response_time_minutes": 16,
+    "casualties": 6,
+    "property_damage_estimate": 52158,
+    "fire_cause": "Accidental",
+    "victim_resources": {
+      "medical_assistance": "ICU",
+      "evacuation_support": "None",
+      "psychological_support": "Crisis Intervention",
+      "basic_necessities": [
+        "Water",
+        "Medication",
+        "Clothing"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-6267",
+    "date": "2024-08-08",
+    "location": {
+      "latitude": 34.275711,
+      "longitude": -118.334417,
+      "city": "Pasadena"
+    },
+    "severity": "Low",
+    "response_time_minutes": 17,
+    "casualties": 10,
+    "property_damage_estimate": 1801,
+    "fire_cause": "Natural",
+    "victim_resources": {
+      "medical_assistance": "First Aid",
+      "evacuation_support": "None",
+      "psychological_support": "None",
+      "basic_necessities": [
+        "Food",
+        "Medication"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-9731",
+    "date": "2024-07-11",
+    "location": {
+      "latitude": 34.266475,
+      "longitude": -118.288614,
+      "city": "Long Beach"
+    },
+    "severity": "Critical",
+    "response_time_minutes": 15,
+    "casualties": 9,
+    "property_damage_estimate": 78575,
+    "fire_cause": "Electrical",
+    "victim_resources": {
+      "medical_assistance": "Ambulance",
+      "evacuation_support": "None",
+      "psychological_support": "Crisis Intervention",
+      "basic_necessities": [
+        "Water",
+        "Medication"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-5519",
+    "date": "2024-12-23",
+    "location": {
+      "latitude": 34.219005,
+      "longitude": -118.341416,
+      "city": "Pasadena"
+    },
+    "severity": "Moderate",
+    "response_time_minutes": 7,
+    "casualties": 7,
+    "property_damage_estimate": 79882,
+    "fire_cause": "Electrical",
+    "victim_resources": {
+      "medical_assistance": "ICU",
+      "evacuation_support": "None",
+      "psychological_support": "Crisis Intervention",
+      "basic_necessities": [
+        "Water",
+        "Clothing"
+      ]
+    }
+  },
+  {
+    "incident_id": "FIRE-2258",
+    "date": "2025-02-01",
+    "location": {
+      "latitude": 34.162561,
+      "longitude": -118.202082,
+      "city": "Long Beach"
+    },
+    "severity": "Low",
+    "response_time_minutes": 15,
+    "casualties": 5,
+    "property_damage_estimate": 16174,
+    "fire_cause": "Accidental",
+    "victim_resources": {
+      "medical_assistance": "Ambulance",
+      "evacuation_support": "Long-Term Housing",
+      "psychological_support": "Crisis Intervention",
+      "basic_necessities": [
+        "Clothing"
+      ]
+    }
+  }
+]
