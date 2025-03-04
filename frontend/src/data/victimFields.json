@@ -4,7 +4,7 @@
     "data": [
       {
         "id": 1,
-        "name": "first_name",
+        "name": "name",
         "display_name": "First Name",
         "format": "string",
         "data_type": "text",
@@ -34,7 +34,7 @@
       },
       {
         "id": 5,
-        "name": "national_id",
+        "name": "unique_id",
         "display_name": "National ID / SSN",
         "format": "string",
         "data_type": "text",

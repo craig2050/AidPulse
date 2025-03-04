@@ -5,6 +5,7 @@ import { createTheme, ThemeProvider, Theme } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 import { v4 as uuidv4 } from "uuid";
 import victimField from "@/data/victimFields.json";
+import victimData from "@/data/victimData.json";
 import responderData from "@/data/responderData.json";
 import { red, green, blue } from "@mui/material/colors";
 
@@ -16,8 +17,8 @@ export interface AppContextType {
   theme: Theme;
   userIdentifier: string;
   configureNewUserSetup: () => void;
-  currentQuestion: number;
-  setCurrentQuestion: (question: number) => void;
+  currentQuestion: string;
+  setCurrentQuestion: (question: string) => void;
   newUser: boolean;
 }
 
@@ -26,7 +27,7 @@ export const AppContext = createContext<AppContextType | undefined>(undefined);
 export const AppProvider = ({ children }: { children: ReactNode }) => {
   const [userType, setUserType] = useState<string>("");
   const [hasGraphic, setHasGraphic] = useState(false);
-  const [currentQuestion, setCurrentQuestion] = useState(1);
+  const [currentQuestion, setCurrentQuestion] = useState("name");
   const [userIdentifier, setUserIdentifier] = useState("");
   const [newUser, setNewUser] = useState(false);
 
@@ -50,6 +51,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     
     if (userType === "victim") {
       localStorage.setItem("questionData", JSON.stringify(victimField));
+      localStorage.setItem("victimQuestionData", JSON.stringify(victimData));
     } else if (userType === "responder") {
       localStorage.setItem("questionData", JSON.stringify(responderData));
     }

@@ -16,16 +16,24 @@ const findFirstEmptyValue = (json) =>
     .flatMap((section) => section.data)
     .find((item) => item.value === "" || item.value === null) || null;
 
-const updateValueById = (data, id, newValue) => {
+const updateValueByName = (data, victimData, name, newValue) => {
   for (const category in data) {
     const items = data[category].data;
-    const item = items.find((obj) => obj.id === id);
+    const item = items.find((obj) => obj.name === name);
     if (item) {
       item.value = newValue;
       break;
     }
   }
 
+  for (const category in victimData) {
+    if (victimData[category].hasOwnProperty(name)) {
+      victimData[category][name] = newValue;
+      break
+    }
+  }
+  
+  localStorage.setItem("victimQuestionData", JSON.stringify(victimData));
   localStorage.setItem("questionData", JSON.stringify(data));
 };
 
@@ -66,8 +74,8 @@ const LLM_CALL_FOR_ANSWER_VALIATION = async (answer) => {
 export {
   promptFunction,
   findFirstEmptyValue,
-  updateValueById,
   generateQuestionFromLLM,
   generateVirtuosoMessage,
   LLM_CALL_FOR_ANSWER_VALIATION,
+  updateValueByName
 };

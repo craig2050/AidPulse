@@ -13,7 +13,8 @@ import {
   generateVirtuosoMessage,
   LLM_CALL_FOR_ANSWER_VALIATION,
   promptFunction,
-  updateValueById,
+  // updateValueById,
+  updateValueByName,
 } from "@/app/utils";
 import { Message } from "../../types/types";
 import useMic from "@/app/hooks/useMic";
@@ -45,12 +46,15 @@ const ChatInput = ({ virtuoso, idCounter }: ChatInputProps) => {
     const storedQuestionData = JSON.parse(
       localStorage.getItem("questionData") ?? "{}"
     );
-    updateValueById(storedQuestionData, context.currentQuestion, message);
+    const storedVictimDataQuestionData = JSON.parse(
+      localStorage.getItem("victimQuestionData") ?? "{}"
+    );
+    updateValueByName(storedQuestionData, storedVictimDataQuestionData, context.currentQuestion, message);
 
     const questionObject = findFirstEmptyValue(
       JSON.parse(localStorage.getItem("questionData") ?? "{}")
     );
-    context.setCurrentQuestion(questionObject.id);
+    context.setCurrentQuestion(questionObject.name);
     const question: string =
       promptFunction(JSON.stringify(questionObject), "QUESTION_FORMATION") ??
       "";

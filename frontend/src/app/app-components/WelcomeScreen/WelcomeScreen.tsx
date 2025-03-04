@@ -18,16 +18,6 @@ export function WelcomeScreen() {
         </div>
       </div>
       <div className="flex justify-center items-center w-full max-w-xs mx-auto mt-8 space-x-4">
-        {/* <div className="flex flex-col items-center col-1 border border-white rounded-lg p-4 min-h-[100px] min-w-[120px]">
-          <div
-            className="material-symbols-outlined"
-            style={{ color: "white", fontSize: "40px" }}
-          >
-            medical_services
-          </div>
-          <div>Responders</div>
-        </div> */}
-
         <div
           onClick={() => appContext?.setUserType("victim")}
           className="flex flex-col items-center col-1 border border-white rounded-lg p-4 min-h-[100px] min-w-[150px]"

@@ -93,7 +93,7 @@ export default function MessageList() {
       const firstQuestionObject = findFirstEmptyValue(
         JSON.parse(localStorage.getItem("questionData") ?? "")
       );
-      context.setCurrentQuestion(firstQuestionObject.id);
+      context.setCurrentQuestion(firstQuestionObject.name);
       const question: string =
         promptFunction(
           JSON.stringify(firstQuestionObject),
