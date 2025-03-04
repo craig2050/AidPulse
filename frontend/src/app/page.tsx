@@ -24,8 +24,6 @@ export default function App() {
     switch (userType) {
       case "victim":
         return <MessageList />;
-      case "volunteer":
-        return <ResponderMessageList />;
       case "responder":
         return <ResponderMessageList />;
       default:

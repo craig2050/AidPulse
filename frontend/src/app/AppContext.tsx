@@ -4,7 +4,7 @@ import { createContext, useState, useEffect, ReactNode } from "react";
 import { createTheme, ThemeProvider, Theme } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 import { v4 as uuidv4 } from "uuid";
-import victimData from "@/data/victimData.json";
+import victimField from "@/data/victimFields.json";
 import responderData from "@/data/responderData.json";
 import { red, green, blue } from "@mui/material/colors";
 
@@ -49,7 +49,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     localStorage.setItem("userIdentifier", identifier);
     
     if (userType === "victim") {
-      localStorage.setItem("questionData", JSON.stringify(victimData));
+      localStorage.setItem("questionData", JSON.stringify(victimField));
     } else if (userType === "responder") {
       localStorage.setItem("questionData", JSON.stringify(responderData));
     }

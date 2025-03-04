@@ -1,4 +1,3 @@
-import messages from "@/data/messages.json";
 import { Button, Typography } from "@mui/material";
 import { AidPulse } from "./AidPulse";
 import { useContext } from "react";
@@ -12,17 +11,14 @@ export function WelcomeScreen() {
       <AidPulse />
       <div>
         <div className="p-8 pt-4 pb-0 text-center">
-          <Typography variant="h2">Hello</Typography>
+          <Typography variant="h2">AidPulse</Typography>
           <Typography variant="h6" className="">
-            We&apos;re here to help.
+            Connects victims & helpers
           </Typography>
         </div>
-        <Typography className="text-center pt-8">
-          {messages.homeText}
-        </Typography>
       </div>
       <div className="flex justify-center items-center w-full max-w-xs mx-auto mt-8 space-x-4">
-        <div className="flex flex-col items-center col-1 border border-white rounded-lg p-4 min-h-[100px] min-w-[120px]">
+        {/* <div className="flex flex-col items-center col-1 border border-white rounded-lg p-4 min-h-[100px] min-w-[120px]">
           <div
             className="material-symbols-outlined"
             style={{ color: "white", fontSize: "40px" }}
@@ -30,21 +26,11 @@ export function WelcomeScreen() {
             medical_services
           </div>
           <div>Responders</div>
-        </div>
-
-        <div className="flex flex-col items-center col-1 border border-white rounded-lg p-4 min-h-[100px] min-w-[120px]">
-          <div
-            className="material-symbols-outlined"
-            style={{ color: "white", fontSize: "40px" }}
-          >
-            volunteer_activism
-          </div>
-          <div>Volunteers</div>
-        </div>
+        </div> */}
 
         <div
           onClick={() => appContext?.setUserType("victim")}
-          className="flex flex-col items-center col-1 border border-white rounded-lg p-4 min-h-[100px] min-w-[120px]"
+          className="flex flex-col items-center col-1 border border-white rounded-lg p-4 min-h-[100px] min-w-[150px]"
         >
           <div
             className="material-symbols-outlined"
@@ -52,7 +38,16 @@ export function WelcomeScreen() {
           >
             emoji_people
           </div>
-          <div>Victims</div>
+          <div>I need help</div>
+        </div>
+        <div onClick={() => appContext?.setUserType("responder")} className="flex flex-col items-center col-1 border border-white rounded-lg p-4 min-h-[100px] min-w-[150px]">
+          <div
+            className="material-symbols-outlined"
+            style={{ color: "white", fontSize: "40px" }}
+          >
+            volunteer_activism
+          </div>
+          <div>I want to help </div>
         </div>
       </div>
 
