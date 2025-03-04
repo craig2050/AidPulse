@@ -1,0 +1,245 @@
+{
+  "personal_information": {
+    "priority": 1,
+    "data": [
+      {
+        "id": 1,
+        "name": "first_name",
+        "display_name": "First Name",
+        "format": "string",
+        "data_type": "text",
+        "rationale": "To identify the victim",
+        "value": "",
+        "optional": false
+      },
+      {
+        "id": 3,
+        "name": "date_of_birth",
+        "display_name": "Date of Birth",
+        "format": "YYYY-MM-DD",
+        "data_type": "date",
+        "rationale": "To verify the age of the victim",
+        "value": "",
+        "optional": false
+      },
+      {
+        "id": 4,
+        "name": "gender",
+        "display_name": "Gender",
+        "format": "string",
+        "data_type": "text",
+        "rationale": "To identify the gender of the victim",
+        "value": "",
+        "optional": false
+      },
+      {
+        "id": 5,
+        "name": "national_id",
+        "display_name": "National ID / SSN",
+        "format": "string",
+        "data_type": "text",
+        "rationale": "To uniquely verify the victim's identity",
+        "value": "",
+        "optional": true
+      }
+    ]
+  },
+  "contact_information": {
+    "priority": 2,
+    "data": [
+      {
+        "id": 6,
+        "name": "phone_number",
+        "display_name": "Phone Number",
+        "format": "string",
+        "data_type": "text",
+        "rationale": "To contact the victim",
+        "value": "",
+        "optional": false
+      },
+      {
+        "id": 7,
+        "name": "email",
+        "display_name": "Email",
+        "format": "string",
+        "data_type": "text",
+        "rationale": "To contact the victim",
+        "value": "",
+        "optional": true
+      },
+      {
+        "id": 8,
+        "name": "emergency_contact_name",
+        "display_name": "Emergency Contact Name",
+        "format": "string",
+        "data_type": "text",
+        "rationale": "To reach a family member or friend in case of emergency",
+        "value": "",
+        "optional": false
+      },
+      {
+        "id": 9,
+        "name": "emergency_contact_phone",
+        "display_name": "Emergency Contact Phone",
+        "format": "string",
+        "data_type": "text",
+        "rationale": "To quickly contact a next of kin or responsible party",
+        "value": "",
+        "optional": false
+      }
+    ]
+  },
+  "location_information": {
+    "priority": 3,
+    "data": [
+      {
+        "id": 10,
+        "name": "address",
+        "display_name": "Residential Address",
+        "format": "string",
+        "data_type": "text",
+        "rationale": "To identify the victim's residence for assistance",
+        "value": "",
+        "optional": false
+      },
+      {
+        "id": 11,
+        "name": "coordinates",
+        "display_name": "Geolocation (Latitude, Longitude)",
+        "format": "object",
+        "data_type": "geo",
+        "rationale": "To pinpoint the victim’s exact location for response teams",
+        "value": {
+          "latitude": "",
+          "longitude": ""
+        },
+        "optional": true
+      },
+      {
+        "id": 12,
+        "name": "temporary_shelter",
+        "display_name": "Temporary Shelter Location",
+        "format": "string",
+        "data_type": "text",
+        "rationale": "If the victim has relocated, this provides their current location",
+        "value": "",
+        "optional": true
+      }
+    ]
+  },
+  "household_information": {
+    "priority": 4,
+    "data": [
+      {
+        "id": 13,
+        "name": "adults",
+        "display_name": "Number of Adults in Household",
+        "format": "integer",
+        "data_type": "number",
+        "rationale": "To determine the total number of adults needing assistance",
+        "value": null,
+        "optional": false
+      },
+      {
+        "id": 14,
+        "name": "children",
+        "display_name": "Number of Children in Household",
+        "format": "integer",
+        "data_type": "number",
+        "rationale": "To determine the number of children affected",
+        "value": null,
+        "optional": false
+      },
+      {
+        "id": 15,
+        "name": "elderly",
+        "display_name": "Number of Elderly in Household",
+        "format": "integer",
+        "data_type": "number",
+        "rationale": "To prioritize support for elderly individuals",
+        "value": null,
+        "optional": false
+      },
+      {
+        "id": 16,
+        "name": "pets",
+        "display_name": "Number of Pets",
+        "format": "integer",
+        "data_type": "number",
+        "rationale": "To assist in rescuing and providing care for pets",
+        "value": null,
+        "optional": true
+      }
+    ]
+  },
+  "utility_information": {
+    "priority": 5,
+    "data": [
+      {
+        "id": 17,
+        "name": "utility_type",
+        "display_name": "Utility Type (Gas/Electric)",
+        "format": "string",
+        "data_type": "text",
+        "rationale": "To determine the necessary utility assistance",
+        "value": "",
+        "optional": false
+      }
+    ]
+  },
+  "disaster_information": {
+    "priority": 6,
+    "data": [
+      {
+        "id": 18,
+        "name": "disaster_type",
+        "display_name": "Disaster Type",
+        "format": "string",
+        "data_type": "text",
+        "rationale": "To categorize the emergency",
+        "value": "",
+        "optional": false
+      },
+      {
+        "id": 19,
+        "name": "fire_active",
+        "display_name": "Is Fire Still Active?",
+        "format": "boolean",
+        "data_type": "boolean",
+        "rationale": "To determine urgency of response",
+        "value": null,
+        "optional": false
+      }
+    ]
+  },
+  "assistance_information": {
+    "priority": 7,
+    "data": [
+      {
+        "id": 20,
+        "name": "medical_assistance",
+        "display_name": "Medical Assistance Needed?",
+        "format": "boolean",
+        "data_type": "boolean",
+        "rationale": "To ensure medical aid is dispatched",
+        "value": null,
+        "optional": false
+      }
+    ]
+  },
+  "timestamp": {
+    "priority": 8,
+    "data": [
+      {
+        "id": 21,
+        "name": "report_time",
+        "display_name": "Report Time",
+        "format": "YYYY-MM-DDTHH:MM:SSZ",
+        "data_type": "datetime",
+        "rationale": "To track when the incident was reported",
+        "value": "",
+        "optional": false
+      }
+    ]
+  }
+}

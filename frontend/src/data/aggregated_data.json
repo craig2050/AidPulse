@@ -1,0 +1,306 @@
+{
+  "first_name": {
+    "type": "text",
+    "count": 500,
+    "null_count": 0,
+    "value_counts": {
+      "John": 32,
+      "Michael": 28,
+      "David": 25,
+      "James": 21,
+      "Robert": 20,
+      "Maria": 19,
+      "Sarah": 18,
+      "Jennifer": 17,
+      "Lisa": 15,
+      "Jessica": 14,
+      "Other": 291
+    },
+    "most_common": "John",
+    "unique_values": 156
+  },
+  "date_of_birth": {
+    "type": "date",
+    "count": 500,
+    "null_count": 0,
+    "min": "1932-01-05",
+    "max": "2012-12-18",
+    "decade_distribution": {
+      "1930s": 15,
+      "1940s": 37,
+      "1950s": 65,
+      "1960s": 86,
+      "1970s": 102,
+      "1980s": 98,
+      "1990s": 56,
+      "2000s": 31,
+      "2010s": 10
+    },
+    "median_year": 1975,
+    "avg_year": 1974.3
+  },
+  "gender": {
+    "type": "text",
+    "count": 500,
+    "null_count": 0,
+    "value_counts": {
+      "Male": 247,
+      "Female": 243,
+      "Non-binary": 8,
+      "Prefer not to say": 2
+    },
+    "most_common": "Male"
+  },
+  "national_id": {
+    "type": "text",
+    "count": 500,
+    "null_count": 87,
+    "completion_rate": 82.6,
+    "format_patterns": {
+      "XXX-XX-XXXX": 392,
+      "XXXXXXXXX": 21
+    }
+  },
+  "phone_number": {
+    "type": "text",
+    "count": 500,
+    "null_count": 0,
+    "format_patterns": {
+      "XXX-XXX-XXXX": 321,
+      "(XXX) XXX-XXXX": 179
+    },
+    "area_code_distribution": {
+      "415": 87,
+      "510": 65,
+      "650": 62,
+      "408": 58,
+      "707": 45,
+      "Other": 183
+    }
+  },
+  "email": {
+    "type": "text",
+    "count": 500,
+    "null_count": 112,
+    "completion_rate": 77.6,
+    "domain_distribution": {
+      "gmail.com": 184,
+      "yahoo.com": 67,
+      "hotmail.com": 52,
+      "outlook.com": 43,
+      "aol.com": 21,
+      "Other": 21
+    }
+  },
+  "emergency_contact_name": {
+    "type": "text",
+    "count": 500,
+    "null_count": 0
+  },
+  "emergency_contact_phone": {
+    "type": "text",
+    "count": 500,
+    "null_count": 0,
+    "format_patterns": {
+      "XXX-XXX-XXXX": 312,
+      "(XXX) XXX-XXXX": 188
+    }
+  },
+  "address": {
+    "type": "text",
+    "count": 500,
+    "null_count": 0,
+    "city_distribution": {
+      "San Francisco": 153,
+      "Oakland": 89,
+      "San Jose": 78,
+      "Berkeley": 45,
+      "Palo Alto": 31,
+      "Other": 104
+    },
+    "avg_length": 68.2
+  },
+  "coordinates": {
+    "type": "geo",
+    "count": 500,
+    "null_count": 147,
+    "completion_rate": 70.6,
+    "lat_bounds": {
+      "min": 37.2543,
+      "max": 38.1284,
+      "avg": 37.7749
+    },
+    "long_bounds": {
+      "min": -122.5134,
+      "max": -121.8892,
+      "avg": -122.4194
+    }
+  },
+  "temporary_shelter": {
+    "type": "text",
+    "count": 500,
+    "null_count": 318,
+    "completion_rate": 36.4,
+    "value_counts": {
+      "Red Cross Shelter": 78,
+      "Community Center": 45,
+      "Local School": 23,
+      "Hotel/Motel": 19,
+      "Family/Friends": 12,
+      "Other": 5
+    }
+  },
+  "adults": {
+    "type": "number",
+    "count": 500,
+    "null_count": 0,
+    "min": 1,
+    "max": 8,
+    "avg": 2.43,
+    "median": 2,
+    "std": 1.15,
+    "value_counts": {
+      "1": 127,
+      "2": 213,
+      "3": 87,
+      "4": 42,
+      "5+": 31
+    }
+  },
+  "children": {
+    "type": "number",
+    "count": 500,
+    "null_count": 0,
+    "min": 0,
+    "max": 7,
+    "avg": 1.62,
+    "median": 1,
+    "std": 1.44,
+    "value_counts": {
+      "0": 156,
+      "1": 123,
+      "2": 97,
+      "3": 78,
+      "4+": 46
+    }
+  },
+  "elderly": {
+    "type": "number",
+    "count": 500,
+    "null_count": 0,
+    "min": 0,
+    "max": 4,
+    "avg": 0.42,
+    "median": 0,
+    "std": 0.78,
+    "value_counts": {
+      "0": 341,
+      "1": 98,
+      "2": 57,
+      "3+": 4
+    }
+  },
+  "pets": {
+    "type": "number",
+    "count": 500,
+    "null_count": 21,
+    "min": 0,
+    "max": 12,
+    "avg": 1.23,
+    "median": 1,
+    "std": 1.56,
+    "value_counts": {
+      "0": 198,
+      "1": 132,
+      "2": 87,
+      "3": 42,
+      "4+": 20
+    },
+    "pet_type_distribution": {
+      "Dog": 163,
+      "Cat": 147,
+      "Bird": 28,
+      "Fish": 23,
+      "Other": 19
+    }
+  },
+  "utility_type": {
+    "type": "text",
+    "count": 500,
+    "null_count": 0,
+    "value_counts": {
+      "Electric": 283,
+      "Gas": 146,
+      "Both": 71
+    }
+  },
+  "disaster_type": {
+    "type": "text",
+    "count": 500,
+    "null_count": 0,
+    "value_counts": {
+      "Fire": 187,
+      "Earthquake": 132,
+      "Flood": 98,
+      "Landslide": 43,
+      "Storm": 31,
+      "Other": 9
+    }
+  },
+  "fire_active": {
+    "type": "boolean",
+    "count": 500,
+    "null_count": 0,
+    "value_counts": {
+      "true": 67,
+      "false": 433
+    },
+    "percent_true": 13.4
+  },
+  "medical_assistance": {
+    "type": "boolean",
+    "count": 500,
+    "null_count": 0,
+    "value_counts": {
+      "true": 156,
+      "false": 344
+    },
+    "percent_true": 31.2
+  },
+  "report_time": {
+    "type": "datetime",
+    "count": 500,
+    "null_count": 0,
+    "min": "2023-01-01T08:12:34Z",
+    "max": "2023-12-31T22:45:10Z",
+    "time_of_day_distribution": {
+      "morning (6am-12pm)": 178,
+      "afternoon (12pm-6pm)": 201,
+      "evening (6pm-12am)": 93,
+      "night (12am-6am)": 28
+    },
+    "month_distribution": {
+      "Jan": 42,
+      "Feb": 38,
+      "Mar": 35,
+      "Apr": 33,
+      "May": 37,
+      "Jun": 39,
+      "Jul": 45,
+      "Aug": 56,
+      "Sep": 58,
+      "Oct": 46,
+      "Nov": 38,
+      "Dec": 33
+    },
+    "weekday_distribution": {
+      "Monday": 67,
+      "Tuesday": 71,
+      "Wednesday": 74,
+      "Thursday": 76,
+      "Friday": 82,
+      "Saturday": 68,
+      "Sunday": 62
+    }
+  }
+}
