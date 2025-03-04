@@ -1,18 +1,20 @@
 "use client";
 
-import { Avatar, useTheme, Button, Typography, Paper, Grid, Box } from "@mui/material";
+import { Avatar, useTheme, Button, Typography, Paper, Grid, Box, IconButton } from "@mui/material";
 import {
   VirtuosoMessageList,
   VirtuosoMessageListLicense,
   VirtuosoMessageListMethods,
   VirtuosoMessageListProps,
 } from "@virtuoso.dev/message-list";
-import { useRef, useState } from "react";
+import { useRef, useState, useContext } from "react";
 // import ChatInput from "./ChatInput";
 import Image from "next/image";
 import { Message } from "@/app/types/types";
 import InteractiveGraphic from "../InteractiveGraphic/InteractiveGraphic";
 import ChartJS from "../Chart/Chart";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { AppContext } from "@/app/AppContext";
 
 const key = process.env.NEXT_PUBLIC_VIRTUOSO_KEY || "";
 
@@ -82,9 +84,32 @@ export default function ResponderMessageList() {
   const theme = useTheme();
   const [activeChart, setActiveChart] = useState("disaster");
   const [showCharts, setShowCharts] = useState(true);
+  
+  // Use AppContext to navigate back to welcome screen
+  const context = useContext(AppContext);
+  if (!context) throw new Error("Component must be used within an AppProvider");
+  const { setUserType } = context;
+  
+  const handleBack = () => {
+    // Setting userType to empty string will render the WelcomeScreen
+    setUserType("");
+  };
 
   return (
     <>
+      <Box sx={{ display: 'flex', alignItems: 'center', p: 2 }}>
+        <IconButton 
+          onClick={handleBack}
+          aria-label="back to home"
+          sx={{ mr: 1, color: theme.palette.primary.main }}
+        >
+          <ArrowBackIcon />
+        </IconButton>
+        <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+          Back to Home
+        </Typography>
+      </Box>
+      
       <Box sx={{ p: 2, mb: 2 }}>
         <Paper elevation={3} sx={{ p: 2, borderRadius: 2 }}>
           <Typography variant="h5" sx={{ mb: 2, fontWeight: 'bold' }}>

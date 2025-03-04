@@ -1,6 +1,6 @@
 "use client";
 
-import { Avatar, useTheme } from "@mui/material";
+import { Avatar, useTheme, IconButton, Box, Typography } from "@mui/material";
 import {
   VirtuosoMessageList,
   VirtuosoMessageListLicense,
@@ -12,6 +12,7 @@ import ChatInput from "./ChatInput";
 import { Message } from "@/app/types/types";
 import { AppContext } from "@/app/AppContext";
 import Image from "next/image";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import {
   findFirstEmptyValue,
   generateQuestionFromLLM,
@@ -75,6 +76,14 @@ export default function MessageList() {
   const virtuoso = useRef<VirtuosoMessageListMethods<Message, null>>(null);
   const context = useContext(AppContext);
   if (!context) throw new Error("App must be used within an AppProvider");
+  const { setUserType } = context;
+  const theme = useTheme();
+  
+  // Handler for the back button
+  const handleBack = () => {
+    // Setting userType to empty string will render the WelcomeScreen
+    setUserType("");
+  };
 
   let idCounter = 0;
 
@@ -113,15 +122,29 @@ export default function MessageList() {
   }, []);
 
   return (
-    <div
-      className="tall-example"
-      style={{
-        height: "calc(100vh - 84px)",
-        display: "flex",
-        flexDirection: "column",
-        fontSize: "80%",
-      }}
-    >
+    <>
+      <Box sx={{ display: 'flex', alignItems: 'center', p: 2, backgroundColor: 'black' }}>
+        <IconButton 
+          onClick={handleBack}
+          aria-label="back to home"
+          sx={{ mr: 1, color: theme.palette.primary.main }}
+        >
+          <ArrowBackIcon />
+        </IconButton>
+        <Typography variant="h6" sx={{ fontWeight: 'bold', color: 'white' }}>
+          Back to Home
+        </Typography>
+      </Box>
+      
+      <div
+        className="tall-example"
+        style={{
+          height: "calc(100vh - 124px)", /* Adjusted height to account for back button */
+          display: "flex",
+          flexDirection: "column",
+          fontSize: "80%",
+        }}
+      >
       <VirtuosoMessageListLicense licenseKey={key}>
         <VirtuosoMessageList<Message, null>
           ref={virtuoso}
@@ -144,5 +167,6 @@ export default function MessageList() {
         <ChatInput virtuoso={virtuoso} idCounter={idCounter} />
       </div>
     </div>
+    </>
   );
 }
