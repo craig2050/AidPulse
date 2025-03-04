@@ -1,1175 +1,1602 @@
 [
   {
-    "incident_id": "FIRE-4385",
-    "date": "2024-06-02",
-    "location": {
-      "latitude": 34.152866,
-      "longitude": -118.496771,
-      "city": "Glendale"
-    },
+    "incident_id": "INC1",
+    "county": "Riverside",
+    "latitude": 33.763874,
+    "longitude": -117.904849,
     "severity": "High",
-    "response_time_minutes": 25,
-    "casualties": 5,
-    "property_damage_estimate": 36757,
-    "fire_cause": "Arson",
-    "victim_resources": {
-      "medical_assistance": "ICU",
-      "evacuation_support": "Temporary Shelter",
-      "psychological_support": "Counseling",
-      "basic_necessities": [
-        "Medication",
-        "Water",
-        "Clothing",
-        "Food"
-      ]
+    "response_time_minutes": 51,
+    "resource_requests": {
+      "Health": 68,
+      "Food": 17,
+      "Shelter": 66,
+      "Clothing": 96,
+      "Water": 71,
+      "Psychological Support": 17
     }
   },
   {
-    "incident_id": "FIRE-8011",
-    "date": "2024-04-24",
-    "location": {
-      "latitude": 34.19667,
-      "longitude": -118.394332,
-      "city": "Long Beach"
-    },
+    "incident_id": "INC2",
+    "county": "San Bernardino",
+    "latitude": 34.308761,
+    "longitude": -117.438869,
+    "severity": "High",
+    "response_time_minutes": 13,
+    "resource_requests": {
+      "Health": 40,
+      "Food": 78,
+      "Shelter": 64,
+      "Clothing": 2,
+      "Water": 80,
+      "Psychological Support": 42
+    }
+  },
+  {
+    "incident_id": "INC3",
+    "county": "Riverside",
+    "latitude": 33.767938,
+    "longitude": -118.131452,
+    "severity": "Low",
+    "response_time_minutes": 31,
+    "resource_requests": {
+      "Health": 75,
+      "Food": 49,
+      "Shelter": 27,
+      "Clothing": 74,
+      "Water": 3,
+      "Psychological Support": 12
+    }
+  },
+  {
+    "incident_id": "INC4",
+    "county": "San Diego",
+    "latitude": 33.65295,
+    "longitude": -116.299193,
+    "severity": "Low",
+    "response_time_minutes": 52,
+    "resource_requests": {
+      "Health": 28,
+      "Food": 30,
+      "Shelter": 67,
+      "Clothing": 9,
+      "Water": 52,
+      "Psychological Support": 47
+    }
+  },
+  {
+    "incident_id": "INC5",
+    "county": "Riverside",
+    "latitude": 33.911498,
+    "longitude": -116.621507,
+    "severity": "Low",
+    "response_time_minutes": 29,
+    "resource_requests": {
+      "Health": 63,
+      "Food": 91,
+      "Shelter": 34,
+      "Clothing": 4,
+      "Water": 40,
+      "Psychological Support": 25
+    }
+  },
+  {
+    "incident_id": "INC6",
+    "county": "Riverside",
+    "latitude": 34.137316,
+    "longitude": -117.523702,
     "severity": "Moderate",
-    "response_time_minutes": 16,
-    "casualties": 5,
-    "property_damage_estimate": 59821,
-    "fire_cause": "Natural",
-    "victim_resources": {
-      "medical_assistance": "ICU",
-      "evacuation_support": "Temporary Shelter",
-      "psychological_support": "Counseling",
-      "basic_necessities": [
-        "Clothing"
-      ]
+    "response_time_minutes": 28,
+    "resource_requests": {
+      "Health": 94,
+      "Food": 58,
+      "Shelter": 1,
+      "Clothing": 31,
+      "Water": 84,
+      "Psychological Support": 19
     }
   },
   {
-    "incident_id": "FIRE-3721",
-    "date": "2024-03-20",
-    "location": {
-      "latitude": 34.180863,
-      "longitude": -118.278589,
-      "city": "Pasadena"
-    },
+    "incident_id": "INC7",
+    "county": "Orange",
+    "latitude": 32.809367,
+    "longitude": -117.928913,
+    "severity": "Low",
+    "response_time_minutes": 41,
+    "resource_requests": {
+      "Health": 53,
+      "Food": 13,
+      "Shelter": 77,
+      "Clothing": 79,
+      "Water": 19,
+      "Psychological Support": 89
+    }
+  },
+  {
+    "incident_id": "INC8",
+    "county": "Riverside",
+    "latitude": 34.045682,
+    "longitude": -117.044785,
+    "severity": "Moderate",
+    "response_time_minutes": 32,
+    "resource_requests": {
+      "Health": 49,
+      "Food": 72,
+      "Shelter": 32,
+      "Clothing": 24,
+      "Water": 4,
+      "Psychological Support": 51
+    }
+  },
+  {
+    "incident_id": "INC9",
+    "county": "Orange",
+    "latitude": 33.16923,
+    "longitude": -116.939736,
+    "severity": "Critical",
+    "response_time_minutes": 25,
+    "resource_requests": {
+      "Health": 2,
+      "Food": 69,
+      "Shelter": 16,
+      "Clothing": 99,
+      "Water": 54,
+      "Psychological Support": 71
+    }
+  },
+  {
+    "incident_id": "INC10",
+    "county": "San Diego",
+    "latitude": 33.833952,
+    "longitude": -117.760225,
     "severity": "High",
-    "response_time_minutes": 14,
-    "casualties": 7,
-    "property_damage_estimate": 31806,
-    "fire_cause": "Arson",
-    "victim_resources": {
-      "medical_assistance": "ICU",
-      "evacuation_support": "None",
-      "psychological_support": "None",
-      "basic_necessities": [
-        "Water"
-      ]
+    "response_time_minutes": 54,
+    "resource_requests": {
+      "Health": 54,
+      "Food": 4,
+      "Shelter": 58,
+      "Clothing": 18,
+      "Water": 77,
+      "Psychological Support": 62
     }
   },
   {
-    "incident_id": "FIRE-6864",
-    "date": "2024-05-31",
-    "location": {
-      "latitude": 34.084353,
-      "longitude": -118.492525,
-      "city": "Los Angeles"
-    },
+    "incident_id": "INC11",
+    "county": "Riverside",
+    "latitude": 33.3336,
+    "longitude": -116.234181,
+    "severity": "High",
+    "response_time_minutes": 59,
+    "resource_requests": {
+      "Health": 67,
+      "Food": 62,
+      "Shelter": 73,
+      "Clothing": 26,
+      "Water": 68,
+      "Psychological Support": 20
+    }
+  },
+  {
+    "incident_id": "INC12",
+    "county": "Los Angeles",
+    "latitude": 33.922747,
+    "longitude": -116.896443,
+    "severity": "Moderate",
+    "response_time_minutes": 13,
+    "resource_requests": {
+      "Health": 3,
+      "Food": 66,
+      "Shelter": 14,
+      "Clothing": 63,
+      "Water": 33,
+      "Psychological Support": 28
+    }
+  },
+  {
+    "incident_id": "INC13",
+    "county": "San Bernardino",
+    "latitude": 32.522736,
+    "longitude": -116.718446,
+    "severity": "High",
+    "response_time_minutes": 51,
+    "resource_requests": {
+      "Health": 5,
+      "Food": 26,
+      "Shelter": 100,
+      "Clothing": 57,
+      "Water": 96,
+      "Psychological Support": 63
+    }
+  },
+  {
+    "incident_id": "INC14",
+    "county": "Orange",
+    "latitude": 33.150076,
+    "longitude": -117.894317,
+    "severity": "Moderate",
+    "response_time_minutes": 9,
+    "resource_requests": {
+      "Health": 62,
+      "Food": 8,
+      "Shelter": 41,
+      "Clothing": 13,
+      "Water": 99,
+      "Psychological Support": 32
+    }
+  },
+  {
+    "incident_id": "INC15",
+    "county": "Riverside",
+    "latitude": 32.728497,
+    "longitude": -116.871225,
     "severity": "High",
     "response_time_minutes": 8,
-    "casualties": 4,
-    "property_damage_estimate": 71718,
-    "fire_cause": "Electrical",
-    "victim_resources": {
-      "medical_assistance": "First Aid",
-      "evacuation_support": "Temporary Shelter",
-      "psychological_support": "None",
-      "basic_necessities": [
-        "Food",
-        "Clothing",
-        "Medication",
-        "Water"
-      ]
+    "resource_requests": {
+      "Health": 98,
+      "Food": 24,
+      "Shelter": 54,
+      "Clothing": 69,
+      "Water": 42,
+      "Psychological Support": 58
     }
   },
   {
-    "incident_id": "FIRE-1815",
-    "date": "2024-03-28",
-    "location": {
-      "latitude": 34.203991,
-      "longitude": -118.293455,
-      "city": "Pasadena"
-    },
+    "incident_id": "INC16",
+    "county": "San Bernardino",
+    "latitude": 32.977068,
+    "longitude": -116.105457,
+    "severity": "Critical",
+    "response_time_minutes": 24,
+    "resource_requests": {
+      "Health": 69,
+      "Food": 32,
+      "Shelter": 84,
+      "Clothing": 23,
+      "Water": 45,
+      "Psychological Support": 50
+    }
+  },
+  {
+    "incident_id": "INC17",
+    "county": "Orange",
+    "latitude": 34.400814,
+    "longitude": -118.003477,
+    "severity": "Critical",
+    "response_time_minutes": 58,
+    "resource_requests": {
+      "Health": 35,
+      "Food": 51,
+      "Shelter": 56,
+      "Clothing": 89,
+      "Water": 90,
+      "Psychological Support": 5
+    }
+  },
+  {
+    "incident_id": "INC18",
+    "county": "Los Angeles",
+    "latitude": 33.965998,
+    "longitude": -117.692799,
+    "severity": "Critical",
+    "response_time_minutes": 48,
+    "resource_requests": {
+      "Health": 81,
+      "Food": 86,
+      "Shelter": 25,
+      "Clothing": 57,
+      "Water": 100,
+      "Psychological Support": 86
+    }
+  },
+  {
+    "incident_id": "INC19",
+    "county": "Orange",
+    "latitude": 33.054368,
+    "longitude": -116.685485,
+    "severity": "High",
+    "response_time_minutes": 8,
+    "resource_requests": {
+      "Health": 47,
+      "Food": 16,
+      "Shelter": 7,
+      "Clothing": 76,
+      "Water": 81,
+      "Psychological Support": 17
+    }
+  },
+  {
+    "incident_id": "INC20",
+    "county": "San Bernardino",
+    "latitude": 34.253157,
+    "longitude": -116.223113,
+    "severity": "Moderate",
+    "response_time_minutes": 17,
+    "resource_requests": {
+      "Health": 28,
+      "Food": 47,
+      "Shelter": 2,
+      "Clothing": 27,
+      "Water": 32,
+      "Psychological Support": 71
+    }
+  },
+  {
+    "incident_id": "INC21",
+    "county": "San Diego",
+    "latitude": 33.542927,
+    "longitude": -118.105821,
+    "severity": "Low",
+    "response_time_minutes": 25,
+    "resource_requests": {
+      "Health": 76,
+      "Food": 9,
+      "Shelter": 68,
+      "Clothing": 84,
+      "Water": 100,
+      "Psychological Support": 63
+    }
+  },
+  {
+    "incident_id": "INC22",
+    "county": "San Bernardino",
+    "latitude": 33.699735,
+    "longitude": -117.989647,
+    "severity": "High",
+    "response_time_minutes": 38,
+    "resource_requests": {
+      "Health": 38,
+      "Food": 61,
+      "Shelter": 48,
+      "Clothing": 28,
+      "Water": 8,
+      "Psychological Support": 100
+    }
+  },
+  {
+    "incident_id": "INC23",
+    "county": "San Diego",
+    "latitude": 32.786098,
+    "longitude": -116.073283,
+    "severity": "Moderate",
+    "response_time_minutes": 18,
+    "resource_requests": {
+      "Health": 93,
+      "Food": 50,
+      "Shelter": 76,
+      "Clothing": 3,
+      "Water": 7,
+      "Psychological Support": 22
+    }
+  },
+  {
+    "incident_id": "INC24",
+    "county": "San Bernardino",
+    "latitude": 34.268616,
+    "longitude": -118.201042,
+    "severity": "Critical",
+    "response_time_minutes": 37,
+    "resource_requests": {
+      "Health": 99,
+      "Food": 75,
+      "Shelter": 78,
+      "Clothing": 40,
+      "Water": 28,
+      "Psychological Support": 71
+    }
+  },
+  {
+    "incident_id": "INC25",
+    "county": "Riverside",
+    "latitude": 32.857834,
+    "longitude": -117.999235,
     "severity": "Low",
     "response_time_minutes": 29,
-    "casualties": 6,
-    "property_damage_estimate": 25278,
-    "fire_cause": "Electrical",
-    "victim_resources": {
-      "medical_assistance": "ICU",
-      "evacuation_support": "Long-Term Housing",
-      "psychological_support": "Counseling",
-      "basic_necessities": [
-        "Medication",
-        "Clothing",
-        "Food"
-      ]
+    "resource_requests": {
+      "Health": 3,
+      "Food": 47,
+      "Shelter": 41,
+      "Clothing": 65,
+      "Water": 17,
+      "Psychological Support": 26
     }
   },
   {
-    "incident_id": "FIRE-7202",
-    "date": "2024-06-27",
-    "location": {
-      "latitude": 34.189013,
-      "longitude": -118.438382,
-      "city": "Glendale"
-    },
-    "severity": "High",
-    "response_time_minutes": 7,
-    "casualties": 2,
-    "property_damage_estimate": 61593,
-    "fire_cause": "Natural",
-    "victim_resources": {
-      "medical_assistance": "Ambulance",
-      "evacuation_support": "Temporary Shelter",
-      "psychological_support": "None",
-      "basic_necessities": [
-        "Food",
-        "Medication",
-        "Water"
-      ]
-    }
-  },
-  {
-    "incident_id": "FIRE-9246",
-    "date": "2024-05-07",
-    "location": {
-      "latitude": 34.160098,
-      "longitude": -118.496397,
-      "city": "Los Angeles"
-    },
-    "severity": "High",
-    "response_time_minutes": 12,
-    "casualties": 4,
-    "property_damage_estimate": 20228,
-    "fire_cause": "Natural",
-    "victim_resources": {
-      "medical_assistance": "Ambulance",
-      "evacuation_support": "Long-Term Housing",
-      "psychological_support": "Counseling",
-      "basic_necessities": [
-        "Clothing",
-        "Water",
-        "Medication"
-      ]
-    }
-  },
-  {
-    "incident_id": "FIRE-1181",
-    "date": "2024-08-01",
-    "location": {
-      "latitude": 34.120264,
-      "longitude": -118.231772,
-      "city": "Glendale"
-    },
-    "severity": "Critical",
-    "response_time_minutes": 9,
-    "casualties": 0,
-    "property_damage_estimate": 69000,
-    "fire_cause": "Natural",
-    "victim_resources": {
-      "medical_assistance": "ICU",
-      "evacuation_support": "Long-Term Housing",
-      "psychological_support": "Crisis Intervention",
-      "basic_necessities": [
-        "Clothing",
-        "Food",
-        "Medication",
-        "Water"
-      ]
-    }
-  },
-  {
-    "incident_id": "FIRE-2198",
-    "date": "2024-12-10",
-    "location": {
-      "latitude": 34.083214,
-      "longitude": -118.30911,
-      "city": "Glendale"
-    },
-    "severity": "High",
-    "response_time_minutes": 21,
-    "casualties": 2,
-    "property_damage_estimate": 34211,
-    "fire_cause": "Electrical",
-    "victim_resources": {
-      "medical_assistance": "Ambulance",
-      "evacuation_support": "Long-Term Housing",
-      "psychological_support": "None",
-      "basic_necessities": [
-        "Medication"
-      ]
-    }
-  },
-  {
-    "incident_id": "FIRE-5388",
-    "date": "2025-02-19",
-    "location": {
-      "latitude": 34.19812,
-      "longitude": -118.443764,
-      "city": "Los Angeles"
-    },
+    "incident_id": "INC26",
+    "county": "San Bernardino",
+    "latitude": 33.907295,
+    "longitude": -117.78356,
     "severity": "Moderate",
-    "response_time_minutes": 29,
-    "casualties": 0,
-    "property_damage_estimate": 94305,
-    "fire_cause": "Electrical",
-    "victim_resources": {
-      "medical_assistance": "First Aid",
-      "evacuation_support": "Temporary Shelter",
-      "psychological_support": "None",
-      "basic_necessities": [
-        "Food",
-        "Medication"
-      ]
+    "response_time_minutes": 18,
+    "resource_requests": {
+      "Health": 89,
+      "Food": 19,
+      "Shelter": 39,
+      "Clothing": 77,
+      "Water": 86,
+      "Psychological Support": 37
     }
   },
   {
-    "incident_id": "FIRE-7037",
-    "date": "2024-03-27",
-    "location": {
-      "latitude": 34.15793,
-      "longitude": -118.321818,
-      "city": "Pasadena"
-    },
-    "severity": "Critical",
-    "response_time_minutes": 19,
-    "casualties": 3,
-    "property_damage_estimate": 45119,
-    "fire_cause": "Arson",
-    "victim_resources": {
-      "medical_assistance": "First Aid",
-      "evacuation_support": "Temporary Shelter",
-      "psychological_support": "None",
-      "basic_necessities": [
-        "Clothing"
-      ]
-    }
-  },
-  {
-    "incident_id": "FIRE-2194",
-    "date": "2024-04-06",
-    "location": {
-      "latitude": 34.096689,
-      "longitude": -118.269037,
-      "city": "Pasadena"
-    },
+    "incident_id": "INC27",
+    "county": "San Bernardino",
+    "latitude": 33.155161,
+    "longitude": -117.049297,
     "severity": "Low",
-    "response_time_minutes": 9,
-    "casualties": 4,
-    "property_damage_estimate": 74202,
-    "fire_cause": "Arson",
-    "victim_resources": {
-      "medical_assistance": "First Aid",
-      "evacuation_support": "None",
-      "psychological_support": "Counseling",
-      "basic_necessities": [
-        "Clothing"
-      ]
+    "response_time_minutes": 6,
+    "resource_requests": {
+      "Health": 77,
+      "Food": 88,
+      "Shelter": 60,
+      "Clothing": 81,
+      "Water": 46,
+      "Psychological Support": 45
     }
   },
   {
-    "incident_id": "FIRE-9247",
-    "date": "2025-02-12",
-    "location": {
-      "latitude": 34.101864,
-      "longitude": -118.353773,
-      "city": "Long Beach"
-    },
-    "severity": "Low",
-    "response_time_minutes": 28,
-    "casualties": 2,
-    "property_damage_estimate": 30634,
-    "fire_cause": "Arson",
-    "victim_resources": {
-      "medical_assistance": "Ambulance",
-      "evacuation_support": "None",
-      "psychological_support": "None",
-      "basic_necessities": [
-        "Water"
-      ]
-    }
-  },
-  {
-    "incident_id": "FIRE-2381",
-    "date": "2024-03-30",
-    "location": {
-      "latitude": 34.127419,
-      "longitude": -118.297877,
-      "city": "Los Angeles"
-    },
-    "severity": "High",
-    "response_time_minutes": 19,
-    "casualties": 6,
-    "property_damage_estimate": 7514,
-    "fire_cause": "Electrical",
-    "victim_resources": {
-      "medical_assistance": "ICU",
-      "evacuation_support": "Long-Term Housing",
-      "psychological_support": "Counseling",
-      "basic_necessities": [
-        "Clothing",
-        "Water",
-        "Medication"
-      ]
-    }
-  },
-  {
-    "incident_id": "FIRE-6107",
-    "date": "2024-09-24",
-    "location": {
-      "latitude": 34.254088,
-      "longitude": -118.494395,
-      "city": "Pasadena"
-    },
-    "severity": "High",
-    "response_time_minutes": 22,
-    "casualties": 8,
-    "property_damage_estimate": 67772,
-    "fire_cause": "Electrical",
-    "victim_resources": {
-      "medical_assistance": "ICU",
-      "evacuation_support": "None",
-      "psychological_support": "None",
-      "basic_necessities": [
-        "Medication",
-        "Water"
-      ]
-    }
-  },
-  {
-    "incident_id": "FIRE-9547",
-    "date": "2025-01-21",
-    "location": {
-      "latitude": 34.125989,
-      "longitude": -118.428375,
-      "city": "Pasadena"
-    },
-    "severity": "Critical",
-    "response_time_minutes": 9,
-    "casualties": 8,
-    "property_damage_estimate": 83080,
-    "fire_cause": "Arson",
-    "victim_resources": {
-      "medical_assistance": "First Aid",
-      "evacuation_support": "Long-Term Housing",
-      "psychological_support": "Crisis Intervention",
-      "basic_necessities": [
-        "Water"
-      ]
-    }
-  },
-  {
-    "incident_id": "FIRE-6478",
-    "date": "2024-10-08",
-    "location": {
-      "latitude": 34.22302,
-      "longitude": -118.340492,
-      "city": "Los Angeles"
-    },
-    "severity": "Moderate",
-    "response_time_minutes": 19,
-    "casualties": 1,
-    "property_damage_estimate": 96573,
-    "fire_cause": "Electrical",
-    "victim_resources": {
-      "medical_assistance": "First Aid",
-      "evacuation_support": "Temporary Shelter",
-      "psychological_support": "Crisis Intervention",
-      "basic_necessities": [
-        "Medication",
-        "Water",
-        "Clothing",
-        "Food"
-      ]
-    }
-  },
-  {
-    "incident_id": "FIRE-9405",
-    "date": "2024-07-20",
-    "location": {
-      "latitude": 34.179413,
-      "longitude": -118.341154,
-      "city": "Los Angeles"
-    },
-    "severity": "Low",
-    "response_time_minutes": 14,
-    "casualties": 1,
-    "property_damage_estimate": 2126,
-    "fire_cause": "Accidental",
-    "victim_resources": {
-      "medical_assistance": "Ambulance",
-      "evacuation_support": "Long-Term Housing",
-      "psychological_support": "Crisis Intervention",
-      "basic_necessities": [
-        "Water",
-        "Clothing",
-        "Medication",
-        "Food"
-      ]
-    }
-  },
-  {
-    "incident_id": "FIRE-3724",
-    "date": "2025-02-05",
-    "location": {
-      "latitude": 34.187954,
-      "longitude": -118.317912,
-      "city": "Glendale"
-    },
-    "severity": "Low",
-    "response_time_minutes": 28,
-    "casualties": 5,
-    "property_damage_estimate": 89399,
-    "fire_cause": "Electrical",
-    "victim_resources": {
-      "medical_assistance": "ICU",
-      "evacuation_support": "None",
-      "psychological_support": "None",
-      "basic_necessities": [
-        "Water",
-        "Food"
-      ]
-    }
-  },
-  {
-    "incident_id": "FIRE-1717",
-    "date": "2024-08-21",
-    "location": {
-      "latitude": 34.159166,
-      "longitude": -118.296355,
-      "city": "Los Angeles"
-    },
-    "severity": "Critical",
-    "response_time_minutes": 26,
-    "casualties": 9,
-    "property_damage_estimate": 26475,
-    "fire_cause": "Accidental",
-    "victim_resources": {
-      "medical_assistance": "First Aid",
-      "evacuation_support": "Temporary Shelter",
-      "psychological_support": "Crisis Intervention",
-      "basic_necessities": [
-        "Water",
-        "Clothing",
-        "Food"
-      ]
-    }
-  },
-  {
-    "incident_id": "FIRE-2410",
-    "date": "2024-05-10",
-    "location": {
-      "latitude": 34.008039,
-      "longitude": -118.246082,
-      "city": "Glendale"
-    },
-    "severity": "High",
-    "response_time_minutes": 9,
-    "casualties": 1,
-    "property_damage_estimate": 69149,
-    "fire_cause": "Electrical",
-    "victim_resources": {
-      "medical_assistance": "ICU",
-      "evacuation_support": "None",
-      "psychological_support": "Crisis Intervention",
-      "basic_necessities": [
-        "Medication"
-      ]
-    }
-  },
-  {
-    "incident_id": "FIRE-3428",
-    "date": "2024-07-04",
-    "location": {
-      "latitude": 34.039235,
-      "longitude": -118.384345,
-      "city": "Los Angeles"
-    },
-    "severity": "Critical",
-    "response_time_minutes": 19,
-    "casualties": 8,
-    "property_damage_estimate": 98691,
-    "fire_cause": "Arson",
-    "victim_resources": {
-      "medical_assistance": "Ambulance",
-      "evacuation_support": "None",
-      "psychological_support": "Counseling",
-      "basic_necessities": [
-        "Medication",
-        "Clothing"
-      ]
-    }
-  },
-  {
-    "incident_id": "FIRE-5137",
-    "date": "2025-01-19",
-    "location": {
-      "latitude": 34.035663,
-      "longitude": -118.338345,
-      "city": "Pasadena"
-    },
-    "severity": "Moderate",
-    "response_time_minutes": 15,
-    "casualties": 6,
-    "property_damage_estimate": 51172,
-    "fire_cause": "Accidental",
-    "victim_resources": {
-      "medical_assistance": "First Aid",
-      "evacuation_support": "None",
-      "psychological_support": "None",
-      "basic_necessities": [
-        "Clothing",
-        "Medication"
-      ]
-    }
-  },
-  {
-    "incident_id": "FIRE-7432",
-    "date": "2024-06-08",
-    "location": {
-      "latitude": 34.020355,
-      "longitude": -118.329883,
-      "city": "Long Beach"
-    },
-    "severity": "Moderate",
-    "response_time_minutes": 30,
-    "casualties": 7,
-    "property_damage_estimate": 53052,
-    "fire_cause": "Accidental",
-    "victim_resources": {
-      "medical_assistance": "Ambulance",
-      "evacuation_support": "Long-Term Housing",
-      "psychological_support": "Crisis Intervention",
-      "basic_necessities": [
-        "Clothing",
-        "Food",
-        "Medication",
-        "Water"
-      ]
-    }
-  },
-  {
-    "incident_id": "FIRE-4669",
-    "date": "2024-04-14",
-    "location": {
-      "latitude": 34.152473,
-      "longitude": -118.331361,
-      "city": "Glendale"
-    },
+    "incident_id": "INC28",
+    "county": "San Bernardino",
+    "latitude": 33.640385,
+    "longitude": -117.377971,
     "severity": "High",
     "response_time_minutes": 30,
-    "casualties": 6,
-    "property_damage_estimate": 25763,
-    "fire_cause": "Accidental",
-    "victim_resources": {
-      "medical_assistance": "Ambulance",
-      "evacuation_support": "Temporary Shelter",
-      "psychological_support": "None",
-      "basic_necessities": [
-        "Medication",
-        "Food"
-      ]
+    "resource_requests": {
+      "Health": 33,
+      "Food": 22,
+      "Shelter": 3,
+      "Clothing": 45,
+      "Water": 45,
+      "Psychological Support": 55
     }
   },
   {
-    "incident_id": "FIRE-6656",
-    "date": "2024-10-21",
-    "location": {
-      "latitude": 34.126247,
-      "longitude": -118.298016,
-      "city": "Long Beach"
-    },
+    "incident_id": "INC29",
+    "county": "Riverside",
+    "latitude": 33.244967,
+    "longitude": -118.020536,
+    "severity": "Low",
+    "response_time_minutes": 41,
+    "resource_requests": {
+      "Health": 49,
+      "Food": 83,
+      "Shelter": 75,
+      "Clothing": 30,
+      "Water": 29,
+      "Psychological Support": 23
+    }
+  },
+  {
+    "incident_id": "INC30",
+    "county": "Orange",
+    "latitude": 33.570667,
+    "longitude": -118.440645,
+    "severity": "Low",
+    "response_time_minutes": 45,
+    "resource_requests": {
+      "Health": 22,
+      "Food": 37,
+      "Shelter": 29,
+      "Clothing": 22,
+      "Water": 16,
+      "Psychological Support": 33
+    }
+  },
+  {
+    "incident_id": "INC31",
+    "county": "San Bernardino",
+    "latitude": 33.957765,
+    "longitude": -117.952034,
+    "severity": "Low",
+    "response_time_minutes": 55,
+    "resource_requests": {
+      "Health": 43,
+      "Food": 78,
+      "Shelter": 57,
+      "Clothing": 87,
+      "Water": 62,
+      "Psychological Support": 98
+    }
+  },
+  {
+    "incident_id": "INC32",
+    "county": "Riverside",
+    "latitude": 34.247405,
+    "longitude": -118.10466,
     "severity": "High",
     "response_time_minutes": 18,
-    "casualties": 7,
-    "property_damage_estimate": 60998,
-    "fire_cause": "Electrical",
-    "victim_resources": {
-      "medical_assistance": "ICU",
-      "evacuation_support": "None",
-      "psychological_support": "Counseling",
-      "basic_necessities": [
-        "Food",
-        "Clothing",
-        "Water"
-      ]
+    "resource_requests": {
+      "Health": 7,
+      "Food": 47,
+      "Shelter": 39,
+      "Clothing": 49,
+      "Water": 13,
+      "Psychological Support": 20
     }
   },
   {
-    "incident_id": "FIRE-5095",
-    "date": "2024-08-06",
-    "location": {
-      "latitude": 34.172618,
-      "longitude": -118.425688,
-      "city": "Los Angeles"
-    },
-    "severity": "Moderate",
-    "response_time_minutes": 15,
-    "casualties": 6,
-    "property_damage_estimate": 91809,
-    "fire_cause": "Accidental",
-    "victim_resources": {
-      "medical_assistance": "ICU",
-      "evacuation_support": "None",
-      "psychological_support": "Crisis Intervention",
-      "basic_necessities": [
-        "Medication"
-      ]
-    }
-  },
-  {
-    "incident_id": "FIRE-9289",
-    "date": "2024-05-09",
-    "location": {
-      "latitude": 34.071079,
-      "longitude": -118.484634,
-      "city": "Long Beach"
-    },
+    "incident_id": "INC33",
+    "county": "Orange",
+    "latitude": 34.460604,
+    "longitude": -117.055633,
     "severity": "Critical",
-    "response_time_minutes": 5,
-    "casualties": 5,
-    "property_damage_estimate": 17917,
-    "fire_cause": "Accidental",
-    "victim_resources": {
-      "medical_assistance": "ICU",
-      "evacuation_support": "Temporary Shelter",
-      "psychological_support": "Counseling",
-      "basic_necessities": [
-        "Clothing",
-        "Water",
-        "Food"
-      ]
+    "response_time_minutes": 27,
+    "resource_requests": {
+      "Health": 36,
+      "Food": 22,
+      "Shelter": 29,
+      "Clothing": 50,
+      "Water": 38,
+      "Psychological Support": 46
     }
   },
   {
-    "incident_id": "FIRE-9249",
-    "date": "2024-05-14",
-    "location": {
-      "latitude": 34.164111,
-      "longitude": -118.257009,
-      "city": "Pasadena"
-    },
+    "incident_id": "INC34",
+    "county": "Orange",
+    "latitude": 32.870931,
+    "longitude": -118.462451,
+    "severity": "High",
+    "response_time_minutes": 45,
+    "resource_requests": {
+      "Health": 79,
+      "Food": 5,
+      "Shelter": 67,
+      "Clothing": 13,
+      "Water": 49,
+      "Psychological Support": 65
+    }
+  },
+  {
+    "incident_id": "INC35",
+    "county": "Riverside",
+    "latitude": 33.731327,
+    "longitude": -117.15926,
+    "severity": "High",
+    "response_time_minutes": 16,
+    "resource_requests": {
+      "Health": 69,
+      "Food": 57,
+      "Shelter": 82,
+      "Clothing": 30,
+      "Water": 87,
+      "Psychological Support": 13
+    }
+  },
+  {
+    "incident_id": "INC36",
+    "county": "San Bernardino",
+    "latitude": 33.491333,
+    "longitude": -118.216471,
+    "severity": "Moderate",
+    "response_time_minutes": 19,
+    "resource_requests": {
+      "Health": 3,
+      "Food": 79,
+      "Shelter": 39,
+      "Clothing": 65,
+      "Water": 61,
+      "Psychological Support": 33
+    }
+  },
+  {
+    "incident_id": "INC37",
+    "county": "San Bernardino",
+    "latitude": 33.499926,
+    "longitude": -118.236654,
+    "severity": "High",
+    "response_time_minutes": 52,
+    "resource_requests": {
+      "Health": 22,
+      "Food": 25,
+      "Shelter": 20,
+      "Clothing": 41,
+      "Water": 94,
+      "Psychological Support": 91
+    }
+  },
+  {
+    "incident_id": "INC38",
+    "county": "San Diego",
+    "latitude": 33.249118,
+    "longitude": -118.32973,
+    "severity": "High",
+    "response_time_minutes": 8,
+    "resource_requests": {
+      "Health": 61,
+      "Food": 31,
+      "Shelter": 74,
+      "Clothing": 16,
+      "Water": 79,
+      "Psychological Support": 57
+    }
+  },
+  {
+    "incident_id": "INC39",
+    "county": "San Bernardino",
+    "latitude": 33.288576,
+    "longitude": -116.15542,
     "severity": "Low",
-    "response_time_minutes": 5,
-    "casualties": 1,
-    "property_damage_estimate": 80502,
-    "fire_cause": "Arson",
-    "victim_resources": {
-      "medical_assistance": "First Aid",
-      "evacuation_support": "Long-Term Housing",
-      "psychological_support": "None",
-      "basic_necessities": [
-        "Water",
-        "Food",
-        "Clothing"
-      ]
+    "response_time_minutes": 60,
+    "resource_requests": {
+      "Health": 30,
+      "Food": 96,
+      "Shelter": 99,
+      "Clothing": 26,
+      "Water": 67,
+      "Psychological Support": 97
     }
   },
   {
-    "incident_id": "FIRE-6497",
-    "date": "2024-09-20",
-    "location": {
-      "latitude": 34.11902,
-      "longitude": -118.344836,
-      "city": "Los Angeles"
-    },
+    "incident_id": "INC40",
+    "county": "San Bernardino",
+    "latitude": 32.748993,
+    "longitude": -117.113325,
+    "severity": "Critical",
+    "response_time_minutes": 30,
+    "resource_requests": {
+      "Health": 42,
+      "Food": 85,
+      "Shelter": 6,
+      "Clothing": 31,
+      "Water": 1,
+      "Psychological Support": 3
+    }
+  },
+  {
+    "incident_id": "INC41",
+    "county": "San Diego",
+    "latitude": 33.54005,
+    "longitude": -117.290328,
+    "severity": "Critical",
+    "response_time_minutes": 14,
+    "resource_requests": {
+      "Health": 57,
+      "Food": 3,
+      "Shelter": 89,
+      "Clothing": 76,
+      "Water": 10,
+      "Psychological Support": 13
+    }
+  },
+  {
+    "incident_id": "INC42",
+    "county": "Orange",
+    "latitude": 33.652087,
+    "longitude": -117.6907,
+    "severity": "Critical",
+    "response_time_minutes": 50,
+    "resource_requests": {
+      "Health": 70,
+      "Food": 43,
+      "Shelter": 73,
+      "Clothing": 100,
+      "Water": 97,
+      "Psychological Support": 34
+    }
+  },
+  {
+    "incident_id": "INC43",
+    "county": "San Bernardino",
+    "latitude": 34.050072,
+    "longitude": -117.893404,
     "severity": "Low",
-    "response_time_minutes": 28,
-    "casualties": 10,
-    "property_damage_estimate": 31144,
-    "fire_cause": "Arson",
-    "victim_resources": {
-      "medical_assistance": "First Aid",
-      "evacuation_support": "None",
-      "psychological_support": "Counseling",
-      "basic_necessities": [
-        "Clothing",
-        "Food",
-        "Water"
-      ]
+    "response_time_minutes": 59,
+    "resource_requests": {
+      "Health": 52,
+      "Food": 77,
+      "Shelter": 61,
+      "Clothing": 64,
+      "Water": 10,
+      "Psychological Support": 100
     }
   },
   {
-    "incident_id": "FIRE-1976",
-    "date": "2024-05-20",
-    "location": {
-      "latitude": 34.186565,
-      "longitude": -118.282649,
-      "city": "Los Angeles"
-    },
+    "incident_id": "INC44",
+    "county": "Orange",
+    "latitude": 32.802558,
+    "longitude": -116.26741,
+    "severity": "Low",
+    "response_time_minutes": 18,
+    "resource_requests": {
+      "Health": 34,
+      "Food": 88,
+      "Shelter": 6,
+      "Clothing": 59,
+      "Water": 33,
+      "Psychological Support": 13
+    }
+  },
+  {
+    "incident_id": "INC45",
+    "county": "Orange",
+    "latitude": 33.525494,
+    "longitude": -116.896691,
+    "severity": "Low",
+    "response_time_minutes": 58,
+    "resource_requests": {
+      "Health": 15,
+      "Food": 14,
+      "Shelter": 65,
+      "Clothing": 99,
+      "Water": 97,
+      "Psychological Support": 44
+    }
+  },
+  {
+    "incident_id": "INC46",
+    "county": "Riverside",
+    "latitude": 32.866437,
+    "longitude": -117.151457,
+    "severity": "Low",
+    "response_time_minutes": 20,
+    "resource_requests": {
+      "Health": 51,
+      "Food": 9,
+      "Shelter": 21,
+      "Clothing": 51,
+      "Water": 72,
+      "Psychological Support": 28
+    }
+  },
+  {
+    "incident_id": "INC47",
+    "county": "Riverside",
+    "latitude": 33.043566,
+    "longitude": -116.579534,
+    "severity": "Critical",
+    "response_time_minutes": 25,
+    "resource_requests": {
+      "Health": 44,
+      "Food": 95,
+      "Shelter": 7,
+      "Clothing": 64,
+      "Water": 60,
+      "Psychological Support": 3
+    }
+  },
+  {
+    "incident_id": "INC48",
+    "county": "Los Angeles",
+    "latitude": 34.161584,
+    "longitude": -116.433048,
     "severity": "Critical",
     "response_time_minutes": 7,
-    "casualties": 2,
-    "property_damage_estimate": 97240,
-    "fire_cause": "Natural",
-    "victim_resources": {
-      "medical_assistance": "Ambulance",
-      "evacuation_support": "Long-Term Housing",
-      "psychological_support": "Counseling",
-      "basic_necessities": [
-        "Water",
-        "Food",
-        "Clothing"
-      ]
+    "resource_requests": {
+      "Health": 18,
+      "Food": 46,
+      "Shelter": 36,
+      "Clothing": 46,
+      "Water": 58,
+      "Psychological Support": 80
     }
   },
   {
-    "incident_id": "FIRE-5096",
-    "date": "2024-07-31",
-    "location": {
-      "latitude": 34.137607,
-      "longitude": -118.429732,
-      "city": "Glendale"
-    },
+    "incident_id": "INC49",
+    "county": "Orange",
+    "latitude": 32.98699,
+    "longitude": -116.055784,
     "severity": "Low",
-    "response_time_minutes": 10,
-    "casualties": 5,
-    "property_damage_estimate": 3236,
-    "fire_cause": "Natural",
-    "victim_resources": {
-      "medical_assistance": "First Aid",
-      "evacuation_support": "Temporary Shelter",
-      "psychological_support": "None",
-      "basic_necessities": [
-        "Medication",
-        "Food",
-        "Clothing"
-      ]
+    "response_time_minutes": 7,
+    "resource_requests": {
+      "Health": 48,
+      "Food": 82,
+      "Shelter": 48,
+      "Clothing": 91,
+      "Water": 96,
+      "Psychological Support": 69
     }
   },
   {
-    "incident_id": "FIRE-6255",
-    "date": "2024-11-12",
-    "location": {
-      "latitude": 34.229227,
-      "longitude": -118.274951,
-      "city": "Long Beach"
-    },
+    "incident_id": "INC50",
+    "county": "San Bernardino",
+    "latitude": 34.012401,
+    "longitude": -117.215943,
+    "severity": "Low",
+    "response_time_minutes": 57,
+    "resource_requests": {
+      "Health": 86,
+      "Food": 15,
+      "Shelter": 48,
+      "Clothing": 24,
+      "Water": 32,
+      "Psychological Support": 19
+    }
+  },
+  {
+    "incident_id": "INC51",
+    "county": "San Diego",
+    "latitude": 33.36792,
+    "longitude": -116.886393,
     "severity": "Moderate",
-    "response_time_minutes": 23,
-    "casualties": 6,
-    "property_damage_estimate": 32726,
-    "fire_cause": "Arson",
-    "victim_resources": {
-      "medical_assistance": "ICU",
-      "evacuation_support": "Long-Term Housing",
-      "psychological_support": "Counseling",
-      "basic_necessities": [
-        "Medication",
-        "Water",
-        "Food",
-        "Clothing"
-      ]
+    "response_time_minutes": 47,
+    "resource_requests": {
+      "Health": 15,
+      "Food": 84,
+      "Shelter": 55,
+      "Clothing": 19,
+      "Water": 63,
+      "Psychological Support": 42
     }
   },
   {
-    "incident_id": "FIRE-9011",
-    "date": "2024-03-28",
-    "location": {
-      "latitude": 34.130925,
-      "longitude": -118.40313,
-      "city": "Los Angeles"
-    },
+    "incident_id": "INC52",
+    "county": "San Bernardino",
+    "latitude": 33.752939,
+    "longitude": -116.277451,
     "severity": "Critical",
-    "response_time_minutes": 9,
-    "casualties": 5,
-    "property_damage_estimate": 77744,
-    "fire_cause": "Natural",
-    "victim_resources": {
-      "medical_assistance": "ICU",
-      "evacuation_support": "Long-Term Housing",
-      "psychological_support": "Crisis Intervention",
-      "basic_necessities": [
-        "Clothing"
-      ]
+    "response_time_minutes": 42,
+    "resource_requests": {
+      "Health": 28,
+      "Food": 28,
+      "Shelter": 60,
+      "Clothing": 65,
+      "Water": 34,
+      "Psychological Support": 51
     }
   },
   {
-    "incident_id": "FIRE-7319",
-    "date": "2024-03-29",
-    "location": {
-      "latitude": 34.197807,
-      "longitude": -118.237039,
-      "city": "Glendale"
-    },
+    "incident_id": "INC53",
+    "county": "Los Angeles",
+    "latitude": 32.960443,
+    "longitude": -118.022893,
     "severity": "Low",
-    "response_time_minutes": 11,
-    "casualties": 10,
-    "property_damage_estimate": 7340,
-    "fire_cause": "Natural",
-    "victim_resources": {
-      "medical_assistance": "ICU",
-      "evacuation_support": "Temporary Shelter",
-      "psychological_support": "Crisis Intervention",
-      "basic_necessities": [
-        "Clothing",
-        "Food",
-        "Water",
-        "Medication"
-      ]
+    "response_time_minutes": 34,
+    "resource_requests": {
+      "Health": 84,
+      "Food": 63,
+      "Shelter": 58,
+      "Clothing": 88,
+      "Water": 37,
+      "Psychological Support": 25
     }
   },
   {
-    "incident_id": "FIRE-7836",
-    "date": "2025-01-30",
-    "location": {
-      "latitude": 34.161714,
-      "longitude": -118.426576,
-      "city": "Pasadena"
-    },
-    "severity": "High",
-    "response_time_minutes": 22,
-    "casualties": 8,
-    "property_damage_estimate": 52772,
-    "fire_cause": "Accidental",
-    "victim_resources": {
-      "medical_assistance": "Ambulance",
-      "evacuation_support": "None",
-      "psychological_support": "Crisis Intervention",
-      "basic_necessities": [
-        "Food",
-        "Water"
-      ]
-    }
-  },
-  {
-    "incident_id": "FIRE-9526",
-    "date": "2024-04-03",
-    "location": {
-      "latitude": 34.000846,
-      "longitude": -118.339451,
-      "city": "Long Beach"
-    },
-    "severity": "High",
-    "response_time_minutes": 22,
-    "casualties": 8,
-    "property_damage_estimate": 86667,
-    "fire_cause": "Natural",
-    "victim_resources": {
-      "medical_assistance": "First Aid",
-      "evacuation_support": "None",
-      "psychological_support": "Counseling",
-      "basic_necessities": [
-        "Food"
-      ]
-    }
-  },
-  {
-    "incident_id": "FIRE-5226",
-    "date": "2024-12-19",
-    "location": {
-      "latitude": 34.275713,
-      "longitude": -118.243632,
-      "city": "Pasadena"
-    },
-    "severity": "Low",
-    "response_time_minutes": 26,
-    "casualties": 0,
-    "property_damage_estimate": 24357,
-    "fire_cause": "Accidental",
-    "victim_resources": {
-      "medical_assistance": "ICU",
-      "evacuation_support": "None",
-      "psychological_support": "Crisis Intervention",
-      "basic_necessities": [
-        "Food",
-        "Clothing"
-      ]
-    }
-  },
-  {
-    "incident_id": "FIRE-8750",
-    "date": "2024-05-10",
-    "location": {
-      "latitude": 34.073226,
-      "longitude": -118.355557,
-      "city": "Los Angeles"
-    },
+    "incident_id": "INC54",
+    "county": "Riverside",
+    "latitude": 33.266394,
+    "longitude": -117.418538,
     "severity": "Critical",
     "response_time_minutes": 19,
-    "casualties": 10,
-    "property_damage_estimate": 37527,
-    "fire_cause": "Arson",
-    "victim_resources": {
-      "medical_assistance": "First Aid",
-      "evacuation_support": "Long-Term Housing",
-      "psychological_support": "Counseling",
-      "basic_necessities": [
-        "Clothing",
-        "Medication",
-        "Water",
-        "Food"
-      ]
+    "resource_requests": {
+      "Health": 41,
+      "Food": 90,
+      "Shelter": 58,
+      "Clothing": 9,
+      "Water": 88,
+      "Psychological Support": 60
     }
   },
   {
-    "incident_id": "FIRE-9274",
-    "date": "2024-05-04",
-    "location": {
-      "latitude": 34.049081,
-      "longitude": -118.258995,
-      "city": "Los Angeles"
-    },
+    "incident_id": "INC55",
+    "county": "Orange",
+    "latitude": 33.195813,
+    "longitude": -116.876966,
+    "severity": "Critical",
+    "response_time_minutes": 23,
+    "resource_requests": {
+      "Health": 85,
+      "Food": 78,
+      "Shelter": 21,
+      "Clothing": 45,
+      "Water": 55,
+      "Psychological Support": 60
+    }
+  },
+  {
+    "incident_id": "INC56",
+    "county": "San Bernardino",
+    "latitude": 33.551803,
+    "longitude": -117.399975,
     "severity": "Low",
-    "response_time_minutes": 10,
-    "casualties": 0,
-    "property_damage_estimate": 26990,
-    "fire_cause": "Arson",
-    "victim_resources": {
-      "medical_assistance": "ICU",
-      "evacuation_support": "Temporary Shelter",
-      "psychological_support": "Crisis Intervention",
-      "basic_necessities": [
-        "Medication",
-        "Clothing",
-        "Water"
-      ]
+    "response_time_minutes": 9,
+    "resource_requests": {
+      "Health": 51,
+      "Food": 67,
+      "Shelter": 89,
+      "Clothing": 60,
+      "Water": 2,
+      "Psychological Support": 71
     }
   },
   {
-    "incident_id": "FIRE-3782",
-    "date": "2025-01-16",
-    "location": {
-      "latitude": 34.023317,
-      "longitude": -118.387812,
-      "city": "Pasadena"
-    },
-    "severity": "Moderate",
-    "response_time_minutes": 12,
-    "casualties": 3,
-    "property_damage_estimate": 76104,
-    "fire_cause": "Accidental",
-    "victim_resources": {
-      "medical_assistance": "ICU",
-      "evacuation_support": "None",
-      "psychological_support": "None",
-      "basic_necessities": [
-        "Clothing",
-        "Food"
-      ]
-    }
-  },
-  {
-    "incident_id": "FIRE-2830",
-    "date": "2025-02-25",
-    "location": {
-      "latitude": 34.116796,
-      "longitude": -118.248182,
-      "city": "Long Beach"
-    },
-    "severity": "Critical",
-    "response_time_minutes": 21,
-    "casualties": 0,
-    "property_damage_estimate": 79211,
-    "fire_cause": "Accidental",
-    "victim_resources": {
-      "medical_assistance": "ICU",
-      "evacuation_support": "None",
-      "psychological_support": "Counseling",
-      "basic_necessities": [
-        "Clothing",
-        "Food",
-        "Medication",
-        "Water"
-      ]
-    }
-  },
-  {
-    "incident_id": "FIRE-8613",
-    "date": "2024-09-29",
-    "location": {
-      "latitude": 34.040496,
-      "longitude": -118.375671,
-      "city": "Long Beach"
-    },
-    "severity": "Moderate",
-    "response_time_minutes": 21,
-    "casualties": 6,
-    "property_damage_estimate": 69769,
-    "fire_cause": "Electrical",
-    "victim_resources": {
-      "medical_assistance": "Ambulance",
-      "evacuation_support": "None",
-      "psychological_support": "None",
-      "basic_necessities": [
-        "Clothing",
-        "Water",
-        "Medication",
-        "Food"
-      ]
-    }
-  },
-  {
-    "incident_id": "FIRE-5253",
-    "date": "2025-01-20",
-    "location": {
-      "latitude": 34.038423,
-      "longitude": -118.314462,
-      "city": "Glendale"
-    },
-    "severity": "Critical",
-    "response_time_minutes": 16,
-    "casualties": 0,
-    "property_damage_estimate": 14875,
-    "fire_cause": "Accidental",
-    "victim_resources": {
-      "medical_assistance": "ICU",
-      "evacuation_support": "None",
-      "psychological_support": "Crisis Intervention",
-      "basic_necessities": [
-        "Water",
-        "Medication",
-        "Clothing"
-      ]
-    }
-  },
-  {
-    "incident_id": "FIRE-9790",
-    "date": "2024-12-05",
-    "location": {
-      "latitude": 34.274419,
-      "longitude": -118.40484,
-      "city": "Long Beach"
-    },
+    "incident_id": "INC57",
+    "county": "San Diego",
+    "latitude": 32.708837,
+    "longitude": -117.448242,
     "severity": "High",
-    "response_time_minutes": 5,
-    "casualties": 1,
-    "property_damage_estimate": 42212,
-    "fire_cause": "Accidental",
-    "victim_resources": {
-      "medical_assistance": "First Aid",
-      "evacuation_support": "Temporary Shelter",
-      "psychological_support": "None",
-      "basic_necessities": [
-        "Water"
-      ]
+    "response_time_minutes": 29,
+    "resource_requests": {
+      "Health": 63,
+      "Food": 42,
+      "Shelter": 40,
+      "Clothing": 29,
+      "Water": 12,
+      "Psychological Support": 62
     }
   },
   {
-    "incident_id": "FIRE-6808",
-    "date": "2024-05-13",
-    "location": {
-      "latitude": 34.017491,
-      "longitude": -118.242179,
-      "city": "Los Angeles"
-    },
-    "severity": "Low",
-    "response_time_minutes": 16,
-    "casualties": 6,
-    "property_damage_estimate": 52158,
-    "fire_cause": "Accidental",
-    "victim_resources": {
-      "medical_assistance": "ICU",
-      "evacuation_support": "None",
-      "psychological_support": "Crisis Intervention",
-      "basic_necessities": [
-        "Water",
-        "Medication",
-        "Clothing"
-      ]
+    "incident_id": "INC58",
+    "county": "San Diego",
+    "latitude": 33.738106,
+    "longitude": -117.261564,
+    "severity": "High",
+    "response_time_minutes": 22,
+    "resource_requests": {
+      "Health": 79,
+      "Food": 64,
+      "Shelter": 27,
+      "Clothing": 44,
+      "Water": 43,
+      "Psychological Support": 39
     }
   },
   {
-    "incident_id": "FIRE-6267",
-    "date": "2024-08-08",
-    "location": {
-      "latitude": 34.275711,
-      "longitude": -118.334417,
-      "city": "Pasadena"
-    },
-    "severity": "Low",
-    "response_time_minutes": 17,
-    "casualties": 10,
-    "property_damage_estimate": 1801,
-    "fire_cause": "Natural",
-    "victim_resources": {
-      "medical_assistance": "First Aid",
-      "evacuation_support": "None",
-      "psychological_support": "None",
-      "basic_necessities": [
-        "Food",
-        "Medication"
-      ]
-    }
-  },
-  {
-    "incident_id": "FIRE-9731",
-    "date": "2024-07-11",
-    "location": {
-      "latitude": 34.266475,
-      "longitude": -118.288614,
-      "city": "Long Beach"
-    },
+    "incident_id": "INC59",
+    "county": "Riverside",
+    "latitude": 33.290626,
+    "longitude": -118.249586,
     "severity": "Critical",
-    "response_time_minutes": 15,
-    "casualties": 9,
-    "property_damage_estimate": 78575,
-    "fire_cause": "Electrical",
-    "victim_resources": {
-      "medical_assistance": "Ambulance",
-      "evacuation_support": "None",
-      "psychological_support": "Crisis Intervention",
-      "basic_necessities": [
-        "Water",
-        "Medication"
-      ]
+    "response_time_minutes": 41,
+    "resource_requests": {
+      "Health": 17,
+      "Food": 25,
+      "Shelter": 36,
+      "Clothing": 34,
+      "Water": 11,
+      "Psychological Support": 31
     }
   },
   {
-    "incident_id": "FIRE-5519",
-    "date": "2024-12-23",
-    "location": {
-      "latitude": 34.219005,
-      "longitude": -118.341416,
-      "city": "Pasadena"
-    },
+    "incident_id": "INC60",
+    "county": "San Diego",
+    "latitude": 33.793115,
+    "longitude": -117.341699,
+    "severity": "Critical",
+    "response_time_minutes": 12,
+    "resource_requests": {
+      "Health": 33,
+      "Food": 73,
+      "Shelter": 13,
+      "Clothing": 26,
+      "Water": 60,
+      "Psychological Support": 69
+    }
+  },
+  {
+    "incident_id": "INC61",
+    "county": "Orange",
+    "latitude": 34.034052,
+    "longitude": -116.949607,
+    "severity": "High",
+    "response_time_minutes": 45,
+    "resource_requests": {
+      "Health": 72,
+      "Food": 28,
+      "Shelter": 41,
+      "Clothing": 10,
+      "Water": 52,
+      "Psychological Support": 20
+    }
+  },
+  {
+    "incident_id": "INC62",
+    "county": "Riverside",
+    "latitude": 32.944658,
+    "longitude": -117.144492,
+    "severity": "High",
+    "response_time_minutes": 21,
+    "resource_requests": {
+      "Health": 11,
+      "Food": 55,
+      "Shelter": 35,
+      "Clothing": 68,
+      "Water": 82,
+      "Psychological Support": 58
+    }
+  },
+  {
+    "incident_id": "INC63",
+    "county": "Los Angeles",
+    "latitude": 32.888603,
+    "longitude": -116.768607,
+    "severity": "Moderate",
+    "response_time_minutes": 55,
+    "resource_requests": {
+      "Health": 35,
+      "Food": 84,
+      "Shelter": 69,
+      "Clothing": 42,
+      "Water": 66,
+      "Psychological Support": 89
+    }
+  },
+  {
+    "incident_id": "INC64",
+    "county": "San Bernardino",
+    "latitude": 34.432654,
+    "longitude": -117.385675,
+    "severity": "Low",
+    "response_time_minutes": 15,
+    "resource_requests": {
+      "Health": 6,
+      "Food": 62,
+      "Shelter": 45,
+      "Clothing": 66,
+      "Water": 71,
+      "Psychological Support": 43
+    }
+  },
+  {
+    "incident_id": "INC65",
+    "county": "Riverside",
+    "latitude": 32.740085,
+    "longitude": -118.403017,
+    "severity": "Critical",
+    "response_time_minutes": 8,
+    "resource_requests": {
+      "Health": 74,
+      "Food": 4,
+      "Shelter": 33,
+      "Clothing": 17,
+      "Water": 70,
+      "Psychological Support": 91
+    }
+  },
+  {
+    "incident_id": "INC66",
+    "county": "San Diego",
+    "latitude": 33.495171,
+    "longitude": -116.86625,
+    "severity": "Moderate",
+    "response_time_minutes": 16,
+    "resource_requests": {
+      "Health": 39,
+      "Food": 78,
+      "Shelter": 65,
+      "Clothing": 31,
+      "Water": 92,
+      "Psychological Support": 68
+    }
+  },
+  {
+    "incident_id": "INC67",
+    "county": "Orange",
+    "latitude": 34.178524,
+    "longitude": -118.135261,
+    "severity": "High",
+    "response_time_minutes": 42,
+    "resource_requests": {
+      "Health": 71,
+      "Food": 98,
+      "Shelter": 1,
+      "Clothing": 17,
+      "Water": 73,
+      "Psychological Support": 71
+    }
+  },
+  {
+    "incident_id": "INC68",
+    "county": "Los Angeles",
+    "latitude": 33.358545,
+    "longitude": -117.752447,
+    "severity": "Critical",
+    "response_time_minutes": 41,
+    "resource_requests": {
+      "Health": 25,
+      "Food": 17,
+      "Shelter": 23,
+      "Clothing": 2,
+      "Water": 29,
+      "Psychological Support": 12
+    }
+  },
+  {
+    "incident_id": "INC69",
+    "county": "Riverside",
+    "latitude": 33.699637,
+    "longitude": -117.206271,
+    "severity": "Low",
+    "response_time_minutes": 12,
+    "resource_requests": {
+      "Health": 60,
+      "Food": 58,
+      "Shelter": 72,
+      "Clothing": 90,
+      "Water": 66,
+      "Psychological Support": 30
+    }
+  },
+  {
+    "incident_id": "INC70",
+    "county": "San Bernardino",
+    "latitude": 32.831433,
+    "longitude": -117.647116,
+    "severity": "Low",
+    "response_time_minutes": 49,
+    "resource_requests": {
+      "Health": 81,
+      "Food": 73,
+      "Shelter": 43,
+      "Clothing": 78,
+      "Water": 2,
+      "Psychological Support": 98
+    }
+  },
+  {
+    "incident_id": "INC71",
+    "county": "Riverside",
+    "latitude": 34.351963,
+    "longitude": -116.877651,
+    "severity": "Critical",
+    "response_time_minutes": 5,
+    "resource_requests": {
+      "Health": 52,
+      "Food": 6,
+      "Shelter": 90,
+      "Clothing": 90,
+      "Water": 90,
+      "Psychological Support": 100
+    }
+  },
+  {
+    "incident_id": "INC72",
+    "county": "Riverside",
+    "latitude": 32.827913,
+    "longitude": -116.658099,
+    "severity": "Critical",
+    "response_time_minutes": 30,
+    "resource_requests": {
+      "Health": 34,
+      "Food": 14,
+      "Shelter": 20,
+      "Clothing": 75,
+      "Water": 69,
+      "Psychological Support": 26
+    }
+  },
+  {
+    "incident_id": "INC73",
+    "county": "Orange",
+    "latitude": 33.0817,
+    "longitude": -116.605318,
+    "severity": "High",
+    "response_time_minutes": 40,
+    "resource_requests": {
+      "Health": 30,
+      "Food": 31,
+      "Shelter": 56,
+      "Clothing": 60,
+      "Water": 95,
+      "Psychological Support": 18
+    }
+  },
+  {
+    "incident_id": "INC74",
+    "county": "San Diego",
+    "latitude": 33.525121,
+    "longitude": -116.368657,
+    "severity": "High",
+    "response_time_minutes": 24,
+    "resource_requests": {
+      "Health": 22,
+      "Food": 37,
+      "Shelter": 61,
+      "Clothing": 95,
+      "Water": 87,
+      "Psychological Support": 63
+    }
+  },
+  {
+    "incident_id": "INC75",
+    "county": "Riverside",
+    "latitude": 33.066051,
+    "longitude": -116.892216,
+    "severity": "High",
+    "response_time_minutes": 47,
+    "resource_requests": {
+      "Health": 90,
+      "Food": 6,
+      "Shelter": 79,
+      "Clothing": 96,
+      "Water": 59,
+      "Psychological Support": 13
+    }
+  },
+  {
+    "incident_id": "INC76",
+    "county": "Orange",
+    "latitude": 32.821116,
+    "longitude": -116.555781,
+    "severity": "Moderate",
+    "response_time_minutes": 27,
+    "resource_requests": {
+      "Health": 8,
+      "Food": 66,
+      "Shelter": 86,
+      "Clothing": 29,
+      "Water": 63,
+      "Psychological Support": 82
+    }
+  },
+  {
+    "incident_id": "INC77",
+    "county": "San Bernardino",
+    "latitude": 33.899557,
+    "longitude": -118.006703,
     "severity": "Moderate",
     "response_time_minutes": 7,
-    "casualties": 7,
-    "property_damage_estimate": 79882,
-    "fire_cause": "Electrical",
-    "victim_resources": {
-      "medical_assistance": "ICU",
-      "evacuation_support": "None",
-      "psychological_support": "Crisis Intervention",
-      "basic_necessities": [
-        "Water",
-        "Clothing"
-      ]
+    "resource_requests": {
+      "Health": 18,
+      "Food": 88,
+      "Shelter": 32,
+      "Clothing": 2,
+      "Water": 84,
+      "Psychological Support": 1
     }
   },
   {
-    "incident_id": "FIRE-2258",
-    "date": "2025-02-01",
-    "location": {
-      "latitude": 34.162561,
-      "longitude": -118.202082,
-      "city": "Long Beach"
-    },
+    "incident_id": "INC78",
+    "county": "Riverside",
+    "latitude": 32.905039,
+    "longitude": -117.097714,
     "severity": "Low",
-    "response_time_minutes": 15,
-    "casualties": 5,
-    "property_damage_estimate": 16174,
-    "fire_cause": "Accidental",
-    "victim_resources": {
-      "medical_assistance": "Ambulance",
-      "evacuation_support": "Long-Term Housing",
-      "psychological_support": "Crisis Intervention",
-      "basic_necessities": [
-        "Clothing"
-      ]
+    "response_time_minutes": 33,
+    "resource_requests": {
+      "Health": 95,
+      "Food": 75,
+      "Shelter": 85,
+      "Clothing": 94,
+      "Water": 54,
+      "Psychological Support": 29
+    }
+  },
+  {
+    "incident_id": "INC79",
+    "county": "Orange",
+    "latitude": 34.075234,
+    "longitude": -117.695661,
+    "severity": "Critical",
+    "response_time_minutes": 17,
+    "resource_requests": {
+      "Health": 4,
+      "Food": 40,
+      "Shelter": 72,
+      "Clothing": 91,
+      "Water": 13,
+      "Psychological Support": 49
+    }
+  },
+  {
+    "incident_id": "INC80",
+    "county": "Riverside",
+    "latitude": 33.000833,
+    "longitude": -116.348391,
+    "severity": "High",
+    "response_time_minutes": 37,
+    "resource_requests": {
+      "Health": 63,
+      "Food": 76,
+      "Shelter": 36,
+      "Clothing": 1,
+      "Water": 70,
+      "Psychological Support": 33
+    }
+  },
+  {
+    "incident_id": "INC81",
+    "county": "Riverside",
+    "latitude": 34.042757,
+    "longitude": -117.312868,
+    "severity": "Critical",
+    "response_time_minutes": 9,
+    "resource_requests": {
+      "Health": 35,
+      "Food": 100,
+      "Shelter": 99,
+      "Clothing": 95,
+      "Water": 99,
+      "Psychological Support": 41
+    }
+  },
+  {
+    "incident_id": "INC82",
+    "county": "Los Angeles",
+    "latitude": 33.022979,
+    "longitude": -117.473732,
+    "severity": "High",
+    "response_time_minutes": 11,
+    "resource_requests": {
+      "Health": 20,
+      "Food": 68,
+      "Shelter": 26,
+      "Clothing": 89,
+      "Water": 2,
+      "Psychological Support": 32
+    }
+  },
+  {
+    "incident_id": "INC83",
+    "county": "Los Angeles",
+    "latitude": 32.874177,
+    "longitude": -116.683581,
+    "severity": "Low",
+    "response_time_minutes": 25,
+    "resource_requests": {
+      "Health": 6,
+      "Food": 24,
+      "Shelter": 40,
+      "Clothing": 86,
+      "Water": 96,
+      "Psychological Support": 37
+    }
+  },
+  {
+    "incident_id": "INC84",
+    "county": "Los Angeles",
+    "latitude": 32.639493,
+    "longitude": -117.112482,
+    "severity": "Low",
+    "response_time_minutes": 8,
+    "resource_requests": {
+      "Health": 41,
+      "Food": 13,
+      "Shelter": 84,
+      "Clothing": 41,
+      "Water": 33,
+      "Psychological Support": 89
+    }
+  },
+  {
+    "incident_id": "INC85",
+    "county": "Orange",
+    "latitude": 33.162137,
+    "longitude": -116.291384,
+    "severity": "Critical",
+    "response_time_minutes": 59,
+    "resource_requests": {
+      "Health": 27,
+      "Food": 53,
+      "Shelter": 55,
+      "Clothing": 56,
+      "Water": 59,
+      "Psychological Support": 2
+    }
+  },
+  {
+    "incident_id": "INC86",
+    "county": "Orange",
+    "latitude": 33.819482,
+    "longitude": -117.1299,
+    "severity": "Moderate",
+    "response_time_minutes": 58,
+    "resource_requests": {
+      "Health": 14,
+      "Food": 24,
+      "Shelter": 68,
+      "Clothing": 23,
+      "Water": 59,
+      "Psychological Support": 58
+    }
+  },
+  {
+    "incident_id": "INC87",
+    "county": "San Diego",
+    "latitude": 33.014163,
+    "longitude": -116.986283,
+    "severity": "High",
+    "response_time_minutes": 12,
+    "resource_requests": {
+      "Health": 15,
+      "Food": 35,
+      "Shelter": 93,
+      "Clothing": 19,
+      "Water": 94,
+      "Psychological Support": 33
+    }
+  },
+  {
+    "incident_id": "INC88",
+    "county": "San Diego",
+    "latitude": 34.065358,
+    "longitude": -118.048598,
+    "severity": "Low",
+    "response_time_minutes": 42,
+    "resource_requests": {
+      "Health": 56,
+      "Food": 45,
+      "Shelter": 45,
+      "Clothing": 42,
+      "Water": 4,
+      "Psychological Support": 48
+    }
+  },
+  {
+    "incident_id": "INC89",
+    "county": "San Bernardino",
+    "latitude": 33.845401,
+    "longitude": -118.34105,
+    "severity": "Critical",
+    "response_time_minutes": 55,
+    "resource_requests": {
+      "Health": 56,
+      "Food": 38,
+      "Shelter": 64,
+      "Clothing": 96,
+      "Water": 61,
+      "Psychological Support": 11
+    }
+  },
+  {
+    "incident_id": "INC90",
+    "county": "San Diego",
+    "latitude": 33.216545,
+    "longitude": -116.83583,
+    "severity": "Moderate",
+    "response_time_minutes": 54,
+    "resource_requests": {
+      "Health": 60,
+      "Food": 84,
+      "Shelter": 11,
+      "Clothing": 26,
+      "Water": 35,
+      "Psychological Support": 47
+    }
+  },
+  {
+    "incident_id": "INC91",
+    "county": "Orange",
+    "latitude": 34.463562,
+    "longitude": -117.274736,
+    "severity": "Critical",
+    "response_time_minutes": 38,
+    "resource_requests": {
+      "Health": 19,
+      "Food": 75,
+      "Shelter": 25,
+      "Clothing": 99,
+      "Water": 78,
+      "Psychological Support": 17
+    }
+  },
+  {
+    "incident_id": "INC92",
+    "county": "San Bernardino",
+    "latitude": 34.19076,
+    "longitude": -117.008592,
+    "severity": "High",
+    "response_time_minutes": 6,
+    "resource_requests": {
+      "Health": 55,
+      "Food": 81,
+      "Shelter": 69,
+      "Clothing": 23,
+      "Water": 83,
+      "Psychological Support": 91
+    }
+  },
+  {
+    "incident_id": "INC93",
+    "county": "Los Angeles",
+    "latitude": 34.2133,
+    "longitude": -118.282849,
+    "severity": "Low",
+    "response_time_minutes": 32,
+    "resource_requests": {
+      "Health": 38,
+      "Food": 64,
+      "Shelter": 49,
+      "Clothing": 80,
+      "Water": 44,
+      "Psychological Support": 29
+    }
+  },
+  {
+    "incident_id": "INC94",
+    "county": "San Diego",
+    "latitude": 33.210614,
+    "longitude": -117.422212,
+    "severity": "Low",
+    "response_time_minutes": 16,
+    "resource_requests": {
+      "Health": 49,
+      "Food": 72,
+      "Shelter": 94,
+      "Clothing": 84,
+      "Water": 29,
+      "Psychological Support": 21
+    }
+  },
+  {
+    "incident_id": "INC95",
+    "county": "San Bernardino",
+    "latitude": 33.980816,
+    "longitude": -116.152616,
+    "severity": "High",
+    "response_time_minutes": 36,
+    "resource_requests": {
+      "Health": 1,
+      "Food": 98,
+      "Shelter": 78,
+      "Clothing": 32,
+      "Water": 47,
+      "Psychological Support": 36
+    }
+  },
+  {
+    "incident_id": "INC96",
+    "county": "Riverside",
+    "latitude": 33.365782,
+    "longitude": -117.013702,
+    "severity": "Low",
+    "response_time_minutes": 59,
+    "resource_requests": {
+      "Health": 39,
+      "Food": 92,
+      "Shelter": 6,
+      "Clothing": 35,
+      "Water": 16,
+      "Psychological Support": 24
+    }
+  },
+  {
+    "incident_id": "INC97",
+    "county": "San Bernardino",
+    "latitude": 33.472135,
+    "longitude": -117.173615,
+    "severity": "Low",
+    "response_time_minutes": 10,
+    "resource_requests": {
+      "Health": 49,
+      "Food": 62,
+      "Shelter": 10,
+      "Clothing": 39,
+      "Water": 68,
+      "Psychological Support": 77
+    }
+  },
+  {
+    "incident_id": "INC98",
+    "county": "Los Angeles",
+    "latitude": 34.302548,
+    "longitude": -117.529685,
+    "severity": "Low",
+    "response_time_minutes": 60,
+    "resource_requests": {
+      "Health": 91,
+      "Food": 56,
+      "Shelter": 37,
+      "Clothing": 85,
+      "Water": 51,
+      "Psychological Support": 64
+    }
+  },
+  {
+    "incident_id": "INC99",
+    "county": "Orange",
+    "latitude": 33.071054,
+    "longitude": -116.833155,
+    "severity": "Moderate",
+    "response_time_minutes": 20,
+    "resource_requests": {
+      "Health": 76,
+      "Food": 15,
+      "Shelter": 13,
+      "Clothing": 25,
+      "Water": 96,
+      "Psychological Support": 65
+    }
+  },
+  {
+    "incident_id": "INC100",
+    "county": "Riverside",
+    "latitude": 34.414711,
+    "longitude": -117.56508,
+    "severity": "Low",
+    "response_time_minutes": 42,
+    "resource_requests": {
+      "Health": 10,
+      "Food": 37,
+      "Shelter": 90,
+      "Clothing": 55,
+      "Water": 86,
+      "Psychological Support": 49
     }
   }
 ]
