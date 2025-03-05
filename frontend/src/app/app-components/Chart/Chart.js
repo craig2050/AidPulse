@@ -235,6 +235,22 @@ const ChartJS = ({
       chartData = getHouseholdCompositionData();
       ChartComponent = Bar;
       chartOptions.plugins.title.text = "Average Household Composition";
+      // Set specific options for the bar chart
+      chartOptions.scales = {
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'Average Number per Household'
+          }
+        },
+        x: {
+          title: {
+            display: true,
+            text: 'Household Member Type'
+          }
+        }
+      };
       break;
     case "utility":
       chartData = getUtilityOutagesData();
