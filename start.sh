@@ -76,11 +76,11 @@ echo -e "${GREEN}Frontend dependencies installed successfully.${NC}"
 
 # Start the frontend server in a new terminal window
 echo -e "${YELLOW}Starting frontend server...${NC}"
-osascript -e "tell application \"Terminal\" to do script \"cd \\\"$PROJECT_DIR/frontend\\\" && PORT=3001 npm start\""
-echo -e "${GREEN}Frontend server started on port 3001.${NC}"
+osascript -e "tell application \"Terminal\" to do script \"cd \\\"$PROJECT_DIR/frontend\\\" && npm run dev\""
+echo -e "${GREEN}Frontend server started on port 3000.${NC}"
 
 print_header "FireAI Application Started"
 echo -e "${GREEN}Backend:${NC} http://localhost:3000"
-echo -e "${GREEN}Frontend:${NC} http://localhost:3001"
+echo -e "${GREEN}Frontend:${NC} http://localhost:3000"
 echo -e "\n${YELLOW}Note: Check the terminal windows for any error messages.${NC}"
 echo -e "${YELLOW}Use Ctrl+C in each terminal window to stop the servers when done.${NC}"

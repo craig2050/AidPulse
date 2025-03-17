@@ -1,0 +1,947 @@
+ec8fc5f - Craig Albuquerque (2025-03-04 23:12:31 -0500) - added interactive elements
+diff --git a/frontend/package-lock.json b/frontend/package-lock.json
+index 85ba364..87e363c 100644
+--- a/frontend/package-lock.json
++++ b/frontend/package-lock.json
+@@ -21,6 +21,7 @@
+         "class-variance-authority": "^0.7.1",
+         "clsx": "^2.1.1",
+         "faker": "^6.6.6",
++        "leaflet": "^1.9.4",
+         "lucide-react": "^0.477.0",
+         "material-symbols": "^0.28.2",
+         "motion": "^12.4.7",
+@@ -28,6 +29,7 @@
+         "react": "^19.0.0",
+         "react-chartjs-2": "^5.3.0",
+         "react-dom": "^19.0.0",
++        "react-leaflet": "^5.0.0",
+         "react-virtuoso": "^4.12.5",
+         "tailwind-merge": "^3.0.2",
+         "tailwindcss-animate": "^1.0.7",
+@@ -1472,6 +1474,17 @@
+         "url": "https://opencollective.com/popperjs"
+       }
+     },
++    "node_modules/@react-leaflet/core": {
++      "version": "3.0.0",
++      "resolved": "https://registry.npmjs.org/@react-leaflet/core/-/core-3.0.0.tgz",
++      "integrity": "sha512-3EWmekh4Nz+pGcr+xjf0KNyYfC3U2JjnkWsh0zcqaexYqmmB5ZhH37kz41JXGmKzpaMZCnPofBBm64i+YrEvGQ==",
++      "license": "Hippocratic-2.1",
++      "peerDependencies": {
++        "leaflet": "^1.9.0",
++        "react": "^19.0.0",
++        "react-dom": "^19.0.0"
++      }
++    },
+     "node_modules/@rtsao/scc": {
+       "version": "1.1.0",
+       "resolved": "https://registry.npmjs.org/@rtsao/scc/-/scc-1.1.0.tgz",
+@@ -4589,6 +4602,12 @@
+         "node": ">=0.10"
+       }
+     },
++    "node_modules/leaflet": {
++      "version": "1.9.4",
++      "resolved": "https://registry.npmjs.org/leaflet/-/leaflet-1.9.4.tgz",
++      "integrity": "sha512-nxS1ynzJOmOlHp+iL3FyWqK89GtNL8U8rvlMOsQdTTssxZwCXh8N2NB3GDQOL+YR3XnWyZAxwQixURb+FA74PA==",
++      "license": "BSD-2-Clause"
++    },
+     "node_modules/levn": {
+       "version": "0.4.1",
+       "resolved": "https://registry.npmjs.org/levn/-/levn-0.4.1.tgz",
+@@ -5542,6 +5561,20 @@
+       "integrity": "sha512-H91OHcwjZsbq3ClIDHMzBShc1rotbfACdWENsmEf0IFvZ3FgGPtdHMcsv45bQ1hAbgdfiA8SnxTKfDS+x/8m2g==",
+       "license": "MIT"
+     },
++    "node_modules/react-leaflet": {
++      "version": "5.0.0",
++      "resolved": "https://registry.npmjs.org/react-leaflet/-/react-leaflet-5.0.0.tgz",
++      "integrity": "sha512-CWbTpr5vcHw5bt9i4zSlPEVQdTVcML390TjeDG0cK59z1ylexpqC6M1PJFjV8jD7CF+ACBFsLIDs6DRMoLEofw==",
++      "license": "Hippocratic-2.1",
++      "dependencies": {
++        "@react-leaflet/core": "^3.0.0"
++      },
++      "peerDependencies": {
++        "leaflet": "^1.9.0",
++        "react": "^19.0.0",
++        "react-dom": "^19.0.0"
++      }
++    },
+     "node_modules/react-transition-group": {
+       "version": "4.4.5",
+       "resolved": "https://registry.npmjs.org/react-transition-group/-/react-transition-group-4.4.5.tgz",
+diff --git a/frontend/package.json b/frontend/package.json
+index 3b4a455..809b978 100644
+--- a/frontend/package.json
++++ b/frontend/package.json
+@@ -22,6 +22,7 @@
+     "class-variance-authority": "^0.7.1",
+     "clsx": "^2.1.1",
+     "faker": "^6.6.6",
++    "leaflet": "^1.9.4",
+     "lucide-react": "^0.477.0",
+     "material-symbols": "^0.28.2",
+     "motion": "^12.4.7",
+@@ -29,6 +30,7 @@
+     "react": "^19.0.0",
+     "react-chartjs-2": "^5.3.0",
+     "react-dom": "^19.0.0",
++    "react-leaflet": "^5.0.0",
+     "react-virtuoso": "^4.12.5",
+     "tailwind-merge": "^3.0.2",
+     "tailwindcss-animate": "^1.0.7",
+diff --git a/frontend/src/app/app-components/Chart/Chart.js b/frontend/src/app/app-components/Chart/Chart.js
+index c1ea716..b29d531 100644
+--- a/frontend/src/app/app-components/Chart/Chart.js
++++ b/frontend/src/app/app-components/Chart/Chart.js
+@@ -235,6 +235,22 @@ const ChartJS = ({
+       chartData = getHouseholdCompositionData();
+       ChartComponent = Bar;
+       chartOptions.plugins.title.text = "Average Household Composition";
++      // Set specific options for the bar chart
++      chartOptions.scales = {
++        y: {
++          beginAtZero: true,
++          title: {
++            display: true,
++            text: 'Average Number per Household'
++          }
++        },
++        x: {
++          title: {
++            display: true,
++            text: 'Household Member Type'
++          }
++        }
++      };
+       break;
+     case "utility":
+       chartData = getUtilityOutagesData();
+diff --git a/frontend/src/app/app-components/Chat/ResponderMessageList.tsx b/frontend/src/app/app-components/Chat/ResponderMessageList.tsx
+index d1653b3..810ff88 100644
+--- a/frontend/src/app/app-components/Chat/ResponderMessageList.tsx
++++ b/frontend/src/app/app-components/Chat/ResponderMessageList.tsx
+@@ -1,6 +1,6 @@
+ "use client";
+ 
+-import { Avatar, useTheme, Button, Typography, Paper, Grid, Box, IconButton } from "@mui/material";
++import { Avatar, useTheme, Button, Typography, Paper, Grid, Box, IconButton, Card, CardContent, Tabs, Tab, Divider, Chip } from "@mui/material";
+ import {
+   VirtuosoMessageList,
+   VirtuosoMessageListLicense,
+@@ -8,12 +8,14 @@ import {
+   VirtuosoMessageListProps,
+ } from "@virtuoso.dev/message-list";
+ import { useRef, useState, useContext } from "react";
+-// import ChatInput from "./ChatInput";
+ import Image from "next/image";
+ import { Message } from "@/app/types/types";
+ import InteractiveGraphic from "../InteractiveGraphic/InteractiveGraphic";
+ import ChartJS from "../Chart/Chart";
+ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
++import BarChartIcon from '@mui/icons-material/BarChart';
++import MapIcon from '@mui/icons-material/Map';
++import PieChartIcon from '@mui/icons-material/PieChart';
+ import { AppContext } from "@/app/AppContext";
+ 
+ const key = process.env.NEXT_PUBLIC_VIRTUOSO_KEY || "";
+@@ -70,13 +72,13 @@ const ItemContent: VirtuosoMessageListProps<Message, null>["ItemContent"] = ({
+ 
+ // Chart types and their labels
+ const chartTypes = [
+-  { id: "disaster", label: "Disaster Types" },
+-  { id: "resource", label: "Resource Requests" },
+-  { id: "household", label: "Household Composition" },
+-  { id: "utility", label: "Utility Outages" },
+-  { id: "medical", label: "Medical Assistance" },
+-  { id: "shelter", label: "Shelter Status" },
+-  { id: "gender", label: "Gender Distribution" },
++  { id: "disaster", label: "Disaster Types", icon: <PieChartIcon /> },
++  { id: "resource", label: "Resource Requests", icon: <BarChartIcon /> },
++  { id: "household", label: "Household Composition", icon: <BarChartIcon /> },
++  { id: "utility", label: "Utility Outages", icon: <PieChartIcon /> },
++  { id: "medical", label: "Medical Assistance", icon: <PieChartIcon /> },
++  { id: "shelter", label: "Shelter Status", icon: <PieChartIcon /> },
++  { id: "gender", label: "Gender Distribution", icon: <PieChartIcon /> },
+ ];
+ 
+ export default function ResponderMessageList() {
+@@ -84,6 +86,7 @@ export default function ResponderMessageList() {
+   const theme = useTheme();
+   const [activeChart, setActiveChart] = useState("disaster");
+   const [showCharts, setShowCharts] = useState(true);
++  const [activeTab, setActiveTab] = useState(0);
+   
+   // Use AppContext to navigate back to welcome screen
+   const context = useContext(AppContext);
+@@ -94,10 +97,25 @@ export default function ResponderMessageList() {
+     // Setting userType to empty string will render the WelcomeScreen
+     setUserType("");
+   };
++  
++  const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
++    setActiveTab(newValue);
++  };
+ 
+   return (
+-    <>
+-      <Box sx={{ display: 'flex', alignItems: 'center', p: 2 }}>
++    <Box sx={{ height: '100vh', display: 'flex', flexDirection: 'column', bgcolor: 'background.default' }}>
++      {/* Header with back button */}
++      <Box sx={{ 
++        display: 'flex', 
++        alignItems: 'center', 
++        p: 2, 
++        borderBottom: 1, 
++        borderColor: 'divider',
++        bgcolor: theme.palette.background.paper,
++        position: 'sticky',
++        top: 0,
++        zIndex: 10
++      }}>
+         <IconButton 
+           onClick={handleBack}
+           aria-label="back to home"
+@@ -106,79 +124,116 @@ export default function ResponderMessageList() {
+           <ArrowBackIcon />
+         </IconButton>
+         <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+-          Back to Home
++          Responder Dashboard
+         </Typography>
++        <Chip 
++          label="Active Responder" 
++          color="primary" 
++          size="small" 
++          sx={{ ml: 'auto', borderRadius: '16px' }}
++        />
+       </Box>
+       
+-      <Box sx={{ p: 2, mb: 2 }}>
+-        <Paper elevation={3} sx={{ p: 2, borderRadius: 2 }}>
+-          <Typography variant="h5" sx={{ mb: 2, fontWeight: 'bold' }}>
+-            Disaster Relief Data Visualizations
+-          </Typography>
+-          <Typography variant="body1" sx={{ mb: 3 }}>
+-            Interactive visualizations showing disaster relief data for victims affected by various types of disasters. 
+-            These visualizations help emergency response teams identify priorities and allocate resources effectively.
+-          </Typography>
+-          
+-          {showCharts && (
+-            <Box sx={{ mb: 3 }}>
+-              <Grid container spacing={3}>
+-                <Grid item xs={12} md={6}>
+-                  <Paper elevation={2} sx={{ p: 2, height: '400px', borderRadius: 2 }}>
+-                    <ChartJS chartType={activeChart} height="360px" />
+-                  </Paper>
+-                </Grid>
+-                <Grid item xs={12} md={6}>
+-                  <Paper elevation={2} sx={{ p: 2, height: '400px', borderRadius: 2 }}>
+-                    <ChartJS 
+-                      chartType={activeChart === "disaster" ? "household" : 
+-                              activeChart === "resource" ? "utility" : 
+-                              activeChart === "household" ? "shelter" : 
+-                              activeChart === "utility" ? "gender" : 
+-                              activeChart === "medical" ? "disaster" : 
+-                              activeChart === "shelter" ? "medical" : "resource"} 
+-                      height="360px" 
+-                    />
+-                  </Paper>
+-                </Grid>
+-              </Grid>
+-            </Box>
+-          )}
+-          
+-          <Box sx={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: 1, justifyContent: 'center' }}>
+-            {chartTypes.map((chart) => (
+-              <Button
+-                key={chart.id}
+-                variant={activeChart === chart.id ? "contained" : "outlined"}
+-                color="primary"
+-                onClick={() => {
+-                  setActiveChart(chart.id);
+-                  setShowCharts(true);
+-                }}
+-                sx={{
+-                  borderRadius: "8px",
+-                  padding: "0.5rem 1rem",
+-                  textTransform: "none",
+-                  ...(activeChart === chart.id ? {
+-                    backgroundColor: theme.palette.primary.main,
+-                    color: theme.palette.primary.contrastText,
+-                    "&:hover": { backgroundColor: theme.palette.primary.dark },
+-                  } : {}),
+-                }}
+-              >
+-                {chart.label}
+-              </Button>
+-            ))}
+-          </Box>
+-        </Paper>
+-      </Box>
++      {/* Tabs for navigation */}
++      <Tabs 
++        value={activeTab} 
++        onChange={handleTabChange} 
++        variant="fullWidth"
++        sx={{ 
++          borderBottom: 1, 
++          borderColor: 'divider',
++          bgcolor: theme.palette.background.paper,
++        }}
++      >
++        <Tab label="Data Visualizations" icon={<BarChartIcon />} iconPosition="start" />
++        <Tab label="Interactive Map" icon={<MapIcon />} iconPosition="start" />
++      </Tabs>
+       
+-      <Box sx={{ p: 2 }}>
+-        <Typography variant="h6" sx={{ mb: 2, fontWeight: 'bold' }}>
+-          Additional Data Insights
+-        </Typography>
+-        <InteractiveGraphic title={"Disaster Response Interactive Map"} buttonUrl={""} />
++      {/* Main content area */}
++      <Box sx={{ flex: 1, overflow: 'auto', p: 2 }}>
++        {/* Data Visualizations Tab */}
++        {activeTab === 0 && (
++          <Card elevation={3} sx={{ borderRadius: 3, overflow: 'hidden', mb: 3 }}>
++            <CardContent sx={{ p: 3 }}>
++              <Typography variant="h5" sx={{ mb: 2, fontWeight: 'bold', color: theme.palette.primary.main }}>
++                Disaster Relief Data Visualizations
++              </Typography>
++              <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary' }}>
++                Interactive visualizations showing disaster relief data for victims affected by various types of disasters. 
++                These visualizations help emergency response teams identify priorities and allocate resources effectively.
++              </Typography>
++              
++              {/* Chart filters as chips */}
++              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 3 }}>
++                {chartTypes.map((chart) => (
++                  <Chip
++                    key={chart.id}
++                    label={chart.label}
++                    icon={chart.icon}
++                    onClick={() => {
++                      setActiveChart(chart.id);
++                      setShowCharts(true);
++                    }}
++                    color={activeChart === chart.id ? "primary" : "default"}
++                    variant={activeChart === chart.id ? "filled" : "outlined"}
++                    sx={{ 
++                      borderRadius: '16px',
++                      '& .MuiChip-label': { px: 1 },
++                      transition: 'all 0.2s ease-in-out',
++                      '&:hover': { transform: 'translateY(-2px)' }
++                    }}
++                  />
++                ))}
++              </Box>
++              
++              {/* Charts */}
++              {showCharts && (
++                <Box sx={{ mb: 3 }}>
++                  <Grid container spacing={3}>
++                    <Grid item xs={12}>
++                      <Card elevation={2} sx={{ p: 2, height: '400px', borderRadius: 2, overflow: 'hidden' }}>
++                        <ChartJS chartType={activeChart} height="360px" />
++                      </Card>
++                    </Grid>
++                  </Grid>
++                </Box>
++              )}
++              
++              {/* Data summary */}
++              <Box sx={{ mt: 3, p: 2, bgcolor: 'background.paper', borderRadius: 2, border: '1px solid', borderColor: 'divider' }}>
++                <Typography variant="subtitle1" sx={{ fontWeight: 'bold', mb: 1 }}>
++                  Key Insights:
++                </Typography>
++                <Typography variant="body2" component="ul" sx={{ pl: 2 }}>
++                  <li>Wildfire is the most common disaster type affecting victims</li>
++                  <li>Shelter and water are the most requested resources</li>
++                  <li>Over 60% of affected households include children</li>
++                  <li>Power outages are reported by 78% of victims</li>
++                </Typography>
++              </Box>
++            </CardContent>
++          </Card>
++        )}
++        
++        {/* Interactive Map Tab */}
++        {activeTab === 1 && (
++          <Card elevation={3} sx={{ borderRadius: 3, overflow: 'hidden' }}>
++            <CardContent sx={{ p: 3 }}>
++              <Typography variant="h5" sx={{ mb: 2, fontWeight: 'bold', color: theme.palette.primary.main }}>
++                Disaster Response Interactive Map
++              </Typography>
++              <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary' }}>
++                Geospatial visualization of disaster-affected areas and victim locations. 
++                This map helps responders coordinate rescue and relief operations efficiently.
++              </Typography>
++              
++              <Box sx={{ height: '500px', width: '100%', position: 'relative', borderRadius: 2, overflow: 'hidden' }}>
++                <InteractiveGraphic title={"Disaster Response Interactive Map"} buttonUrl={""} />
++              </Box>
++            </CardContent>
++          </Card>
++        )}
+       </Box>
+-    </>
++    </Box>
+   );
+ }
+diff --git a/frontend/src/app/app-components/InteractiveGraphic/DisasterMap.tsx b/frontend/src/app/app-components/InteractiveGraphic/DisasterMap.tsx
+new file mode 100644
+index 0000000..41a6cf2
+--- /dev/null
++++ b/frontend/src/app/app-components/InteractiveGraphic/DisasterMap.tsx
+@@ -0,0 +1,361 @@
++"use client";
++
++import React, { useEffect, useState } from 'react';
++import { MapContainer, TileLayer, Marker, Popup, Circle, useMap } from 'react-leaflet';
++import { Icon, LatLngExpression, DivIcon } from 'leaflet';
++import L from 'leaflet';
++import 'leaflet/dist/leaflet.css';
++import { Box, Typography, Paper, Chip, Avatar } from '@mui/material';
++import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
++import FloodIcon from '@mui/icons-material/Water';
++import HurricaneIcon from '@mui/icons-material/Air';
++import EarthquakeIcon from '@mui/icons-material/Vibration';
++import PersonPinIcon from '@mui/icons-material/PersonPin';
++import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
++import HomeIcon from '@mui/icons-material/Home';
++
++// Fix for Leaflet icon issue in Next.js
++const fixLeafletIcon = () => {
++  // Only run on the client side
++  if (typeof window !== 'undefined') {
++    // @ts-ignore
++    delete Icon.Default.prototype._getIconUrl;
++    Icon.Default.mergeOptions({
++      iconRetinaUrl: '/assets/marker-icon-2x.png',
++      iconUrl: '/assets/marker-icon.png',
++      shadowUrl: '/assets/marker-shadow.png',
++    });
++  }
++};
++
++// Sample disaster data
++const disasterData = [
++  {
++    id: 1,
++    type: 'wildfire',
++    location: [34.0522, -118.2437] as LatLngExpression,
++    severity: 'high',
++    affectedArea: 2500, // in meters
++    victims: 120,
++    timestamp: new Date('2025-03-01T10:30:00'),
++    description: 'Wildfire in Los Angeles area affecting residential neighborhoods',
++  },
++  {
++    id: 2,
++    type: 'flood',
++    location: [37.7749, -122.4194] as LatLngExpression,
++    severity: 'medium',
++    affectedArea: 1800,
++    victims: 85,
++    timestamp: new Date('2025-03-02T14:15:00'),
++    description: 'Flooding in San Francisco Bay Area after heavy rainfall',
++  },
++  {
++    id: 3,
++    type: 'hurricane',
++    location: [25.7617, -80.1918] as LatLngExpression,
++    severity: 'critical',
++    affectedArea: 5000,
++    victims: 250,
++    timestamp: new Date('2025-03-03T08:45:00'),
++    description: 'Hurricane making landfall in Miami with strong winds and storm surge',
++  },
++  {
++    id: 4,
++    type: 'earthquake',
++    location: [37.8044, -122.2711] as LatLngExpression,
++    severity: 'high',
++    affectedArea: 3000,
++    victims: 180,
++    timestamp: new Date('2025-03-04T16:20:00'),
++    description: 'Earthquake in Oakland with significant structural damage',
++  },
++];
++
++// Sample responder data
++const responderData = [
++  {
++    id: 101,
++    type: 'medical',
++    location: [34.0624, -118.2537] as LatLngExpression,
++    capacity: 50,
++    available: 22,
++    description: 'Medical response team with emergency supplies',
++  },
++  {
++    id: 102,
++    type: 'rescue',
++    location: [37.7849, -122.4294] as LatLngExpression,
++    capacity: 30,
++    available: 12,
++    description: 'Search and rescue team with specialized equipment',
++  },
++  {
++    id: 103,
++    type: 'shelter',
++    location: [25.7717, -80.2018] as LatLngExpression,
++    capacity: 200,
++    available: 85,
++    description: 'Emergency shelter with food and supplies',
++  },
++  {
++    id: 104,
++    type: 'medical',
++    location: [37.8144, -122.2811] as LatLngExpression,
++    capacity: 75,
++    available: 40,
++    description: 'Field hospital with trauma specialists',
++  },
++];
++
++// Component to recenter map when data changes
++const MapRecenter = ({ center }: { center: LatLngExpression }) => {
++  const map = useMap();
++  useEffect(() => {
++    map.setView(center);
++  }, [center, map]);
++  return null;
++};
++
++// Get icon based on disaster type
++const getDisasterIcon = (type: string) => {
++  switch (type) {
++    case 'wildfire':
++      return <LocalFireDepartmentIcon sx={{ color: '#ff4444' }} />;
++    case 'flood':
++      return <FloodIcon sx={{ color: '#33b5e5' }} />;
++    case 'hurricane':
++      return <HurricaneIcon sx={{ color: '#aa66cc' }} />;
++    case 'earthquake':
++      return <EarthquakeIcon sx={{ color: '#ffbb33' }} />;
++    default:
++      return <LocalFireDepartmentIcon sx={{ color: '#ff4444' }} />;
++  }
++};
++
++// Get color based on severity
++const getSeverityColor = (severity: string) => {
++  switch (severity) {
++    case 'low':
++      return '#4285F4';
++    case 'medium':
++      return '#FBBC05';
++    case 'high':
++      return '#EA4335';
++    case 'critical':
++      return '#8B0000';
++    default:
++      return '#EA4335';
++  }
++};
++
++// Get icon based on responder type
++const getResponderIcon = (type: string) => {
++  switch (type) {
++    case 'medical':
++      return <MedicalServicesIcon sx={{ color: '#00C851' }} />;
++    case 'rescue':
++      return <PersonPinIcon sx={{ color: '#FF8800' }} />;
++    case 'shelter':
++      return <HomeIcon sx={{ color: '#2BBBAD' }} />;
++    default:
++      return <PersonPinIcon sx={{ color: '#FF8800' }} />;
++  }
++};
++
++// Create a custom icon for the map markers
++const createCustomIcon = (type: string, isDisaster: boolean = true) => {
++  // Define colors based on type
++  let color = '#ff4444'; // default color
++  
++  if (isDisaster) {
++    switch (type) {
++      case 'wildfire': color = '#ff4444'; break;
++      case 'flood': color = '#33b5e5'; break;
++      case 'hurricane': color = '#aa66cc'; break;
++      case 'earthquake': color = '#ffbb33'; break;
++    }
++  } else {
++    switch (type) {
++      case 'medical': color = '#00C851'; break;
++      case 'rescue': color = '#FF8800'; break;
++      case 'shelter': color = '#2BBBAD'; break;
++    }
++  }
++  
++  // Create a custom divIcon with CSS styling
++  return new L.DivIcon({
++    html: `<div style="
++      background-color: ${color};
++      border: 2px solid white;
++      border-radius: 50%;
++      width: 100%;
++      height: 100%;
++      display: flex;
++      align-items: center;
++      justify-content: center;
++      box-shadow: 0 0 5px rgba(0,0,0,0.5);
++    "></div>`,
++    className: 'custom-div-icon',
++    iconSize: isDisaster ? [30, 30] : [24, 24],
++    iconAnchor: isDisaster ? [15, 15] : [12, 12]
++  });
++};
++
++interface DisasterMapProps {
++  height?: string;
++  width?: string;
++}
++
++const DisasterMap: React.FC<DisasterMapProps> = ({ height = '100%', width = '100%' }) => {
++  const [activeDisaster, setActiveDisaster] = useState<number | null>(null);
++  const [mapCenter, setMapCenter] = useState<LatLngExpression>([37.0902, -95.7129]); // US center
++  const [mapZoom, setMapZoom] = useState(4);
++
++  // Fix Leaflet icon issue on component mount
++  useEffect(() => {
++    fixLeafletIcon();
++  }, []);
++
++  const handleDisasterClick = (id: number, location: LatLngExpression) => {
++    setActiveDisaster(id);
++    setMapCenter(location);
++    setMapZoom(10);
++  };
++
++  return (
++    <Box sx={{ height, width, position: 'relative' }}>
++      {/* Disaster summary panel */}
++      <Paper
++        elevation={3}
++        sx={{
++          position: 'absolute',
++          top: 10,
++          left: 10,
++          zIndex: 1000,
++          p: 2,
++          maxWidth: 300,
++          backgroundColor: 'rgba(33, 33, 33, 0.9)',
++          borderRadius: 2,
++          color: 'white',
++          backdropFilter: 'blur(4px)'
++        }}
++      >
++        <Typography variant="subtitle1" fontWeight="bold" gutterBottom sx={{ color: 'white', display: 'flex', alignItems: 'center' }}>
++          <Box component="span" sx={{ display: 'inline-flex', alignItems: 'center', mr: 1, color: 'error.light' }}>
++            <LocalFireDepartmentIcon fontSize="small" />
++          </Box>
++          Active Disasters: {disasterData.length}
++        </Typography>
++        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.8, mb: 2 }}>
++          {disasterData.map((disaster) => (
++            <Chip
++              key={disaster.id}
++              icon={getDisasterIcon(disaster.type)}
++              label={`${disaster.type.charAt(0).toUpperCase() + disaster.type.slice(1)}`}
++              onClick={() => handleDisasterClick(disaster.id, disaster.location)}
++              color={activeDisaster === disaster.id ? 'primary' : 'default'}
++              variant={activeDisaster === disaster.id ? 'filled' : 'outlined'}
++              size="small"
++              sx={{
++                bgcolor: activeDisaster === disaster.id ? 'primary.main' : 'rgba(255, 255, 255, 0.15)',
++                color: 'white',
++                borderColor: 'rgba(255, 255, 255, 0.3)',
++                '&:hover': {
++                  bgcolor: 'rgba(255, 255, 255, 0.25)',
++                }
++              }}
++            />
++          ))}
++        </Box>
++        <Box sx={{ bgcolor: 'rgba(255, 255, 255, 0.1)', p: 1.5, borderRadius: 1, mb: 1 }}>
++          <Typography variant="body2" sx={{ color: 'white', display: 'flex', alignItems: 'center', mb: 1 }}>
++            <PersonPinIcon fontSize="small" sx={{ mr: 1, color: 'error.light' }} />
++            <strong>{disasterData.reduce((sum, d) => sum + d.victims, 0)}</strong>
++            <Box component="span" sx={{ ml: 0.5 }}>people affected</Box>
++          </Typography>
++          <Typography variant="body2" sx={{ color: 'white', display: 'flex', alignItems: 'center' }}>
++            <MedicalServicesIcon fontSize="small" sx={{ mr: 1, color: 'success.light' }} />
++            <strong>{responderData.reduce((sum, r) => sum + r.available, 0)}</strong>
++            <Box component="span" sx={{ mx: 0.5 }}>of</Box>
++            <strong>{responderData.reduce((sum, r) => sum + r.capacity, 0)}</strong>
++            <Box component="span" sx={{ ml: 0.5 }}>responders available</Box>
++          </Typography>
++        </Box>
++      </Paper>
++
++      {/* Map container */}
++      <MapContainer
++        center={mapCenter}
++        zoom={mapZoom}
++        style={{ height: '100%', width: '100%', zIndex: 1 }}
++      >
++        <TileLayer
++          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
++          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
++        />
++        <MapRecenter center={mapCenter} />
++
++        {/* Render disaster markers and affected areas */}
++        {disasterData.map((disaster) => (
++          <React.Fragment key={disaster.id}>
++            <Circle
++              center={disaster.location}
++              radius={disaster.affectedArea}
++              pathOptions={{
++                fillColor: getSeverityColor(disaster.severity),
++                fillOpacity: 0.3,
++                color: getSeverityColor(disaster.severity),
++                weight: 1,
++              }}
++            />
++            <Marker
++              position={disaster.location}
++              eventHandlers={{
++                click: () => handleDisasterClick(disaster.id, disaster.location),
++              }}
++              icon={createCustomIcon(disaster.type, true)}
++            >
++              <Popup>
++                <Typography variant="subtitle2" fontWeight="bold">
++                  {disaster.type.charAt(0).toUpperCase() + disaster.type.slice(1)}
++                </Typography>
++                <Typography variant="body2">{disaster.description}</Typography>
++                <Typography variant="body2">
++                  Severity: <strong>{disaster.severity}</strong>
++                </Typography>
++                <Typography variant="body2">
++                  Affected: <strong>{disaster.victims} people</strong>
++                </Typography>
++                <Typography variant="body2">
++                  Reported: {disaster.timestamp.toLocaleString()}
++                </Typography>
++              </Popup>
++            </Marker>
++          </React.Fragment>
++        ))}
++
++        {/* Render responder markers */}
++        {responderData.map((responder) => (
++          <Marker
++            key={responder.id}
++            position={responder.location}
++            icon={createCustomIcon(responder.type, false)}
++          >
++            <Popup>
++              <Typography variant="subtitle2" fontWeight="bold">
++                {responder.type.charAt(0).toUpperCase() + responder.type.slice(1)} Team
++              </Typography>
++              <Typography variant="body2">{responder.description}</Typography>
++              <Typography variant="body2">
++                Capacity: <strong>{responder.available}</strong> of {responder.capacity} available
++              </Typography>
++            </Popup>
++          </Marker>
++        ))}
++      </MapContainer>
++    </Box>
++  );
++};
++
++export default DisasterMap;
+diff --git a/frontend/src/app/app-components/InteractiveGraphic/InteractiveGraphic.tsx b/frontend/src/app/app-components/InteractiveGraphic/InteractiveGraphic.tsx
+index 3ea9686..cea26e1 100644
+--- a/frontend/src/app/app-components/InteractiveGraphic/InteractiveGraphic.tsx
++++ b/frontend/src/app/app-components/InteractiveGraphic/InteractiveGraphic.tsx
+@@ -1,10 +1,19 @@
+ 'use client'
+ 
+ import { AppContext } from '@/app/AppContext'
+-import { Fade, IconButton, Box, Typography } from '@mui/material' // Import MUI components
++import { Fade, IconButton, Box, Typography, Card, CardContent, Button, CircularProgress } from '@mui/material' // Import MUI components
+ import ArrowBackIcon from '@mui/icons-material/ArrowBack'
++import ZoomInIcon from '@mui/icons-material/ZoomIn'
++import ZoomOutIcon from '@mui/icons-material/ZoomOut'
++import RefreshIcon from '@mui/icons-material/Refresh'
++import LayersIcon from '@mui/icons-material/Layers'
+ import Image from 'next/image'
+-import { useContext, useState } from 'react'
++import { useContext, useState, useEffect } from 'react'
++import dynamic from 'next/dynamic'
++
++// Dynamically import the DisasterMap component with no SSR
++// This is necessary because Leaflet requires browser APIs
++const DisasterMap = dynamic(() => import('./DisasterMap'), { ssr: false });
+ 
+ interface InteractiveGraphicProps {
+   title: string
+@@ -12,62 +21,122 @@ interface InteractiveGraphicProps {
+ }
+ 
+ const InteractiveGraphic = ({ buttonUrl, title }: InteractiveGraphicProps) => {
+-  const [showImage, ] = useState(false)
++  const [showImage, setShowImage] = useState(false)
++  const [isLoading, setIsLoading] = useState(true)
++  const [zoomLevel, setZoomLevel] = useState(1)
++  const [showControls, setShowControls] = useState(false)
+   const context = useContext(AppContext)
+ 
+   if (!context) {
+     throw new Error('AppContext not found')
+   }
+ 
+-  const { hasGraphic, setUserType } = context
++  const { hasGraphic, setUserType, setHasGraphic } = context
+   
+   // Handler for the back button
+   const handleBack = () => {
+     // Setting userType to empty string will render the WelcomeScreen
+     setUserType("");
+   };
++  
++  // Simulate loading the map data
++  useEffect(() => {
++    // Set hasGraphic to true to ensure the map is displayed
++    setHasGraphic(true);
++    
++    const timer = setTimeout(() => {
++      setIsLoading(false);
++      setShowControls(true);
++    }, 1500);
++    
++    return () => clearTimeout(timer);
++  }, [setHasGraphic]);
++  
++  const handleZoomIn = () => {
++    setZoomLevel(prev => Math.min(prev + 0.2, 2));
++  };
++  
++  const handleZoomOut = () => {
++    setZoomLevel(prev => Math.max(prev - 0.2, 0.6));
++  };
++  
++  const handleRefresh = () => {
++    setIsLoading(true);
++    setTimeout(() => {
++      setIsLoading(false);
++    }, 1000);
++  };
+ 
+   return (
+-    <div className='InteractiveGraphic'>
+-      <Box sx={{ display: 'flex', alignItems: 'center', p: 2, backgroundColor: 'black' }}>
+-        <IconButton 
+-          onClick={handleBack}
+-          aria-label="back to home"
+-          sx={{ mr: 1, color: 'primary.main' }}
++    <Card elevation={3} sx={{ height: '100%', borderRadius: 2, overflow: 'hidden' }}>
++      {/* Map container */}
++      <Box sx={{ position: 'relative', height: '100%', width: '100%', overflow: 'hidden' }}>
++        {/* Loading overlay */}
++        {isLoading && (
++          <Box sx={{
++            position: 'absolute',
++            top: 0,
++            left: 0,
++            right: 0,
++            bottom: 0,
++            display: 'flex',
++            alignItems: 'center',
++            justifyContent: 'center',
++            backgroundColor: 'rgba(0,0,0,0.7)',
++            zIndex: 1000 // Higher z-index to appear above the map
++          }}>
++            <Box sx={{ textAlign: 'center' }}>
++              <CircularProgress color="primary" size={60} thickness={4} />
++              <Typography variant="body1" sx={{ mt: 2, color: 'white' }}>
++                Loading disaster response map...
++              </Typography>
++            </Box>
++          </Box>
++        )}
++        
++        {/* Interactive Map */}
++        <Fade in={hasGraphic && !isLoading} timeout={1000}>
++          <Box sx={{
++            height: '100%',
++            width: '100%',
++          }}>
++            <DisasterMap height="100%" width="100%" />
++          </Box>
++        </Fade>
++        
++        {/* Back button overlay */}
++        <Box sx={{
++          position: 'absolute',
++          top: 10,
++          left: 10,
++          zIndex: 500,
++          display: 'flex',
++          alignItems: 'center',
++          bgcolor: 'rgba(0,0,0,0.8)',
++          borderRadius: 2,
++          p: 0.5,
++          pl: 1,
++          pr: 2,
++          boxShadow: '0 2px 10px rgba(0,0,0,0.3)',
++          cursor: 'pointer',
++          '&:hover': {
++            bgcolor: 'rgba(0,0,0,0.9)',
++          }
++        }}
++        onClick={handleBack}
+         >
+-          <ArrowBackIcon />
+-        </IconButton>
+-        <Typography variant="h6" sx={{ fontWeight: 'bold', color: 'white' }}>
+-          Back to Home
+-        </Typography>
+-      </Box>
+-      
+-      <div style={{ backgroundColor: 'black', padding: '20px' }}>
+-        <Fade in={hasGraphic} timeout={1000}>
+-          {/* <Button
+-            variant="contained"
+-            color="primary"
+-            className="interactive-button"
+-            onClick={handleButtonClick}
+-            sx={{ mt: 2 }}
++          <IconButton
++            size="small"
++            sx={{ color: 'primary.main', mr: 1 }}
+           >
+-            Show Interactive Graphic
+-          </Button> */}
+-          <Image
+-            src='/assets/ScatterGif.gif'
+-            height={100}
+-            width={100}
+-            alt='Interactive Graphic'
+-          />
+-        </Fade>
+-
+-        {showImage && (
+-          <div className='interactive-image'>
+-            <Image src={buttonUrl} alt='Interactive Graphic' height={100} width={100}/>
+-          </div>
+-        )}
+-      </div>
+-    </div>
++            <ArrowBackIcon />
++          </IconButton>
++          <Typography variant="body2" sx={{ color: 'white', fontWeight: 'medium' }}>
++            Back to Home
++          </Typography>
++        </Box>
++      </Box>
++    </Card>
+   )
+ }
+ 
