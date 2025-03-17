@@ -1,195 +1,113 @@
-# FireAI - Wildfire Response Assistant
+# AidPulse - AI-Powered Emergency Response Assistant
 
-This project is a web application designed to assist in wildfire emergency situations by providing an AI-powered chat interface for different user roles: victims, citizens, responders, and helpers. The application uses a React frontend with a Node.js/Express backend connected to MongoDB for data storage.
+AidPulse deploys lightweight, local AI agents that run on-device which processes real-time data to evaluate risks, channel help, and allocate resources even when networks are down. Built with React, Node.js, Express, and MongoDB, AidPulse enhances emergency response through intelligent, decentralized assistance.
 
-## Project Overview
+## Why AidPulse?  
 
-FireAI serves as a communication platform during wildfire emergencies, offering tailored assistance based on user roles:
-- **Victims**: Direct communication and assistance for those in immediate danger
-- **Citizens**: General information and safety guidance
-- **Responders**: Enhanced interface with interactive graphics for emergency responders
-- **Helpers**: Resources and guidance for those providing assistance
+**Driven by Data:** Inspired by research on wildfire trends over the past 28 years, which showed a rise in severe, large-scale wildfires. AidPulse bridges the gap between data insights and real-world emergency response.  
 
-## Quick Start
+**AI for Impact:** Integrating LLMs and interactive dashboards, AidPulse personalizes emergency guidance for different user roles.  
 
-The easiest way to run the application is using the provided startup scripts:
+**Making a Difference:** As wildfires grow more destructive, we need smarter solutions—AidPulse delivers exactly that.  
 
-### macOS / Linux
-```bash
-# Make the script executable (first time only)
-chmod +x start.sh
+## Key Features  
 
-# Run the application
-./start.sh
+AidPulse serves as an AI-powered emergency response platform that functions even in offline scenarios:
+
+- **People Affected:** Immediate alerts and guidance for safer evacuations 
+- **Responders:** Enhanced tools with interactive graphics for rapid decision-making 
+- **Support Volunteers:** A streamlined system to coordinate relief efforts effectively
+
+## Project Demo
+- **[Demo Video (if applicable)]**
+
+## Tech Stack  
+
+**Frontend:** React, React Router, Redux  
+**Backend:** Node.js, Express.js, MongoDB, Mongoose  
+**APIs & Integrations:** OpenAI GPT (for chatbot), Firebase, Google Maps API  
+**Deployment:** Docker, CI/CD, Azure/GCP  
+
+## Quick Start  
+
+### Setup (macOS / Linux)  
+```bash  
+# Install dependencies  
+cd backend && npm install && cd ../frontend && npm install  
+
+# Start backend & frontend  
+cd backend && npm start & cd ../frontend && npm start  
 ```
 
-### Windows
+### Setup (Windows)  
+```powershell  
+# Install dependencies  
+cd backend; npm install; cd ../frontend; npm install  
+
+# Start backend & frontend  
+start cmd /k "cd backend && npm start"  
+start cmd /k "cd frontend && npm start"  
 ```
-# Simply double-click start.bat file
-# Or run from command prompt:
-start.bat
+
+### Environment Variables  
+
+Create a `.env` file in the backend directory:  
+```plaintext  
+NODE_ENV=development  
+PORT=3000  
+MONGO_URL=mongodb://127.0.0.1:27017/AidPulse  
+LOG_LEVEL=debug  
 ```
 
-The scripts will:
-1. Check for and start MongoDB if not running
-2. Install backend dependencies and start the backend server
-3. Install frontend dependencies and start the frontend server
-4. Open browser windows/tabs for both servers
+## Project Structure  
 
-Once running, access the application at http://localhost:3001
+```
+AidPulse/  
+│── backend/        # Node.js & Express backend  
+│   ├── routes/     # API routes  
+│   ├── models/     # Mongoose models  
+│   ├── config/     # Config files  
+│   ├── index.js    # Backend entry point  
+│── frontend/       # React frontend  
+│   ├── src/  
+│   │   ├── components/  
+│   │   ├── pages/  
+│   │   ├── App.js  
+│── docs/           # Documentation & presentations  
+│── README.md  
+│── .env.example    # Example environment variables  
+│── package.json  
+```
 
-## Project Structure
+## Troubleshooting  
 
-- **backend/**: Node.js/Express backend
-  - **config/**: Configuration files including environment settings
-  - **index.js**: Main entry point for the Express application
-  - **package.json**: Backend dependencies and scripts
-  
-- **frontend/**: React-based frontend application
-  - **public/**: Static assets and HTML entry point
-  - **src/**: Source code for the frontend
-    - **Components/**: React components organized by feature
-      - **Chat/**: Chat interface components including MessageInput and MessageList
-      - **Home/**: Home screen with role selection buttons
-      - **InteractiveGraphic/**: Interactive visual components for responders and helpers
-    - **App.js**: Main application component with routing logic
-  
-- **presentation/**: Project presentation materials
-  - **initial_presentation.pptx**: Project presentation slides
+### MongoDB Issues  
+- macOS: `brew services restart mongodb-community`  
+- Windows: `net start MongoDB`  
 
-## Technologies Used
+### Port Conflicts  
+- **Backend (3000):** Run `lsof -i :3000` (Mac) or `netstat -ano | findstr :3000` (Windows)  
+- **Frontend (3001):** Run with a different port:  
+  ```bash  
+  PORT=3002 npm start  
+  ```
 
-### Backend
-- Node.js with Express
-- MongoDB for data storage
-- Mongoose for database modeling
-- Axios for HTTP requests
-- dotenv for environment configuration
+## Future Enhancements  
 
-### Frontend
-- React (v19.0.0)
-- React DOM
-- React Scripts
-- Testing libraries (Jest, React Testing Library)
+- LLM-powered real-time assistance  
+- Live data streaming for emergency tracking  
+- Automated integration with first responders' systems  
 
-## Setup and Installation
+## Hackathon Recognition  
 
-### Backend Setup
-1. Navigate to the backend directory:
-   ```
-   cd backend
-   ```
-2. Install dependencies:
-   ```
-   npm install
-   ```
-3. Create a `.env` file in the backend directory with the following variables:
-   ```
-   NODE_ENV=development
-   PORT=3000
-   MONGO_URL=mongodb://127.0.0.1:27017/test
-   LOG_LEVEL=debug
-   ```
-4. For production, update the environment variables:
-   ```
-   NODE_ENV=production
-   MONGO_URL=mongodb+srv://[username]:[password]@[cluster-address]/
-   LOG_LEVEL=error
-   ```
-5. Start the backend in development mode:
-   ```
-   npm run dev
-   ```
+AidPulse won the [Hackathon Name]! This project was built at the [Event Name] to tackle wildfire emergency response using AI.  
 
-### Frontend Setup
-1. Navigate to the frontend directory:
-   ```
-   cd frontend
-   ```
-2. Install dependencies:
-   ```
-   npm install
-   ```
-3. Start the development server:
-   ```
-   npm start
-   ```
-4. The application will be available at http://localhost:3000
+## License  
 
-## Manual Setup and Installation
+This project is licensed under the MIT License.  
 
-If you prefer to set up the application manually, follow these steps:
+AidPulse aims to use AI-driven solutions to enhance disaster response and save lives.
 
-### Prerequisites
-- Node.js (v14 or higher)
-- MongoDB installed and running
+## Acknowledgments
 
-### Backend Setup
-1. Navigate to the backend directory:
-   ```
-   cd backend
-   ```
-2. Install dependencies:
-   ```
-   npm install
-   ```
-3. Create a `.env` file in the backend directory with the following variables:
-   ```
-   NODE_ENV=development
-   PORT=3000
-   MONGO_URL=mongodb://127.0.0.1:27017/test
-   LOG_LEVEL=debug
-   ```
-4. For production, update the environment variables:
-   ```
-   NODE_ENV=production
-   MONGO_URL=mongodb+srv://[username]:[password]@[cluster-address]/
-   LOG_LEVEL=error
-   ```
-5. Start the backend in development mode:
-   ```
-   npm run dev
-   ```
-
-### Frontend Setup
-1. Navigate to the frontend directory:
-   ```
-   cd frontend
-   ```
-2. Install dependencies:
-   ```
-   npm install
-   ```
-3. Start the development server:
-   ```
-   PORT=3001 npm start
-   ```
-4. The application will be available at http://localhost:3001
-
-## Troubleshooting
-
-### MongoDB Issues
-- **macOS**: If MongoDB doesn't start, try `brew services restart mongodb-community`
-- **Windows**: Ensure MongoDB service is running or start it with `net start MongoDB`
-
-### Port Conflicts
-- If port 3000 is in use, the backend will fail to start. Check for processes using this port:
-  - macOS/Linux: `lsof -i :3000`
-  - Windows: `netstat -ano | findstr :3000`
-- If port 3001 is in use, set a different port for the frontend:
-  - `PORT=3002 npm start` (macOS/Linux)
-  - `set PORT=3002 && npm start` (Windows)
-
-## Features in Development
-
-Currently developing the following features based on the todoList:
-- Prompt creation and validation
-- Response verification based on priority
-- User identity management
-- Emergency tracking
-- Communication with central server
-- LLM integration for intelligent responses
-
-## License
-
-This project is licensed under the ISC License.
+Local LLM simulation powered by [ollama_flask_api](https://github.com/craig2050/ollama_flask_api)
